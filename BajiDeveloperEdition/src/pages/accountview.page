@@ -1,0 +1,3 @@
+<apex:page standardController="Account">
+      <apex:detail inlineEdit="true" showChatter="true"/>
+</apex:page>

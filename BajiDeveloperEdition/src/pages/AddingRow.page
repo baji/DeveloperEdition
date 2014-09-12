@@ -1,0 +1,14 @@
+<apex:page standardController="Contact" extensions="Test">
+<apex:form >
+<apex:pageBlock id="thPB" >
+<apex:commandButton value="Add New Row" action="{!addFilter}" reRender="thPB"/>
+<apex:pageBlockSection >
+<apex:repeat var="filter" value="{!counterId}">
+<apex:inputText />
+</apex:repeat>
+</apex:pageBlockSection>
+
+</apex:pageBlock>
+
+</apex:form>
+</apex:page>

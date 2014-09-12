@@ -1,0 +1,15 @@
+<apex:page standardController="Account" showHeader="false">
+<apex:includeScript value="/soap/ajax/21.0/connection.js" />
+    <apex:includeScript value="/soap/ajax/21.0/apex.js" />
+<apex:form >
+    <script type="text/javascript">
+        
+    </script>
+   <apex:pageBlock >
+   <apex:pageBlockSection >
+   <apex:outputLabel >Account Search:
+       <input type="text" id="FindAccount"  style="width:220px;" /></apex:outputLabel>
+   </apex:pageBlockSection>
+   </apex:pageBlock>
+</apex:form>
+</apex:page>

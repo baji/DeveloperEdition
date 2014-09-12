@@ -1,0 +1,45 @@
+<apex:page showHeader="false" controller="accountdisplylink"><br/><br/><br/>
+    
+    <style>
+    .baji {color:red; font-size:large;}
+    </style>
+    <script>
+        function show1(){ alert('BAJI COMPANY LOGO'); }
+    </script>       
+    <apex:image url="{!$Resource.Comp_Logo}" onclick="show();" height="100" width="100"/>
+    
+    <apex:outputText value="Welcome {!$User.FirstName}, {!now()}" styleClass="baji"/>     
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockSection >
+            <a href="http://www.google.com/">
+                <img src="{!$Resource.Flower}"/>
+            </a>
+                <apex:commandLink value="Custom Link"/>            
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    <apex:pageBlock >
+    <div class="rolodex">
+    &nbsp;<apex:commandLink value="B" action="{!search}" rerender="resultsblock" styleClass="listItem">&nbsp;   
+            <apex:param name="name" value="b"/>&nbsp;
+    </apex:commandLink>
+    &nbsp;<apex:commandLink value="C" action="{!search}" rerender="resultsblock" styleClass="listItem">&nbsp;   
+            <apex:param name="name" value="c"/>&nbsp;
+    </apex:commandLink>
+    &nbsp;<apex:commandLink value="G" action="{!search}" rerender="resultsblock" styleClass="listItem">&nbsp;   
+            <apex:param name="name" value="g"/>&nbsp;
+    </apex:commandLink>
+    </div>
+    </apex:pageBlock>
+    <apex:pageblock title="Contacts Info" id="resultsblock">
+                <apex:outputPanel >
+                           <apex:commandButton value="PREVIOUS" action="{!PREVIOUS}" styleClass="btnImportant" rendered="{!Con.HasPrevious}" />
+                           <apex:commandButton value="NEXT" action="{!NEXT}" styleClass="btnImportant" rendered="{!Con.HasNext}" />
+                </apex:outputPanel>
+                <apex:pageBlockTable value="{!searchResults}" var="o" >                                    
+                       <apex:column value="{!o.Name}"/>
+                       <apex:column value="{!o.phone}"/>           
+                </apex:pageBlocktable>
+           </apex:pageBlock>
+    </apex:form>
+</apex:page>

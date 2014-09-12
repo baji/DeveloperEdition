@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Junction_Object</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Junction_Object</value>
+    </caseValues>
+    <fields>
+        <label><!-- Foundation_Countries --></label>
+        <name>country_child__c</name>
+        <relationshipLabel><!-- Junction_Object --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Foundation_States --></label>
+        <name>states_child__c</name>
+        <relationshipLabel><!-- Junction_Object --></relationshipLabel>
+    </fields>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

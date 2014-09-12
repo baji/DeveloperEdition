@@ -1,0 +1,3 @@
+<apex:page >
+<apex:outputLabel >This a aside test page</apex:outputLabel>
+</apex:page>

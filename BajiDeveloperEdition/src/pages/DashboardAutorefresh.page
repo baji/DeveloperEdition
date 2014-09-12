@@ -1,0 +1,63 @@
+<apex:page sidebar="false" showheader="false" standardstylesheets="false">
+  <apex:includeScript value="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js"/>
+   
+  <div id="countDown"></div>
+ 
+  <script>
+    $(document).ready(function($) {
+       startCountDown(10, 1000, doRefresh);
+    });
+ 
+    function startCountDown(i, p, f)
+    {
+        var pause = p;
+        var fn = f;
+                 
+        var countDownObj = document.getElementById("countDown");
+        if (countDownObj == null)
+        {
+            alert("div not found, check your id");
+            return;
+        }
+                 
+        countDownObj.count = function(i)
+        {
+            countDownObj.innerHTML = 'Refreshing in ' + i + ' seconds';
+            if (i == 0)
+            {
+                fn();
+                return;
+            }
+            setTimeout(function() {
+                          countDownObj.count(i - 1);
+                         },
+                       pause
+            );
+        }
+         
+        countDownObj.count(i);
+    }
+                 
+    function doRefresh()
+    {
+        $.ajax(
+            {
+              url: '/services/data/v31.0/analytics/dashboards/01Z90000000Ley4',
+              type: 'PUT',
+              beforeSend: function(xhr) {
+                // Set the OAuth header from the session ID
+                xhr.setRequestHeader('Authorization', 'Bearer {!$Api.Session_ID}');
+              },
+              success: function(response) {
+                window.top.location='/01Z90000000Ley4';
+              },
+              error: function(jqXHR, textStatus, errorThrown) {
+                // Oops - what went wrong?
+                alert(jqXHR.status + ': ' + errorThrown);
+              }
+          }
+        );
+    }
+  </script>
+   
+</apex:page>

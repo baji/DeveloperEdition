@@ -1,0 +1,14 @@
+<apex:page showHeader="false" controller="customlink_contry">
+<apex:form >
+<apex:pageBlock >    
+    <apex:pageBlockSection title="States" collapsible="false" id="states">
+        <apex:pageBlockSectionItem >
+             <apex:outputLabel value="States: "/>
+                 <apex:selectList size="1" multiselect="false" >                       
+                       <apex:selectOptions value="{!States}"/>
+                 </apex:selectList>
+        </apex:pageBlockSectionItem>
+    </apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form> 
+</apex:page>

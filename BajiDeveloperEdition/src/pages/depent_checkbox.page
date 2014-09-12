@@ -1,0 +1,19 @@
+<apex:page controller="dependent_checkbox_controller" showHeader="false" ><p/>
+<apex:form >
+    <apex:pageBlock >
+        <apex:outputLabel value="Select Country from the List" ></apex:outputLabel><br/>  
+            <apex:pageBlockSection id="sec1" >                
+                <apex:selectCheckboxes value="{!Country}" id="count_check"> 
+                <apex:actionSupport event="onclick" reRender="Sec2" />                   
+                    <apex:selectOptions value="{!countries}" />
+                </apex:selectCheckboxes>              
+            </apex:pageBlockSection>
+            <apex:pageBlockSection id="Sec2">
+                <apex:selectList id="chooseState" value="{!State}" size="1">                      
+                <apex:selectOptions value="{!States}"/>               
+                </apex:selectList>    
+            </apex:pageBlockSection>                     
+    </apex:pageBlock>
+    
+</apex:form>
+</apex:page>

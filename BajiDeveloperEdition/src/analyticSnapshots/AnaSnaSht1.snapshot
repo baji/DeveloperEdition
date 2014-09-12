@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnalyticSnapshot xmlns="http://soap.sforce.com/2006/04/metadata">
+    <mappings>
+        <sourceField>CUST_NAME</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>test_Custom_Object__c.Name__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>Merchandise__c.Description__c</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>test_Custom_Object__c.Address__c</targetField>
+    </mappings>
+    <name>AnaSnaSht1</name>
+    <runningUser>bajidssk@gmail.com</runningUser>
+    <sourceReport>Marchandise_Reports/All_Merchandise_with_Price_and_Inventory</sourceReport>
+    <targetObject>test_Custom_Object__c</targetObject>
+</AnalyticSnapshot>

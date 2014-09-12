@@ -1,0 +1,38 @@
+<apex:page standardController="Account" recordSetVar="account1" 
+rendered="{!if($Profile.Name == 'System Administrator',true,false)}">
+
+<apex:pageBlock >
+    <apex:pageblockSection >
+        <apex:pageblockTable value="{!account1}" var="ac">    
+        
+            <apex:column value="{!ac.name}"/>
+            <apex:column value="{!ac.Id}"/>
+            <apex:column value="{!ac.Phone}"/>
+            <apex:column value="{!ac.Website}"/>                        
+                        
+        </apex:pageblockTable>        
+    </apex:pageblockSection>
+</apex:pageBlock>
+
+<apex:tabPanel switchType="client" >
+    <apex:tab label="Tab1">
+        tab content 1
+        <apex:pageBlock >
+                    <apex:pageblockSection >
+                        <apex:pageblockTable value="{!account1}" var="ac">    
+                        
+                            <apex:column value="{!ac.name}"/>
+                            <apex:column value="{!ac.Id}"/>
+                            <apex:column value="{!ac.Phone}"/>
+                            <apex:column value="{!ac.Website}"/>                        
+                                        
+                        </apex:pageblockTable>        
+                    </apex:pageblockSection>
+        </apex:pageBlock>
+    </apex:tab>
+    <apex:tab label="Tab2">
+        tab content 2    
+    </apex:tab>
+</apex:tabPanel>
+
+</apex:page>

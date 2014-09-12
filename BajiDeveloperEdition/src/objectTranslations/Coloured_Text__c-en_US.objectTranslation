@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Coloured_Text</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Coloured_Texts</value>
+    </caseValues>
+    <fields>
+        <label><!-- Colour_1 --></label>
+        <name>Colour_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Colour_2 --></label>
+        <name>Colour_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Field_1 --></label>
+        <name>Field_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Field_2 --></label>
+        <name>Field_2__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

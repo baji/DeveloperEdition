@@ -1,0 +1,103 @@
+<apex:page Controller="LeadController" tabStyle="Account" showHeader="false" sidebar="false">
+<apex:includeScript value="{!URLFOR($Resource.JSCalendar,'calendar.js')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.JSCalendar,'calendar_blue.css')}" />
+<script type="text/javascript" language="javascript" >
+function fnSetDateFormat(oDateFormat)
+{
+ oDateFormat['FullYear'];  //Example = 2007
+ oDateFormat['Year'];   //Example = 07
+ oDateFormat['FullMonthName']; //Example = January
+ oDateFormat['MonthName'];  //Example = Jan
+ oDateFormat['Month'];   //Example = 01
+ oDateFormat['Date'];   //Example = 01
+ oDateFormat['FullDay'];   //Example = Sunday
+ oDateFormat['Day'];    //Example = Sun
+ oDateFormat['Hours'];   //Example = 01
+ oDateFormat['Minutes'];   //Example = 01
+ oDateFormat['Seconds'];   //Example = 01
+  
+ var sDateString;
+  
+ // Use dd/mm/yyyy format
+ sDateString = oDateFormat['Date'] +"/"+ oDateFormat['Month'] +"/"+ oDateFormat['FullYear'];
+ return sDateString;
+}
+   
+     
+function initialiseCalendar(obj, eleId)
+{
+ var element=document.getElementById(eleId);
+ var params='close=true';
+ if (null!=element)
+ {
+  if (element.value.length>0)
+  {
+   // date is formatted dd/mm/yyyy - pull out the month and year
+   var month=element.value.substr(3,2);
+   var year=element.value.substr(6,4);
+   params+=',month='+month;
+   params+=',year='+year;
+  }
+ }
+ fnInitCalendar(obj, eleId, params);
+}
+
+function validatePhone(phoneID, spanid)
+{
+    phoneValue = document.getElementById(phoneID).value
+    var phoneFix = phoneValue.replace(/\D/g,"")
+    var phoneRegEx = /^\d{10}$/.test(phoneFix)
+    var falsePhone = /^d{7}$/.test(phoneFix)
+    if(phoneRegEx == true)
+    {
+        var phoneSlice = phoneValue.replace(/\D/g,"");
+        areaCode = phoneSlice.substr(0,3);
+        phone3digits = phoneSlice.substr(3,3);
+        phone4digits = phoneSlice.substr(6,4);
+        phoneFinal = "("+areaCode+")"+phone3digits+"-"+phone4digits;
+        document.getElementById(phoneID).value = phoneFinal;
+        document.getElementById(spanid).style.display = 'none';
+    }
+    else
+    {
+        document.getElementById(spanid).style.display = 'block';
+        document.getElementById(spanid).innerHTML = "This is not a valid phone number.";
+        returnValue = false;
+    }
+}
+</script>
+<style type="text/css">
+.error {
+    display:none;
+    color:#ff0000;
+.tstyle{
+    font-size:large;
+}
+}
+</style>
+
+    <apex:sectionHeader title="Inquiry Form"/>
+    <apex:form >   
+        <apex:pageBlock title="Lead Information" mode="edit">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="Submit"/>
+                <apex:commandButton action="{!cancel}" value="Cancel" immediate="true"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                <apex:inputField value="{!lead.Company}" required="true" label="Organization Name" />
+                <apex:inputField value="{!lead.LastName}"/>
+                <apex:inputField value="{!lead.FirstName}"/>
+                <apex:inputField value="{!lead.Phone}" onBlur="javascript:validatePhone(this.id, 'phoneReq');" id="phone">
+                  <div class="error" id="phoneReq">Error.</div>
+                 </apex:inputField>
+                <apex:inputField value="{!lead.City}"/>            
+                <apex:inputField value="{!lead.PostalCode}"/>                        
+                <apex:inputField value="{!lead.Email}"/>
+                
+                <apex:inputText id="startdate" size="10" value="{!Lead.DateSigned__c}" onmouseover="initialiseCalendar(this, '{!$Component.startdate}')"/>
+            
+            </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

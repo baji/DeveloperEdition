@@ -1,0 +1,12 @@
+<apex:page standardController="Account" extensions="AccountExtension" showHeader="false">
+    <apex:form >
+        <apex:pageblock >
+            <apex:pageBlockSection >
+                <apex:inputField value="{!oaccount.id}"/>
+                <apex:inputField value="{!oaccount.Name}"/>
+                <apex:inputField value="{!oaccount.Website}"/>
+                <apex:inputField value="{!oaccount.Phone}"/>
+            </apex:pageBlockSection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

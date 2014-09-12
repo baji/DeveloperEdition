@@ -1,0 +1,15 @@
+<apex:page controller="ClassSet"  showHeader="false" tabStyle="Company__c">
+<apex:form >
+<apex:pageMessages />
+    <apex:pageBlock >
+        
+        <apex:pageBlockSection >        
+            <apex:inputField required="true" value="{!Company.Name}"/>
+            <apex:inputField value="{!Company.Address__c}"/>
+            <apex:inputField value="{!Company.CEO__c}"/>          
+            <apex:commandButton action="{!save}" value="Save"/>              
+          
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:form>    
+</apex:page>

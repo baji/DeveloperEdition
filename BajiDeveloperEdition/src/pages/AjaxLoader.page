@@ -1,0 +1,32 @@
+<apex:page controller="ChangeOppStageController" action="{!init }" showHeader="false">
+    <apex:stylesheet value="{!URLFOR($Resource.Spinner, 'spinner.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.Spinner, 'jquery.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.Spinner, 'spinner.js')}"/>
+    <div class="splashStatus" id="splashDiv">
+        <div class="circle"><img src="{!URLFOR($Resource.Spinner, 'spinner.gif')}"/></div>
+        <div class="txt">Please Wait. Loading...</div>
+    </div>
+    <apex:actionStatus id="splashStatus" onstart="startSplash();" onstop="endSplash(); "/>
+    <apex:form id="all">
+        <apex:pageBlock title="Opportunities">
+            <apex:pageBlockTable value="{! oppList }" var="oppTable">
+                <apex:column >
+                    <apex:facet name="header">Change Stage</apex:facet>
+                    <apex:commandLink action="{! changeStage }"
+                                    value="Closed Paid" status="splashStatus" reRender="all">
+                        <apex:param name="oppId" assignTo="{! oppId }" value="{! oppTable.Id }"/>
+                    </apex:commandLink>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Name</apex:facet>
+                    <apex:outputText value="{! oppTable.Name }"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Stage</apex:facet>
+                    <apex:outputText value="{! oppTable.StageName }"/>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+    <div class="lightbox"></div>
+</apex:page>

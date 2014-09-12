@@ -1,0 +1,6 @@
+<apex:page showHeader="false" controller="GigyaController" >
+  <!-- {! IF ( CONTAINS(result,'baji'), '<html><h1>Baji</h1></html>', 'Nah') }<br/>  -->
+   <apex:outputPanel id="op" rendered="{!IF(result == 'baji', true, false)}">
+       <apex:outputLabel >It contains the search string</apex:outputLabel>
+   </apex:outputPanel>
+</apex:page>

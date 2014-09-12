@@ -1,0 +1,24 @@
+<apex:page Controller="searchAccount" showHeader="true" tabStyle="INV2__tab" wizard="false">
+    <apex:form >
+        <apex:pageblock >
+            <apex:pageBlockSection title="search" collapsible="false" /><br/>                                           
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <apex:outputText >Account Name&nbsp;</apex:outputText>
+                <apex:inputText id="searchtext" value="{!searchtext}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <apex:outputText >Customer ID&nbsp;</apex:outputText>
+                <apex:inputText id="searchtextCID" value="{!searchtextCID}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <apex:commandButton value="search" action="{!searchResults}" rerender="PBT,PBMSG"/>
+                                
+            <apex:pageBlockSection title="Results" dir="RTR" collapsible="false" /><br/>
+            <apex:pageBlockSection id="PBMSG">                    
+                <apex:pageMessage summary="{!Err}" severity="warning" id="errID"  strength="2" rendered="{!Err != ''}"/>
+            </apex:pageBlockSection>    
+                <apex:pageBlockTable value="{!searchResults}" var="sr" id="PBT">
+                    <apex:column headerValue="Account Name">{!sr.Name}</apex:column>
+                    <apex:column headerValue="Phone" >{!sr.Phone}</apex:column>
+                    <apex:column headerValue="Billing State/Province" >{!sr.BillingState}</apex:column>
+                    <apex:column headerValue="Website" >{!sr.Website}</apex:column>
+                </apex:pageBlockTable>                               
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

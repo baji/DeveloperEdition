@@ -1,0 +1,58 @@
+<apex:page showHeader="false"><br/><br/>
+
+<html>
+<head>
+ 
+<!-- You can load the jQuery library from the Google Content Network.
+Probably better than from your own server. -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+ 
+<!-- Load the CloudCarousel JavaScript file -->
+<script type="text/JavaScript" src="{!$Resource.Cloud_carousel}"></script>
+ 
+<script>
+$(document).ready(function(){
+                           
+    // This initialises carousels on the container elements specified, in this case, carousel1.
+    $("#carousel1").CloudCarousel(      
+        {           
+            xPos: 220,
+            yPos: 70,
+            buttonLeft: $("#left-but"),
+            buttonRight: $("#right-but"),
+            altBox: $("#alt-text"),
+            titleBox: $("#title-text")
+        }
+    );
+});
+ 
+</script>
+ 
+</head>
+    <body>
+        <!-- This is the container for the carousel. -->
+        <div id = "carousel1" style="width:500px; height:220px;overflow:scroll;">            
+            <!-- All images with class of "cloudcarousel" will be turned into carousel items -->
+            <!-- You can place links around these images -->
+            <a href="#" onclick="window.open('http://www.google.com','external')">     
+                <img class = "cloudcarousel" src="{!$Resource.IGT}" alt="IGT module" title="IGT" />  </a> 
+            <img class = "cloudcarousel" src="{!$Resource.spa}" alt="SPA module" title="SPA" />
+            <img class = "cloudcarousel" src="{!$Resource.crs_lms}" alt="CRS module" title="CRS" />
+            <img class = "cloudcarousel" src="{!$Resource.unica}" alt="UNICA module" title="UNICA" />
+            <img class = "cloudcarousel" src="{!$Resource.tkt_mstr}" alt="TKT MASTER module" title="TKTMAS" />
+            <img class = "cloudcarousel" src="{!$Resource.single_view}" alt="single_view module" title="SINGLE VIEW" />
+            <img class = "cloudcarousel" src="{!$Resource.partners}" alt="partners module" title="PARTNERS" />
+            <img class = "cloudcarousel" src="{!$Resource.lyt_mgmt}" alt="lyt_mgmt module" title="LOYALTY MANAGMENT" />
+        </div>
+        
+        <!-- Define left and right buttons. -->
+        <input id="left-but"  type="button" value="Left" />
+        
+        <input id="right-but" type="button" value="Right" />
+        
+        <!-- Define elements to accept the alt and title text from the images. -->
+        <p id="title-text"></p>
+        <p id="alt-text"></p>
+    </body>
+</html>
+</apex:page>

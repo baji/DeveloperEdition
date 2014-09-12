@@ -1,0 +1,552 @@
+<apex:page standardController="Account" standardStylesheets="true" showHeader="false" docType="html-5.0">
+    <apex:includeScript value="{!$Resource.JQuery_1_9_1}"/>  
+    <apex:includeScript value="{!$Resource.jQuery_Mobile}"/>  
+    <apex:stylesheet value="{!$Resource.jQuery_Mobile_CSS}"/>
+    <apex:includeScript value="{!$Resource.livevalidation_standalone_JS}"/>
+
+    <apex:remoteObjects >
+    <!--Name the field you like to query-->
+    <apex:remoteObjectModel name="Account" jsShorthand="acc" fields="Id,Name,Phone,BillingCity"/>
+    </apex:remoteObjects>
+<html>    
+   <script>
+     var j$ = jQuery.noConflict();
+
+<!--   For Create   -->
+     
+     var DML = function(){
+        
+        var name = j$("#name_add").val();
+        var phone = j$("#phone_add").val();
+        var type = j$("#type option:selected" ).text();
+        alert(type);
+                      
+        <!-- var ctDetails = { Name: name, Industry: industry };   -->
+        
+        var record = new SObjectModel.acc({       
+            Name: name,
+            Phone: phone,
+            RecordTypeId: '01290000000OV2C',
+            Type: type
+        });
+        addUpdateAccount(false,record);
+     
+        } 
+  
+ 
+<!--     For updating     -->
+
+    var updateAccount = function(){
+                    
+        var upName = j$("#accname").val();
+        var upPhone = j$("#phone").val();
+                
+        var record = new SObjectModel.acc({
+        
+            Name: upName,
+            Phone: upPhone
+        });
+        addUpdateAccount(AccId,record);
+    }
+    function addUpdateAccount(AccId,record){
+    
+        if( !AccId ) 
+        {               
+              record.create(updateCallback);
+              j$("#name_add").val('');
+              j$("#phone_add").val('');
+        } 
+        else 
+        {                 
+              record.set('Id', AccId);
+              record.update(updateCallback);
+        }
+        
+    
+    }
+    function updateCallback(err, ids){
+                if (err) { 
+                    displayError(err); 
+                } 
+                else 
+                {                    
+                    alert("Create/Update Done SuccessFully");
+                }
+            }
+     
+<!--  For individual display  -->
+
+    var getAccount = function(){
+        
+        var data = new SObjectModel.acc();
+            
+            data.retrieve(
+                {
+                  where: { 
+                    Id : {eq: AccId }
+                  },                                  
+                  limit : 1
+                } , function(err, records){
+            //if failure
+                if(err) alert(err.message);
+                else{
+                   
+                    populateDialog(records);
+                }
+            });
+            function populateDialog(records){
+            j$("#update").hide();    
+                 records.forEach(function(record){
+                 var getName = record.get("Name");
+                 var getPhone = record.get("Phone");
+                 j$("#accname").val(getName);
+                 j$("#phone").val(getPhone);
+                 });
+            }
+    }     
+     
+<!--  For Display    -->   
+      
+     var getContacts = function(){
+         
+         var data = new SObjectModel.acc();
+            
+            data.retrieve(
+                { 
+                   where: { Name: { like: 'a%'},
+                  },
+                  orderby: [{Name: 'DESC'}],                                           
+                  limit : 200
+                } , function(err, records){
+            //if failure
+                if(err) alert(err.message);
+                else {
+                   
+                    populate(records);
+                }
+            });
+        
+            function populate(records){
+                j$.mobile.loading( "show", {
+                    text: "loading",
+                    textVisible: "true",
+                    theme: "b",
+                    textonly: "false"   
+                });
+            
+                records.forEach(function(record){
+                var getName = record.get("Name");
+                var getId = record.get("Id");
+                var getPhone = record.get("Phone");
+                j$('#cList').append("<li><a href='#AccountDialog' data-rel='popup' data-position-to='window' data-transition='slideup' data-id="+getId+">"+getName+"</a></li>");
+
+                });
+                j$.mobile.loading("hide");
+                j$('#cList').listview('refresh');
+            }
+     }
+     
+   <!--  search   -->
+    var searchAccount = function(){
+    
+        var search = j$("#search").val();
+        var city = j$("#search_city").val();
+        alert(search+'--'+city);
+        var data = new SObjectModel.acc();
+            
+            data.retrieve(
+                {
+                  where: { 
+                      or:{
+                    Name : {eq: search },
+                    BillingCity : { like: city+"%" }
+                          }  
+                  },                                  
+                  limit : 10
+                } , function(err, records){
+            //if failure
+                if(err) alert(err.message);
+                else{                   
+                    populateSearch(records);
+                }
+            });
+            function populateSearch(records){
+                j$.mobile.loading( "show", {
+                    text: "loading",
+                    textVisible: "true",
+                    theme: "b",
+                    textonly: "false"   
+                });
+            
+                records.forEach(function(record){
+                var getName = record.get("Name");
+                var getId = record.get("Id");
+                var getPhone = record.get("Phone");
+                j$('#searchList').append("<li><a href='#'>"+getName+"</a></li>");
+
+                });
+                j$.mobile.loading("hide");
+                j$('#searchList').listview('refresh');
+            }
+    }
+<!-- end of functiions  -->  
+
+     var AccId;
+     j$(document).ready(function(){    
+          
+          j$(".nav").hide();
+         
+          j$(document).on("click", "#nav_bar li a" ,function (event) {
+              var div_id = j$(this).attr("data-attr");
+              console.log(j$(this).attr("data-attr"));
+               j$("#home_b").hide();
+               j$(".nav").hide();
+               j$("#"+div_id).show();
+          });
+          
+                    
+          j$(document).on("click", "#HomePage #cList li" ,function (event) {
+          
+               <!--  alert(j$(this).text()+'--'+j$(this).find('a').attr("data-id"));  -->
+                var AccName = j$(this).text();
+                AccId = j$(this).find('a').attr("data-id");
+                
+              <!--  j$("#accname").val(AccName); -->
+                
+                getAccount();
+                
+            }); 
+          
+          j$("#save").click(function(){
+              DML();              
+          });
+          j$("#edit").click(function(){
+              
+              j$("#accname").removeAttr("readonly");
+              j$("#phone").removeAttr("readonly");
+              j$("#update").show();
+              j$("#edit").hide();
+          });
+          j$("#update").click(function(){
+               j$("#update").hide();
+               j$("#edit").show();
+               updateAccount();
+          });
+          j$("#searchValue").click(function(){
+              j$('#searchList').empty();
+              searchAccount();
+              
+          });
+          j$("#refresh").click(function(){
+             j$('#cList').empty();
+             getContacts(); 
+             j$('#cList').listview('refresh'); 
+          });
+          getContacts();         
+        });
+       
+   </script>
+<body>    
+
+
+<!-- *******************Home Page*************** -->
+<div data-role="page" id="HomePage">
+    <div data-role="header">
+    <h1>Accounts</h1>
+        <div data-role="navbar" id="nav_bar">
+          <ul>
+            <li><a href="#" data-attr="search_b">Search</a></li>
+            <li><a href="#" data-attr="add_b">Add</a></li>
+            <li><a href="#" data-attr="disp_b">Show</a></li>
+          </ul>
+        </div>
+     </div>
+
+     <div data-role="main" class="ui-content" id="home_b">
+       <p>Select the your option...........</p>
+     </div>
+     
+     
+    <div data-role="main" class="ui-content nav" id="search_b">
+      <input type="text" id="search" name="search" placeholder="enter account name" value="" />
+      <input type="text" id="search_city" name="search" placeholder="enter city" value="" />
+      <a href="#" id="searchValue" class="ui-btn ui-btn-inline ui-corner-all ui-btn-b ui-icon-search ui-btn-icon-left">Search</a>
+      <ul id="searchList" data-role="listview" data-inset="true">
+      </ul>
+    </div>
+    
+    <div data-role="main" class="ui-content nav" id="add_b">
+          <!--
+           
+           <apex:form >
+          
+           <apex:outputLabel for="name" value="Name"/>
+           <apex:inputField id="name" styleClass="name"  value="{!Account.Name}" html-placeholder="Account Name"/>
+           <apex:outputLabel for="industry" value="Industry"/>
+           <apex:inputField id="industry" styleClass="industry" value="{!Account.Industry}"/>
+                     
+           <a href="#pageAccounts" class="ui-btn ui-btn-inline ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left">Cancel</a>
+           <a href="#myPopupDialog1" data-rel="popup" data-position-to="window" data-transition="slideup" id="save" class="ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left" onclick="save();">Save</a>                          
+          
+          </apex:form>
+          -->
+          <form>
+          <input type="text" id="name_add"  name="search" placeholder="Name..." value="" />
+          <input type="text" id="phone_add" name="phone" placeholder="Phone..." value="" />
+          <select name="type" id="type">
+            <option value="">--Type--</option>
+            <option value="Prospect">Prospect</option>
+            <option value="Customer - Direct">Customer - Direct</option>
+            <option value="Customer - Channel">Customer - Channel</option>
+            <option value="Channel Partner / Reseller">Channel Partner / Reseller</option>
+            <option value="Installation Partner">Installation Partner</option>
+            <option value="Technology Partner">Technology Partner</option>
+            <option value="Other">Other</option>
+          </select>
+          <a href="#pageAccounts" class="ui-btn ui-btn-inline ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left">Cancel</a>
+          <a href="#myPopupDialog1" data-rel="popup" data-position-to="window" data-transition="slideup" id="save" class="ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left" onclick="save();">Save</a>                          
+          
+          </form>
+    </div>      
+    
+    
+    <div data-role="content" class="ui-content nav"  id="disp_b">            
+        <ul id="cList" data-filter="true" data-role="listview" data-inset="true">
+        </ul>
+    </div> 
+    <!--   Dialog Popup   -->
+           
+      <div data-role="popup" id="AccountDialog">
+      <div data-role="header">
+        <h1>Account</h1>
+      </div>
+
+      <div data-role="main" class="ui-content" >
+        <h2>Detailed Account Information!</h2>
+        <br/><br/>   
+            
+        <label>Name:</label>
+        <input type="text" id="accname" value="adfaa" readonly="readonly"/>
+        <label>Phone:</label>
+        <input type="text" id="phone" value="9999999999" readonly="readonly"/>
+        
+        <a href="#pageone" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-back ui-btn-icon-left" data-rel="back">Close</a>
+        <a href="#" id="edit" class="ui-btn ui-btn-inline ui-corner-all ui-btn-b ui-icon-edit ui-btn-icon-right">Edit</a>
+        <a href="#" id="update" class="ui-btn ui-btn-inline ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left">update</a> 
+      </div>
+
+      <div data-role="footer">
+            
+      </div>
+    </div>
+      
+      <!--   End of Dialog Popup   -->
+      <div data-role="popup" id="successPopup" data-dismissible="false" style="max-width:400px;" class="ui-content">
+        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+        <p>I have a close button at the top right corner.</p>
+        <p><b>Tip:</b> You can also click outside to close me.</p>
+         
+    </div>
+      
+      
+     <div data-role="footer">
+        <h1></h1>
+      </div>
+</div>
+
+
+
+
+<!--  ***********Accounts Display Page **********  -->
+<div data-role="page" id="pageAccounts">
+    <div data-role="panel" id="myPanel" data-theme="b"> 
+        
+        <div data-role="main" class="ui-content">
+            <br/><br/><br/>
+            <a href="#pageone" class="ui-btn ui-corner-all">New</a>
+            <a href="#pageAccounts" class="ui-btn ui-corner-all">Show</a>
+            <a href="#pageSearch" class="ui-btn ui-corner-all">Find</a>            
+        </div>
+        
+    </div> 
+    <div data-role="header" data-position="fixed">         
+        <a href="#myPanel" class="ui-btn ui-corner-all ui-btn-left ui-icon-bars ui-btn-icon-left" data-transition="slide">Menu</a>
+        <h1>Welcome</h1>
+        <a href="#pageone" class="ui-btn ui-corner-all ui-btn-right ui-icon-plus ui-btn-icon-right ui-btn-b">Add</a>      
+    </div>
+      
+    <div data-role="content">            
+        <ul id="cList" data-filter="true" data-role="listview" data-inset="true">
+        </ul>
+    </div>  
+    <!--   Dialog Popup   -->
+           
+      <div data-role="popup" id="AccountDialog">
+      <div data-role="header">
+        <h1>Account</h1>
+      </div>
+
+      <div data-role="main" class="ui-content" >
+        <h2>Detailed Account Information!</h2>
+        <br/><br/>   
+            
+        <label>Name:</label>
+        <input type="text" id="accname" value="adfaa" readonly="readonly"/>
+        <label>Phone:</label>
+        <input type="text" id="phone" value="9999999999" readonly="readonly"/>
+        
+        <a href="#pageone" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-back ui-btn-icon-left" data-rel="back">Go Back</a>
+        <a href="#" id="edit" class="ui-btn ui-btn-inline ui-corner-all ui-btn-b ui-icon-edit ui-btn-icon-right">Edit</a>
+        <a href="#" id="update" class="ui-btn ui-btn-inline ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left">update</a> 
+      </div>
+
+      <div data-role="footer">
+            
+      </div>
+    </div>
+      
+      <!--   End of Dialog Popup   -->
+      
+    <div data-role="footer" data-position="fixed">
+      <h1>jQuery Mobile + Remote Objects</h1>
+      <a href="#" id="refresh" class="ui-btn ui-corner-all ui-btn-right ui-icon-refresh ui-btn-icon-right ui-btn-b">Refresh</a>
+    </div>
+    
+</div> 
+
+
+<!-- *******************Page One*************** -->
+<div data-role="page" id="pageone">
+      
+      <div data-role="header" data-position="fixed">
+          <a href="#" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-left" data-rel="back">Back</a>
+              <h1>Welcome</h1>
+      <!--  <a href="#pagetwo" class="ui-btn ui-corner-all ui-btn-right ui-icon-arrow-r ui-btn-icon-right" data-transition="slide">Go</a>  -->
+      </div>
+       
+      <div data-role="main" class="ui-content">
+          <apex:form >
+          
+           <apex:outputLabel for="name" value="Name"/>
+           <apex:inputField id="name" styleClass="name"  value="{!Account.Name}" html-placeholder="Account Name"/>
+           <apex:outputLabel for="industry" value="Industry"/>
+           <apex:inputField id="industry" styleClass="industry" value="{!Account.Industry}"/>  
+           
+           <a href="#pageAccounts" class="ui-btn ui-btn-inline ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left">Cancel</a>
+           <a href="#myPopupDialog1" data-rel="popup" data-position-to="window" data-transition="slideup" id="save" class="ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left" onclick="save();">Save</a>                  
+       
+            
+          </apex:form>
+          
+          <!--  search  
+          <br/><br/>
+          <input type="text" id="search" name="search" placeholder="search" value="" />
+          <a href="#" id="searchValue" class="ui-btn ui-btn-inline ui-corner-all ui-btn-b ui-icon-search ui-btn-icon-left">Search</a>
+          <ul id="searchList" data-role="listview" data-inset="true">
+          </ul>
+            end of search -->
+      </div>
+      
+      <!--   Dialog Popup   -->
+           
+      <div data-role="popup" id="myPopupDialog1">
+      <div data-role="header">
+        <h1>New Account</h1>
+      </div>
+
+      <div data-role="main" class="ui-content">
+        <h2>Your Account has been created succesfully!</h2>
+        <p>jQuery Mobile is FUN!</p>
+        <a href="#pageone" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-back ui-btn-icon-left" data-rel="back">Go Back</a>
+      </div>
+               
+      <div data-role="footer">
+        <h1>Created</h1>
+      </div>
+      </div>
+      
+      <!--   End of Dialog Popup   -->
+      
+      <div data-role="footer" data-position="fixed" data-fullscreen="true">
+          <h1>1</h1>
+      </div>
+  
+  
+</div>
+
+<!-- ***********Page Search***************** -->
+<div data-role="page" id="pageSearch">
+  <div data-role="header">
+    <a href="#pageAccounts" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-left" data-rel="back">Back</a>
+    <h1>welcome to search</h1>
+  </div>
+  <div data-role="main" class="ui-content">
+      <input type="text" id="search" name="search" placeholder="search" value="" />
+      <a href="#" id="searchValue" class="ui-btn ui-btn-inline ui-corner-all ui-btn-b ui-icon-search ui-btn-icon-left">Search</a>
+      <ul id="searchList" data-role="listview" data-inset="true">
+      </ul>
+  </div>
+</div>  
+
+<!-- *******************page two*************** -->
+<div data-role="page" id="pagetwo">
+  <div data-role="header">
+    <a href="#" class="ui-btn ui-corner-all ui-icon-back ui-btn-icon-left" data-rel="back">Back</a>
+    <h1>Welcome To My Homepage</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    
+    <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" data-position-to="window" data-transition="slideup">Show Popup</a>
+    <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" data-position-to="origin" data-transition="slide">Show Popup</a>
+    <a href="#myPopupDialog" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" data-position-to="origin" data-transition="slide">Open Dialog Popup</a>
+    <a href="#dialog" class="ui-btn ui-btn-b ui-shadow">Open a Dialog</a>
+    <div data-role="popup" id="myPopup" data-dismissible="false" style="max-width:400px;" class="ui-content">
+        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+        <p>I have a close button at the top right corner.</p>
+        <p><b>Tip:</b> You can also click outside to close me.</p>
+         
+    </div>
+    
+    <div data-role="popup" id="myPopupDialog">
+      <div data-role="header">
+        <h1>Header Text</h1>
+      </div>
+
+      <div data-role="main" class="ui-content">
+        <h2>Welcome to my Popup Dialog!</h2>
+        <p>jQuery Mobile is FUN!</p>
+        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-back ui-btn-icon-left" data-rel="back">Go Back</a>
+      </div>
+
+      <div data-role="footer">
+        <h1>Footer Text</h1>
+      </div>
+    </div>
+  
+    
+  </div>
+
+  <div data-role="footer">
+    <h1>2</h1>
+  </div>
+</div> 
+<div data-role="page" data-dialog="true" id="dialog">
+  <div data-role="header">
+    <h1>I'm A Dialog Box!</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <p>The dialog box is different from a normal page, it is displayed on top of the current page and it will not span the entire width of the page. The dialog has also an icon of "X" in the header to close the box.</p>
+    <a href="#pageone">Go to Page One</a>
+  </div>
+
+  <div data-role="footer">
+    <h1>Footer Text In Dialog</h1>
+  </div>
+</div>
+ 
+
+</body>
+</html>
+</apex:page>

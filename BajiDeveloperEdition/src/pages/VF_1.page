@@ -1,0 +1,17 @@
+<apex:page controller="Myclass1">
+  <h1>Hi Baji your Company Information</h1>
+  
+  <apex:pageBlock >
+<apex:pageBlockSection >
+<apex:pageBlockTable value="{!myMethod}" var="Oc">
+
+<apex:column value="{!Oc.CEO__c}"/>
+<apex:column value="{!Oc.Address__c}"/>
+<apex:column value="{!Oc.Id}"/> 
+<apex:column value="{!Oc.CreatedBy.Name}"/> 
+</apex:pageBlockTable>
+<img src="{!$Resource.img}" hight="100" width="100"/>
+</apex:pageBlockSection>
+</apex:pageBlock>
+  
+</apex:page>

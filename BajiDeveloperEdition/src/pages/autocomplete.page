@@ -1,0 +1,41 @@
+<apex:page showHeader="false" controller="AccountAutoComplete">
+<style>
+    .headText{color:red; font-size:30px;}
+    </style>
+<apex:outputLabel styleClass="headText"><br/>
+AutoComplete Test</apex:outputLabel>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>jQuery UI Autocomplete - Default functionality</title>
+<script src="{!$Resource.jQuery}"></script>
+<script src="{!$Resource.aucom_jquery183_js}"></script>
+<script src="{!$Resource.aucom_jqueryui_js}"></script>
+<apex:stylesheet value="{!$Resource.aucomstylecss}"/>
+<apex:stylesheet value="{!$Resource.aucom_jquerycss}"/>
+<script type = "text/javascript">
+var accountName = "{!account.Name}";
+
+alert(accountName);
+var test = [accountName];
+
+$(function() {
+
+
+ var accounts =["LocTest","Account","Baji","Shaik","Chennai","Delhi","Fish","English"];
+    
+    
+$("#test").autocomplete({source: test});
+
+});
+
+</script>
+</head>
+<body>
+    <div class="ui-widget">
+    <br/>
+        <lable>Accounts:</lable><input id="test" />
+    </div>
+</body>
+</html>
+</apex:page>

@@ -1,0 +1,16 @@
+<apex:component access="global" selfClosing="true">
+
+<apex:attribute name="pageType" type="String" default="Desktop"
+	description="The type of the parent Skuid Page, e.g. Desktop or Mobile"/>
+	 
+<apex:attribute name="pageTheme" type="String" default="/resource/skuid__SkuidThemeClassic/skuidtheme.css"
+	description="The URL to the desired Skuid Theme to display."/>
+
+<apex:outputPanel rendered="{!pageType=='Mobile'}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1"></meta>
+</apex:outputPanel>
+
+<apex:stylesheet value="{!URLFOR($Resource.skuid__JQueryUIStyle, 'jquery-ui-1.11.0.custom.min.css')}" />
+<apex:stylesheet value="{!pageTheme}" />
+ 
+</apex:component>

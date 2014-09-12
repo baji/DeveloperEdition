@@ -1,0 +1,68 @@
+<apex:page id="oppPage" showHeader="false"> 
+   <script>
+    function onChangeCheckBox()
+    {   
+    alert("erterterter"); 
+       
+    }
+    </script>
+    <h1>TestPage</h1>    
+      <apex:form id="oppForm">
+          <apex:pageBlock id="oppPageBlock">
+              <apex:pageBlockSection id="pbsec1">
+                    <table  align="left" width="100%">
+                        <tr>
+                            <td>Services</td>
+                           
+                            <td>Requested</td>
+                           
+                            <td>Completed</td>
+                           
+                        </tr>
+                        <tr>
+                            <td>Hotel</td>    
+                            <apex:actionRegion > 
+                            <apex:actionSupport event="onchange"     reRender="FirstCheckBox_dep">
+                                <td><input id="FirstCheckBox" onClick="onChangeCheckBox" type="checkbox"/></td>
+                             </apex:actionSupport>
+                             </apex:actionRegion>                        
+                            <td><input id="FirstCheckBox_dep" type="checkbox" disabled="disabled" /></td>
+                        </tr>
+                        <tr>
+                            <td>Restaurant</td>
+                            <td><input type="checkbox"/></td>
+                            <td><input type="checkbox" disabled="disabled"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Transportation</td>
+                            <td><input type="checkbox"/></td>
+                            <td><input type="checkbox" disabled="disabled"/></td>
+                        </tr>
+                        <tr>
+                            <td>Spa</td>
+                            <td><input type="checkbox"/></td>
+                            <td><input type="checkbox" disabled="disabled"/></td>
+                        </tr>
+                        <tr>
+                            <td>Night Club</td>
+                            <td><input type="checkbox"/></td>
+                            <td><input type="checkbox" disabled="disabled"/></td>
+                        </tr>
+                        <tr>
+                            <td>Cabana</td>
+                            <td><input type="checkbox"/></td>
+                            <td><input type="checkbox" disabled="disabled"/></td>
+                        </tr>
+                        <tr>
+                            <td>Amenity</td>
+                            <td><input type="checkbox" /></td>
+                            <td><input type="checkbox" disabled="disabled"/></td>
+                        </tr>
+                       
+                    </table>
+                                
+              </apex:pageBlockSection>
+          </apex:pageBlock>
+      </apex:form>
+ </apex:page>

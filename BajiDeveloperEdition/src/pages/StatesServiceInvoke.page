@@ -1,0 +1,27 @@
+<apex:page controller="vfcontroller">
+    <apex:form >
+    <apex:pageBlock title="Countries">
+    
+    <apex:dataTable value="{!myContacts}" var="aContact" width="100%">   
+    <apex:column >
+    <apex:facet name="header"><b>Name</b></apex:facet>
+    <apex:commandLink action="{!invokeService}" value="{!aContact.name}"   rerender="resultPanel">
+    <apex:param name="id" value="{!aContact.id}"/>
+    </apex:commandLink>           
+  </apex:column>
+  </apex:dataTable>
+  <!-- 
+  <apex:column >
+    <apex:facet name="header"><b>Account Name</b></apex:facet>
+      {!aContact.Account.Name}
+  </apex:column>
+  </apex:dataTable>-->
+  </apex:pageBlock>
+  
+  <apex:pageBlock title="Fetched Data">
+   <apex:outputPanel id="resultPanel" layout="block"> 
+    Result: {!fetchedData}
+   </apex:outputPanel>
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

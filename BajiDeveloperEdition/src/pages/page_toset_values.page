@@ -1,0 +1,13 @@
+<apex:page standardController="Company__c" showHeader="false">
+<apex:form >
+<apex:pageBlock title="Hello {!$User.FirstName}!">
+your viewing the {!Company__c.Name} account.<p/>
+Enter Company name:
+<apex:inputField value="{!Company__c.Name}"/><p/>
+Enter Cfeild Value:
+<apex:inputField value="{!Company__c.cFeild__c}"/><p/>
+
+<apex:commandButton action="{!save}" value="Save New Company Details"/>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

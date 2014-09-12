@@ -1,0 +1,21 @@
+<apex:page controller="wrapper_class_controller" showHeader="false">
+  <apex:form >
+      <apex:pageBlock >
+          <apex:pageBlockButtons >
+              <apex:commandButton value="Action" reRender="pbsec1" action="{!isselected}"/>
+          </apex:pageBlockButtons>
+          <apex:pageBlockSection id="pbsec1">
+          <apex:pageBlockTable value="{!accounts}" var="a">
+              <apex:column >
+                  <apex:inputCheckbox value="{!selected}"/>
+              </apex:column>
+              <apex:column value="{!a.id}"/>
+              <apex:column value="{!a.name}"/>
+              <apex:column value="{!a.website}"/>
+              <apex:column value="{!a.rating}"/>
+              <apex:column value="{!a.phone}"/>
+          </apex:pageBlockTable>
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

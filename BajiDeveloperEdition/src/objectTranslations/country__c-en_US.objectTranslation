@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>country</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>countrys</value>
+    </caseValues>
+    <fields>
+        <label><!-- countrycode --></label>
+        <name>country__c</name>
+    </fields>
+    <fields>
+        <label><!-- countrycode --></label>
+        <name>countrycode__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

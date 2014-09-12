@@ -1,0 +1,7 @@
+<apex:page standardstylesheets="false" showHeader="false">
+   <apex:form >
+       <apex:stylesheet value="{!$Resource.ex}"/>
+           <apex:commandlink styleclass="button"><span> Save </span> </apex:commandlink>
+           <apex:commandlink styleclass="button"><span> Cancel </span> </apex:commandlink>
+       </apex:form>  
+</apex:page>

@@ -1,0 +1,750 @@
+<apex:page Controller="AccountCreationController"  showHeader="false" sidebar="false" >
+<apex:includeScript value="{!URLFOR($Resource.JSCalendar,'calendar.js')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.JSCalendar,'calendar_blue.css')}" />
+
+<script type="text/javascript" language="javascript" >
+function fnSetDateFormat(oDateFormat)
+{
+ oDateFormat['FullYear'];  //Example = 2007
+ oDateFormat['Year'];   //Example = 07
+ oDateFormat['FullMonthName']; //Example = January
+ oDateFormat['MonthName'];  //Example = Jan
+ oDateFormat['Month'];   //Example = 01
+ oDateFormat['Date'];   //Example = 01
+ oDateFormat['FullDay'];   //Example = Sunday
+ oDateFormat['Day'];    //Example = Sun
+ oDateFormat['Hours'];   //Example = 01
+ oDateFormat['Minutes'];   //Example = 01
+ oDateFormat['Seconds'];   //Example = 01
+  
+ var sDateString;
+  
+ // Use dd/mm/yyyy format
+ sDateString = oDateFormat['Date'] +"/"+ oDateFormat['Month'] +"/"+ oDateFormat['FullYear'];
+ return sDateString;
+}
+   
+     
+function initialiseCalendar(obj, eleId)
+{
+ var element=document.getElementById(eleId);
+ var params='close=true';
+ if (null!=element)
+ {
+  if (element.value.length>0)
+  {
+   // date is formatted dd/mm/yyyy - pull out the month and year
+   var month=element.value.substr(3,2);
+   var year=element.value.substr(6,4);
+   params+=',month='+month;
+   params+=',year='+year;
+  }
+ }
+ fnInitCalendar(obj, eleId, params);
+}
+function validatePhone(phoneID, spanid)
+{
+    phoneValue = document.getElementById(phoneID).value
+    var phoneFix = phoneValue.replace(/\D/g,"")
+    var phoneRegEx = /^\d{10}$/.test(phoneFix)
+    var falsePhone = /^d{7}$/.test(phoneFix)
+    if(phoneRegEx == true)
+    {
+        var phoneSlice = phoneValue.replace(/\D/g,"");
+        areaCode = phoneSlice.substr(0,3);
+        phone3digits = phoneSlice.substr(3,3);
+        phone4digits = phoneSlice.substr(6,4);
+        phoneFinal = "("+areaCode+")"+phone3digits+"-"+phone4digits;
+        document.getElementById(phoneID).value = phoneFinal;
+        document.getElementById(spanid).style.display = 'none';
+    }
+    else
+    {
+        document.getElementById(spanid).style.display = 'block';
+        document.getElementById(spanid).innerHTML = "This is not a valid phone number.";
+        returnValue = false;
+    }
+}
+function test1(email,spanid){
+    email1=document.getElementById(email).value;
+ var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+if(!email1.match(mailformat))  
+{  
+        alert("Please Enter a valid Email Address");
+}  
+
+AccountCreationController.getEmail(email1,function(result,event){
+        
+        if(event.status){
+            if(result != null){
+                document.getElementById(spanid).style.display = 'block';
+                document.getElementById(spanid).innerHTML = "Email Id is already Exist";
+                returnValue = false;
+            }
+            
+         }
+         else
+         {
+         document.getElementById(spanid).style.display = 'none';
+         }
+        });
+}
+
+function testCheck(checkbox){
+
+if(document.getElementById(checkbox).checked== false){
+document.getElementById('Test').style.display = 'none';
+}
+else
+{
+document.getElementById('Test').style.display = 'block';
+}
+
+}
+</script>
+<style type="text/css">
+.error {
+    display:none;
+    color:#ff0000;
+.tstyle{
+    font-size:large;
+}
+}
+.cmdBtn{font-weight:bold;font-size:12px;}
+.registerBtn{font-weight:bold;font-size:17px;}
+</style>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta property="fb:page_id" content="62342221439" />
+
+<title>Start Awana</title>
+
+
+    <meta name="description" content="Start Awana at your church." />
+
+
+    <meta name="keywords" content="inquiry, church, God, ministry, missionary, registration, start awana, how to start awana, fax, mail, email, register, intro to awana, video, know, love, serve, children, youth, integrated, ages 2 to 18, spanish, canada" />
+
+
+
+<apex:stylesheet value="{!$Resource.default_org}"/>
+
+<apex:stylesheet value="{!$Resource.jquery_jcarousel}"/>
+
+<apex:stylesheet value="{!$Resource.ui_all}"/>
+
+
+
+<meta name="google-site-verification" content="tKhDJsstGYlLqeKKnU3kcsVst5qU4SU0FfV_RSslMV8" />
+    </head>
+    <body>
+        <div id="wrapper">       
+            <div id="header">
+
+    <apex:stylesheet value="{!$Resource.header}"/>
+            
+        <div class="contentasset">
+        <apex:stylesheet value="{!$Resource.colorbox}"/>
+<script src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/-/default/v1300112606594/js/jquery.colorbox-min.js" type="text/javascript"></script>
+<!--[if IE]>
+<style type="text/css">
+.primaryNavLastChild a {
+    line-height:23px !important;
+}
+</style>
+<![endif]-->
+<style type="text/css">
+.barLI {
+    color:#fff;
+    line-height:28px;
+}
+</style>
+<div id="headerLogo"><a href="http://awana.org"> &nbsp;</a></div>
+<div id="headerNavigation">
+<ul>
+    <li><a href="http://awana.org/about/about-awana,default,pg.html" class="liFirst">About Us</a></li>
+    <li><a href="http://awana.org/donate/donate,default,pg.html">Donate</a></li>
+    <li><a href="http://awana.org/locations/awana-locator,default,pg.html">Awana Locator</a></li>
+    <li><a href="http://awana.org/startawana/start-awana,default,pg.html">Inquire About Awana</a></li>
+    <li><a href="http://awana.org/pressroom/press_room_home,default,pg.html">Press Room</a></li>
+    <li><a href="http://awana.org/contactus/contact-us,default,pg.html">Contact Us</a></li>
+    <li><a href="http://awana.org/espanol/Awana-en-Espanol,default,pg.html">Espa&#241;ol</a></li>
+</ul>
+</div>
+<div id="headerLogin">
+    <form id="headerLoginForm" method="post" action="https://na3.salesforce.com/secur/login_portal.jsp" target="_blank" name="login">
+        <div>
+            <input type="hidden" name="startURL"/>
+            <input type="hidden" name="loginURL"/>
+            <input type="hidden" name="useSecure" value="true"/>
+            <input type="hidden" id="jse" name="jse" value="0"/>
+            <input type="hidden" name="orgId" value="00D500000006dw0"/>
+            <input type="hidden" name="portalId" value="060500000004ddU"/>
+            <input type="hidden" name="loginType" value="2"/>
+            <input type="hidden" name="action" value="loginAction"/>
+        </div>
+        <input type="text" id="headerun" class="username" maxlength="80" name="un" title="ART User Name" style="background-image: url(http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/Sites-Awana-Library/default/v1361485737640/awanaorg/images/home/user-name-txt.gif);"/>
+        <input type="password" id="headerpassword" class="pw" maxlength="80" name="pw" title="Password"/>
+    </form>
+    <p id="formLinks"><a href="https://na3.salesforce.com/secur/forgotpasswordp.jsp?orgId=00D500000006dw0&amp;portalId=060500000004ddU&amp;pLu=%2Fsecur%2Flogin_portal.jsp">Forgot your password?</a>&nbsp;&nbsp;<a href="http://www5.awana.org/register/">Create Account</a></p>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+    if($("#headerun").val() != "" && $("#headerun").val() != "undefined") {
+        $("#headerun").css("background-image","none")
+    }
+    if($("#headerpassword").val() != "" && $("#headerpassword").val() != "undefined") {
+        $("#headerpassword").css("background-image","none")
+    }
+})
+$("#headerun").focus(function() {
+    $("#headerun").css("background-image","none")
+});
+$("#headerun").blur(function() {
+    if($("#headerun").val() == "" || $("#headerun").val() == "undefined") {
+        $("#headerun").css("background-image","url(http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/Sites-Awana-Library/default/v1361404501210/awanaorg/images/home/user-name-txt.gif)")
+    }
+})
+$("#headerpassword").focus(function() {
+    $("#headerpassword").css("background-image","none")
+})
+$("#headerpassword").blur(function() {
+    if($("#headerpassword").val() == "" || $("#headerpassword").val() == "undefined") {
+        $("#headerpassword").css("background-image","url(http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/Sites-Awana-Library/default/v1361404501210/awanaorg/images/home/art-login-txt.gif)")
+    }
+})
+$("#headerpassword").keypress(function(e, terms) {
+    var charCode = (e.which) ? e.which : e.keyCode;
+    if(charCode==13) {
+        $("#headerLoginForm").submit();
+    }
+})
+</script>
+        </div> 
+  
+    <div id="headerSearch">
+        <form action="http://awana.org/on/demandware.store/Sites-Awana-Site/default/Search-Show" method="get" id="SimpleSearchForm" class="simplesearch">
+            <p><label for="searchinput">Search</label> <input type="text" maxlength="50" name="q" class="simplesearchinput" id="searchinput" /><button type="submit" value="Go" name="simplesearch"><span>Search</span></button></p>
+        </form>
+    </div>
+</div>
+
+<div id="mainNavigation">
+    <ul id="dropdown">
+     
+            <li>
+       
+                <a href="http://www.awana.org" class="top-level">Home</a>
+        
+            </li>
+            
+            <li>
+           
+                <a href="http://awana.org/welcometoawana/welcome-to-awana,default,pg.html" class="top-level">Parents</a>
+            
+                <ul><li><a href='http://awana.org/welcometoawana/welcome-to-awana,default,pg.html'>Parents - Home</a></li><li><a href='/locations/awana-locator,default,pg.html'>New To Awana » » » </a><ul><li><a href='http://awana.org/welcometoawana/welcome-to-awana,default,pg.html'>What Is Awana?</a></li><li><a href='http://awana.org/locations/awana-locator,default,pg.html'>Find Awana in Your Area</a></li><li><a href='http://awana.org/welcometoawana/welcome-to-awana,default,pg.html'>What Kids Learn</a></li><li><a href='http://awana.org/alumni-study/alumni-study,default,pg.html'>How We Impact Kids</a></li><li><a href='/tommeyer/tom-meyer,default,pg.html'>What is an MDJ?</a></li><li><a href='/youcanhaveeternallife/you-can-have-eternal-life,default,pg.html'>You Can Have Eternal Life</a></li></ul></li><li><a href='#'>My Kids Are in Awana  » » » </a><ul><li><a href='#'>Award Placement » » » </a><ul><li><a href='http://awana.org/awana-clubs/cubbies-awards,default,pg.html'>Cubbies</a></li><li><a href='/awana-clubs/sparks-awards,default,pg.html'>Sparks</a></li><li><a href='/ttawards/tt-awards,default,pg.html'>T amp;T</a></li></ul></li><li><a href='#'>Club Helps » » » </a><ul><li><a href='/extra-credit/extra-credit,default,pg.html'>Extra Credit Materials</a></li><li><a href='/memorization-tips/memorization-tips,default,pg.html'>Awana - Memorization Tips</a></li><li><a href='/learning-styles/learning-styles,default,pg.html'>Learning Styles</a></li><li><a href='/club-verse-count/club-verse-count,default,pg.html'>Club Verse Count</a></li><li><a href='http://awana.org/homestretch-handbook-helps/homestretch-handbook-helps,default,pg.html'>Handbook Helps</a></li></ul></li><li><a href='http://awana.org/powerup-sparks-bookwalks/powerup-sparks-bookwalks,default,pg.html'>PowerUP Sparks Bookwalks</a></li><li><a href='http://awana.org/powerup-tt-bookwalks/powerup-tt-bookwalks,default,pg.html'>PowerUP T amp;T Bookwalks</a></li><li><a href='store/Awana at Home/family-at-home,default,sc.html'>Parent Resources</a></li><li><a href='http://awana.org/social-media/social-media,default,pg.html'>Parent Blogs » » » </a><ul><li><a href='http://mdj.awana.org'>Parenting Articles</a></li><li><a href='http://parenthelps.awana.org/'>Parent Helps</a></li><li><a href='http://apparentlyblogging.awana.org/'>apPARENTly Blogging</a></li></ul></li></ul></li><li><a href='http://awana.org/You%20Belong%20-%20Home/you-belong,default,pg.html'>Volunteer in Awana</a></li><li><a href='http://awana.org/espanol/Awana-en-Espanol,default,pg.html'>Espa&ntilde;ol</a></li><li><a href='http://awana.org/athome/awana-at-home,default,pg.html'>Awana at Home » » » </a><ul><li><a href='http://awana.org/truthscripts/truthscript-home,default,pg.html'>TruthScripts </a></li></ul></li><li><a href='http://awana.org/social-media/social-media,default,pg.html'>Articles   Blogs  » » » </a><ul><li><a href='http://mdj.awana.org'>Parenting Articles</a></li><li><a href='http://parenthelps.awana.org/'>Parent Helps</a></li><li><a href='http://apparentlyblogging.awana.org/'>apPARENTly Blogging</a></li></ul></li></ul>
+            
+            </li>
+            
+            <li>
+              
+                <a href="http://awana.org/welcometoawana/welcome-to-awana,default,pg.html" class="top-level">Children Age 2 to Grade 6</a>
+            
+                <ul><li><a href='http://awana.org/awana-clubs/puggles-home,default,pg.html'>Puggles - Age 2 and 3</a></li><li><a href='http://awana.org/awana-clubs/cubbies-home,default,pg.html'>Cubbies - Preschool</a></li><li><a href='http://awana.org/awana-clubs/sparks-home,default,pg.html'>Sparks - Grade K - 2</a></li><li><a href='http://awana.org/awana-clubs/tt-home,default,pg.html'>T amp;T - Grade 3 - 6</a></li></ul>
+            
+            </li>
+            
+            <li>
+              
+                <a href="http://awana.org/youthministries/aym-home,default,pg.html" class="top-level">Youth Middle / High School</a>
+            
+                <ul><li><a href='http://awana.org/youthministries/aym-home,default,pg.html'>Awana Youth Ministries</a></li><li><a href='http://awana.org/youthministries/aym-trek-overview,default,pg.html'>Trek - Middle School</a></li><li><a href='http://awana.org/youthministries/aym-journey-overview,default,pg.html'>Journey - High School</a></li><li><a href='http://awana.org/whatisctrack/what-is-ctrack,default,pg.html'>C-track</a></li><li><a href='http://awana.org/summit/Summit-Home,default,pg.html'>Summit</a></li><li><a href='http://awana.org/youthministries/aym-colleges,default,pg.html'>College Scholarships</a></li></ul>
+            
+            </li>
+            
+            <li>
+                
+                <a href="http://awana.org/about/about-awana,default,pg.html" class="top-level">Info for Churches</a>
+            
+                <ul><li><a href='/about/about-awana,default,pg.html'>Welcome</a></li><li><a href='/startawana/start-awana,default,pg.html'>Tell me about Awana</a></li><li><a href='http://awana.org/welcometoawana/welcome-to-awana,default,pg.html'>What is Awana » » » </a><ul><li><a href='http://awana.org/alumni-study/alumni-study,default,pg.html'>Alumni Study</a></li><li><a href='http://awana.org/endorsements/endorsements,default,pg.html'>Endorsements</a></li><li><a href='http://awana.org/Awana%20-%20F.A.Q.s/awana-faqs,default,pg.html'>F.A.Q's</a></li></ul></li><li><a href='http://awana.org/Awana%20-%20What%20We%20Believe%20-%20expanded%20version/what-we-believe-expanded,default,pg.html'>What We Believe</a></li><li><a href='http://awana.org/missionary-home/missionary-home,default,pg.html'>Awana Missionaries » » » </a><ul><li><a href='http://awana.org/missionary-serve/missionary-serve,default,pg.html'>Learn What They Do</a></li><li><a href='http://awana.org/missionary-history/missionary-history,default,pg.html'>History</a></li><li><a href='http://awana.org/missionary-support/missionary-support,default,pg.html'>Support Them</a></li><li><a href='http://awana.org/missionaries/missionary-map,default,pg.html'>Find Your Missionary</a></li><li><a href='/becomeamissionary/become-a-missionary,default,pg.html'>Become an Awana Missionary</a></li><li><a href='http://awana.org/employment/employment,default,pg.html'>Employment</a></li></ul></li><li><a href='http://awana.org/You%20Belong%20-%20Home/you-belong,default,pg.html'>Volunteer Campaign - You Belong</a></li><li><a href='http://awana.org/training/training,default,pg.html'>Leader Training</a></li><li><a href='http://awana.org/pastors/pastors,default,pg.html'>Pastor Resources</a></li><li><a href='http://awana.org/espanol/Awana-en-Espanol,default,pg.html'>Awana en Espa&ntilde;ol</a></li></ul>
+            
+            </li>
+            
+            <li>
+                
+                <a href="http://awanalifeline.org/" class="top-level">Fathering Ministries</a>
+            
+                <ul><li><a href='http://awanalifeline.org/'>Lifeline</a></li><li><a href='http://awanalifeline.org/#/programs'>Malachi Dads</a></li><li><a href='http://awanalifeline.org/#/programs/returning-hearts'>Returning Hearts Celebration</a></li><li><a href='http://www.turnassembly.org/'>Turn - Men's Conference</a></li></ul>
+            
+            </li>
+            
+            <li>
+                
+                <a href="http://www.awanainternational.org/" class="top-level">Awana International</a>
+            
+                <ul><li><a href='http://www.awanainternational.org/'>Awana International Home</a></li><li><a href='http://missions.awana.org/site/PageServer?pagename=aac_landing_page'>Adopt-a-Club</a></li><li><a href='http://www.awanachildrenatrisk.org'>Children at Risk</a></li></ul>
+            
+            </li>
+            <li>
+               
+                <a href="/store" class="top-level">Shop</a>
+            
+            </li>
+   
+    </ul>
+
+</div>
+
+    <apex:stylesheet value="{!$Resource.inquiry_beta}"/>
+            
+        <div class="contentasset"><!-- dwMarker="content" dwContentID="bcjisiaagTqwaaaacUhVtNeE6g" -->
+            <style type="text/css">
+label {
+    text-align:left !important;
+}
+#mainDiv {
+    margin:15px 0 15px 15px;
+}
+#spanishForm {
+    text-align:right;
+    vertical-align:top;
+}
+</style>
+<script>
+     var addressCheck = "http://awana.org/on/demandware.store/Sites-Awana-Site/default/VerifyAddress-VerifyAJAXAddress";
+</script>
+<div id="contentBox" class="wrapper">
+    <div id="inquiryHeader">
+        <div id="headerCopy">
+            <p><strong>We appreciate your interest in our ministry to churches. After filling out this form:</strong></p>
+            <p class="steps"><strong>1) You will be redirected</strong> to a page featuring a video and more information on Awana.</p>
+            <p class="steps"><strong>2) A local Awana missionary will contact you.</strong> The missionary will explain how Awana can benefit your church, help you assess your needs and support you every step of the way.</p>
+            <p><strong>Thanks for your commitment to reaching and discipling children and youth!</strong></p>
+        </div>
+    </div>
+
+<div id="qaDialog"></div><div id="loadDialog"></div>
+<script type="text/javascript" src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/Sites-Awana-Library/default/v1361404501210/awanaorg/scripts/inquiry-beta.js"></script>
+<script type="text/javascript" src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/Sites-Awana-Library/default/v1361404501210/awanaorg/scripts/validation-beta.js"></script>
+<script type="text/javascript" src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/Sites-Awana-Library/default/v1361404501210/awanaorg/scripts/encrypt.js"></script>
+        </div> <!-- End contentasset -->
+    
+
+<script type="text/javascript">
+(function($) {
+$(document).ready(function() {
+    $("a").each(function(e) {
+        if($(this).attr("href").indexOf(".pdf") > 0) {
+            $(this).addClass("pdfBox");
+            $(this).attr("target","_self");
+        }
+    })
+    $(".pdfBox")
+        .colorbox({inline:true, href:function(e) {
+            $("#pdfLink").val($(this).attr("href"));
+            return "#showForm";
+        }})
+});
+$("#dropdown > li").each(function(index) {
+    if(index < 6) {
+        $(this).after("<li id='barLI"+index+"' class='barLI'>|</li>");
+    }
+})
+})(jQuery);
+</script>
+
+<script type="text/javascript">
+$("#dropdown > li:last-child").addClass("primaryNavLastChild");
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-1265584-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+        </div> 
+  
+</div>
+            
+       
+   <script type="text/javascript" src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/-/default/v1361404501210/internal/jscript/dwanalytics.js"></script><script type="text/javascript">
+
+</script>
+</body>
+</html>
+
+<apex:form >
+<table width="80%" align="center" >
+<tr>
+<td width="40%" align="right">Homeschool Name</td>
+<td width="30%" align="left"><apex:inputField id="home" value="{!account.Name}" label="home" onblur="javascript:textreq('nameReq');">
+    <div class="error" id="nameReq">Error.</div>
+    </apex:inputField>
+    
+</td>
+<td width="20%" align="right">Type</td>
+<td width="40%" align="left"><apex:inputField value="{!account.Organization_Type__c}" label="Type" /></td>
+</tr>
+<tr>
+<td width="40%" align="right">First Name</td>
+<td width="30%" align="left"><apex:inputField value="{!account.First_Name__c}" label="First Name" /></td>
+<td width="20%" align="right">Last Name</td>
+<td width="25%" align="left"><apex:inputField value="{!account.Last_Name__c}" label="Last Name" /></td>
+</tr>
+<tr>
+<td width="40%" align="right">E-mail</td>
+<td width="30%" align="left"><apex:inputField id="Email" value="{!account.Email__c}" label="Email" onblur="javascript:test1(this.id,'emailreq')">
+                    <div class="error" id="emailreq">Error.</div>
+               </apex:inputField>
+</td>
+<td width="20%" align="right">Phone</td>
+<td width="25%" align="left"><apex:inputField value="{!account.Organization_Phone__c}" label="Phone" onBlur="javascript:validatePhone(this.id, 'phoneReq');"  >
+                  <div class="error" id="phoneReq">Error.</div>
+                 </apex:inputField>
+</td>
+</tr>
+</table><br/>
+<table width="80%" align="center" >
+<tr>
+<td width="30%" align="right">Billing Address</td>
+<td width="20%" align="left">&nbsp;</td>
+<td width="20%" align="right">&nbsp;</td>
+<td width="20%" align="left">&nbsp;</td>
+</tr>
+</table>
+<table width="80%" align="center" >
+<tr>
+<td width="50%" align="right">Street 1</td>
+<td width="20%" align="left"><apex:inputField value="{!account.BillingStreet}" label="street"/></td>
+<td width="20%" align="right">&nbsp;</td>
+<td width="20%" align="left">&nbsp;</td>
+</tr>
+<tr>
+<td width="50%" align="right">Street 2</td>
+<td width="20%" align="left"><apex:inputField value="{!account.BillingStreet}" label="street" /></td>
+<td width="20%" align="right">&nbsp;</td>
+<td width="20%" align="left">&nbsp;</td>
+</tr>
+<tr>
+<td width="20%" align="right">City</td>
+<td width="10%" align="left"><apex:inputField value="{!account.BillingCity}" />
+</td>
+<td width="10%" align="right">State</td>
+<td width="10%" align="left"><apex:selectList label="BillingState" size="1" multiselect="false" value="{!account.BillingState}">
+                        <apex:selectOption itemValue="" itemLabel="select state"/>
+                        <apex:selectOption itemValue="AL" itemLabel="Alabama"/>
+                        <apex:selectOption itemValue="AK" itemLabel="Alaska"/>
+                        <apex:selectOption itemValue="AR" itemLabel="Arizona"/>
+                        <apex:selectOption itemLabel="Arkansas" itemValue="AR"/>
+                        <apex:selectOption itemLabel="California" itemValue="CA"/>
+                        <apex:selectOption itemLabel="Colorado" itemValue="CO"/>
+                        <apex:selectOption itemLabel="Connecticut" itemValue="CT"/>
+                        <apex:selectOption itemLabel="District of Columbia" itemValue="DC"/>
+                        <apex:selectOption itemLabel="Delaware" itemValue="DE"/>
+                        <apex:selectOption itemLabel="Florida" itemValue="FL"/>
+                        <apex:selectOption itemLabel="Georgia" itemValue="GA"/>
+                        <apex:selectOption itemLabel="Hawaii" itemValue="HI"/>
+                        <apex:selectOption itemLabel="Idaho" itemValue="ID"/>
+                        <apex:selectOption itemLabel="Illinois" itemValue="IL"/>
+                        <apex:selectOption itemLabel="Indiana" itemValue="IN"/>
+                        <apex:selectOption itemLabel="Iowa" itemValue="IA"/>
+                        <apex:selectOption itemLabel="Kansas" itemValue="KS"/>
+                        <apex:selectOption itemLabel="Kentucky" itemValue="KY"/>
+                        <apex:selectOption itemLabel="Louisiana" itemValue="LA"/>
+                        <apex:selectOption itemLabel="Maine" itemValue="ME"/>
+                        <apex:selectOption itemLabel="Maryland" itemValue="MD"/>
+                        <apex:selectOption itemLabel="Massachusetts" itemValue="MA"/>
+                        <apex:selectOption itemLabel="Michigan" itemValue="MI"/>
+                        <apex:selectOption itemLabel="Minnesota" itemValue="MN"/>
+                        <apex:selectOption itemLabel="Mississippi" itemValue="MS"/>
+                        <apex:selectOption itemLabel="Missouri" itemValue="MO"/>
+                        <apex:selectOption itemLabel="Montana" itemValue="MT"/>
+                        <apex:selectOption itemLabel="Nebraska" itemValue="NE"/>
+                        <apex:selectOption itemLabel="Nevada" itemValue="NV"/>
+                        <apex:selectOption itemLabel="New Hampshire" itemValue="NH"/>
+                        <apex:selectOption itemLabel="New Jersey" itemValue="NJ"/>
+                        <apex:selectOption itemLabel="New Mexico" itemValue="NM"/>
+                        <apex:selectOption itemLabel="New York" itemValue="NY"/>
+                        <apex:selectOption itemLabel="North Carolina" itemValue="NC"/>
+                        <apex:selectOption itemLabel="North Dakota" itemValue="ND"/>
+                        <apex:selectOption itemLabel="Ohio" itemValue="OH"/>
+                        <apex:selectOption itemLabel="Oklahoma" itemValue="OK"/>
+                        <apex:selectOption itemLabel="Oregon" itemValue="OR"/>
+                        <apex:selectOption itemLabel="Pennsylvania" itemValue="PA"/>
+                        <apex:selectOption itemLabel="Rhode Island" itemValue="RI"/>
+                        <apex:selectOption itemLabel="South Carolina" itemValue="SC"/>
+                        <apex:selectOption itemLabel="South Dakota" itemValue="SD"/>
+                        <apex:selectOption itemLabel="Tennessee" itemValue="TN"/>
+                        <apex:selectOption itemLabel="Texas" itemValue="TX"/>
+                        <apex:selectOption itemLabel="Utah" itemValue="UT"/>
+                        <apex:selectOption itemLabel="Vermont" itemValue="VT"/>
+                        <apex:selectOption itemLabel="Virginia" itemValue="VA"/>
+                        <apex:selectOption itemLabel="Washington" itemValue="WA"/>
+                        <apex:selectOption itemLabel="West Virginia" itemValue="WV"/>
+                        <apex:selectOption itemLabel="Wisconsin" itemValue="WI"/>
+                        <apex:selectOption itemLabel="Wyoming" itemValue="WY"/>
+                </apex:selectList>
+</td>
+<td width="10%" align="right">Zip</td>
+<td width="10%" align="left"><apex:inputField value="{!account.BillingPostalcode}" />
+</td>
+</tr>
+</table>
+<table width="80%" align="center" >
+<tr>
+<td width="30%" align="right">Shipping Address</td>
+<td width="20%" align="left">&nbsp;</td>
+<td width="20%" align="right">&nbsp;</td>
+<td width="20%" align="left">&nbsp;</td>
+</tr>
+</table>
+<table width="80%" align="center" >
+<tr>
+<td width="50%" align="right">Street 1</td>
+<td width="20%" align="left"><apex:inputField value="{!account.ShippingStreet}" label="street"/></td>
+<td width="20%" align="right">&nbsp;</td>
+<td width="20%" align="left">&nbsp;</td>
+</tr>
+<tr>
+<td width="50%" align="right">Street 2</td>
+<td width="20%" align="left"><apex:inputField value="{!account.ShippingStreet}" label="street" /></td>
+<td width="20%" align="right">&nbsp;</td>
+<td width="20%" align="left">&nbsp;</td>
+</tr>
+<tr>
+<td width="20%" align="right">City</td>
+<td width="10%" align="left"><apex:inputField value="{!account.ShippingCity}" />
+</td>
+<td width="10%" align="right">State</td>
+<td width="10%" align="left"><apex:selectList label="BillingState" size="1" multiselect="false" value="{!account.ShippingState}">
+                        <apex:selectOption itemValue="" itemLabel="select state"/>
+                        <apex:selectOption itemValue="AL" itemLabel="Alabama"/>
+                        <apex:selectOption itemValue="AK" itemLabel="Alaska"/>
+                        <apex:selectOption itemValue="AR" itemLabel="Arizona"/>
+                        <apex:selectOption itemLabel="Arkansas" itemValue="AR"/>
+                        <apex:selectOption itemLabel="California" itemValue="CA"/>
+                        <apex:selectOption itemLabel="Colorado" itemValue="CO"/>
+                        <apex:selectOption itemLabel="Connecticut" itemValue="CT"/>
+                        <apex:selectOption itemLabel="District of Columbia" itemValue="DC"/>
+                        <apex:selectOption itemLabel="Delaware" itemValue="DE"/>
+                        <apex:selectOption itemLabel="Florida" itemValue="FL"/>
+                        <apex:selectOption itemLabel="Georgia" itemValue="GA"/>
+                        <apex:selectOption itemLabel="Hawaii" itemValue="HI"/>
+                        <apex:selectOption itemLabel="Idaho" itemValue="ID"/>
+                        <apex:selectOption itemLabel="Illinois" itemValue="IL"/>
+                        <apex:selectOption itemLabel="Indiana" itemValue="IN"/>
+                        <apex:selectOption itemLabel="Iowa" itemValue="IA"/>
+                        <apex:selectOption itemLabel="Kansas" itemValue="KS"/>
+                        <apex:selectOption itemLabel="Kentucky" itemValue="KY"/>
+                        <apex:selectOption itemLabel="Louisiana" itemValue="LA"/>
+                        <apex:selectOption itemLabel="Maine" itemValue="ME"/>
+                        <apex:selectOption itemLabel="Maryland" itemValue="MD"/>
+                        <apex:selectOption itemLabel="Massachusetts" itemValue="MA"/>
+                        <apex:selectOption itemLabel="Michigan" itemValue="MI"/>
+                        <apex:selectOption itemLabel="Minnesota" itemValue="MN"/>
+                        <apex:selectOption itemLabel="Mississippi" itemValue="MS"/>
+                        <apex:selectOption itemLabel="Missouri" itemValue="MO"/>
+                        <apex:selectOption itemLabel="Montana" itemValue="MT"/>
+                        <apex:selectOption itemLabel="Nebraska" itemValue="NE"/>
+                        <apex:selectOption itemLabel="Nevada" itemValue="NV"/>
+                        <apex:selectOption itemLabel="New Hampshire" itemValue="NH"/>
+                        <apex:selectOption itemLabel="New Jersey" itemValue="NJ"/>
+                        <apex:selectOption itemLabel="New Mexico" itemValue="NM"/>
+                        <apex:selectOption itemLabel="New York" itemValue="NY"/>
+                        <apex:selectOption itemLabel="North Carolina" itemValue="NC"/>
+                        <apex:selectOption itemLabel="North Dakota" itemValue="ND"/>
+                        <apex:selectOption itemLabel="Ohio" itemValue="OH"/>
+                        <apex:selectOption itemLabel="Oklahoma" itemValue="OK"/>
+                        <apex:selectOption itemLabel="Oregon" itemValue="OR"/>
+                        <apex:selectOption itemLabel="Pennsylvania" itemValue="PA"/>
+                        <apex:selectOption itemLabel="Rhode Island" itemValue="RI"/>
+                        <apex:selectOption itemLabel="South Carolina" itemValue="SC"/>
+                        <apex:selectOption itemLabel="South Dakota" itemValue="SD"/>
+                        <apex:selectOption itemLabel="Tennessee" itemValue="TN"/>
+                        <apex:selectOption itemLabel="Texas" itemValue="TX"/>
+                        <apex:selectOption itemLabel="Utah" itemValue="UT"/>
+                        <apex:selectOption itemLabel="Vermont" itemValue="VT"/>
+                        <apex:selectOption itemLabel="Virginia" itemValue="VA"/>
+                        <apex:selectOption itemLabel="Washington" itemValue="WA"/>
+                        <apex:selectOption itemLabel="West Virginia" itemValue="WV"/>
+                        <apex:selectOption itemLabel="Wisconsin" itemValue="WI"/>
+                        <apex:selectOption itemLabel="Wyoming" itemValue="WY"/>
+                </apex:selectList>
+</td>
+<td width="10%" align="right">Zip</td>
+<td width="10%" align="left"><apex:inputField value="{!account.ShippingPostalcode}" />
+</td>
+</tr>
+</table>
+
+   <div align="center" style="width:1000px;height:400px; overflow:scroll;border:1px solid; margin:0px auto;">
+           
+    <table align="center">
+        <tr ><br/><td  style="font-weight:bold;font-size:26px;"> Awana® Ministry Agreement – Home School</td>
+        </tr>
+        </table>
+    <br/>
+            <table align="center">
+            <tr>
+                <td width="400" style="font-weight:bold;font-size:14px;">
+                1. Awana Clubs International (ACI) develops ministry
+                   program materials (the “Awana program materials”) and
+                   licenses such materials to churches and other
+                   organizations for use in their youth programs. The Home
+                   School and/or Home School Association named below
+                  (the “Home School”) agrees to use the Awana program
+                   materials consistent with the principles expressed in this
+                   Agreement.
+                </td>
+                <td width="400" style="font-weight:bold;font-size:14px;">
+                7. The Home School agrees that all copyrights, trademarks,
+                    trade names, service marks and similar intellectual
+                    property rights in and to the Awana program materials,
+                    including the “Awana” name, are the property of ACI and
+                    are owned solely and exclusively by ACI. The Home
+                    School agrees that it will not reproduce or use the Awana
+                    program materials in the production or sale of proprietary
+                    materials. The Home School agrees that it will not modify
+                    the Awana program materials.</td>
+                
+            </tr>
+            <tr>
+                <td width="400" style="font-weight:bold;font-size:14px;">
+                2. The Home School and ACI agree that the Home School is
+not a division, branch, or department of ACI. The Home
+School and ACI further agree that their relative status is
+that of an independent purchaser (the Home School) and
+provider (ACI) of the Awana program materials.
+                </td>
+                <td width="400" style="font-weight:bold;font-size:14px;">
+                8. The Home School may use the Awana program materials
+                   only while this Agreement is in effect. Such use shall be
+                   confined solely to the conduct and promotion of the Home
+                   School’s program. The Home School shall not assign or
+                   transfer any rights under this Agreement to another entity,
+                   Home School or person without ACI’s prior written
+                   consent.
+                </td>
+                
+            </tr>
+            <tr>
+                <td width="400" style="font-weight:bold;font-size:14px;">
+                3. The Home School agrees that it is solely responsible for
+all aspects of its youth programs, including the safety of all
+children and adults who are involved or participate in any
+way in its programs. Volunteers, employees and other
+personnel involved in the Home School’s program are not
+in any way volunteers, employees or personnel of ACI, but
+are solely volunteers, employees and personnel of the
+Home School.
+                </td>
+                <td width="400" style="font-weight:bold;font-size:14px;">
+                    9. This Agreement shall be governed by the laws of the State
+of Illinois. The parties agree that, if they are unable to
+resolve a dispute or claim between themselves with
+respect to this Agreement, the dispute or claim shall be
+submitted to biblically-based mediation and, if necessary,
+legally binding arbitration under a Christian mediation or
+conciliation process in accordance with the Rules of
+Procedure promulgated by Peacemakers Ministries, Inc.
+of Billings, Montana, United States of America, or its
+successor. Judgment upon an arbitration award may be
+entered in any court otherwise having jurisdiction.
+                </td>
+                
+            </tr>
+            <tr>
+                <td width="400" style="font-weight:bold;font-size:14px;">
+                4. The Home School shall indemnify, defend and hold
+harmless ACI and its successors, for all claims, damages
+and liability arising out of the Home School’s programs.
+This provision survives the termination of this Agreement.
+                </td>
+                <td width="400" style="font-weight:bold;font-size:14px;">
+                10. If any provision of this Agreement is determined to be
+invalid, illegal or unenforceable, the remaining provisions
+of this Agreement remain in full force, if the essential
+terms and conditions of the Agreement for each party
+remain valid, binding and enforceable.
+                </td>
+                
+            </tr>
+            <tr>
+                <td width="400" style="font-weight:bold;font-size:14px;">
+                5. The Home School agrees that in using the Awana
+program materials and carrying out its program it shall
+comply with all applicable local, state and federal laws,
+and shall maintain a policy or policies of insurance
+adequate to cover physical and other injuries to children
+and adults participating in, conducting, or leading its
+program using Awana program materials.
+                </td>
+                <td width="400" style="font-weight:bold;font-size:14px;">
+                11. The initial term of this Agreement is one year. This
+Agreement will automatically renew for successive oneyear
+terms, unless terminated in accordance with
+paragraph 12.
+                </td>
+                
+            </tr>
+            <tr>
+                <td width="400" style="font-weight:bold;font-size:14px;">
+                6. The Home School agrees it shall be fully responsible for
+all state and local sales and other taxes applicable to its
+purchase of Awana program materials.
+                </td>
+                <td width="400" style="font-weight:bold;font-size:14px;">
+                12. Either party may terminate this Agreement at any time
+prior to the end of the current term in its sole discretion
+and without cause by giving written notice to the other
+party. The Home School agrees not to use any of the
+Awana program materials following termination of this
+Agreement.
+                </td>
+            </tr>             
+        </table>
+</div>
+<div style="font-size:15px;font-weight:bold" align="center"><br/><input type="checkbox" id="acceptTerms"/>&nbsp;&nbsp;I accept the terms of the Awana Ministry Agreement<br/>
+        <br/>
+</div>
+<div style="font-size:15px;" align="center">
+        <apex:commandButton action="{!save}" value="Register" styleClass="btnImportant" onclick="return termAccept()" />   
+</div>
+<script>
+
+
+function termAccept(){
+       
+       if(document.getElementById('acceptTerms').checked == false){
+            
+            alert("please accept the terms and conditions of awana");
+            return false;
+        }    
+   }
+function testCheck(){
+   
+        if(document.getElementById('chk').checked== false){
+            
+            document.getElementById('Test').style.display = 'none';
+        }
+        else
+        {
+        
+            document.getElementById('Test').style.display = 'block';
+        }
+
+}
+   </script>  
+   </apex:form>
+</apex:page>

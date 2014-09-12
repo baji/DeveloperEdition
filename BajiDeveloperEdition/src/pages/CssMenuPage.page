@@ -1,0 +1,68 @@
+<apex:page showHeader="false" standardStylesheets="false">
+<apex:form >
+    <apex:includeScript value="{!$Resource.jkoutlinemenuJS}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.jkoutlinemenu, 'jkoutlinemenu.css')}"/>
+    
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+<script type="text/javascript" src="jkoutlinemenu.js">
+
+/***********************************************
+* Animated Outline Menu- by JavaScript Kit (www.javascriptkit.com)
+* This notice must stay intact for usage
+* Visit JavaScript Kit at http://www.javascriptkit.com/ for full source code
+***********************************************/
+
+</script>
+
+
+<a href="#" id="designanchor">Web Design Links</a>
+
+<br /><br />
+
+<div style="text-align:right"><a href="#" id="designanchor2">More web Design Links</a></div>
+
+
+<!--Define HTML for all animated menus at the very end of the page (ie: right before </body> tag)!-->
+
+<div id="mymenu1" class="outlinemenu">
+<ul>
+<li><a href="http://www.dynamicdrive.com/">JavaScript Kit</a></li>
+<li><a href="http://www.dynamicdrive.com/" >Dynamic Drive</a></li>
+<li><a href="http://www.dynamicdrive.com/style/" >CSS Library</a></li>
+<li><a href="http://www.javascriptkit.com/jsref/">JavaScript Reference</a></li>
+<li><a href="http://www.javascriptkit.com/domref/">DOM Reference</a></li>
+<li><a href="http://www.cssdrive.com">CSS Drive</a></li>
+<li><a href="http://www.codingforums.com/" style="border-bottom-width: 0">Coding Forums</a></li>        
+</ul>
+</div>
+
+<script type="text/javascript">
+//jkoutlinemenu.definemenu("anchorid", "menuid", "mouseover|click", optional_width, optional_height)
+jkoutlinemenu.definemenu("designanchor", "mymenu1", "mouseover", 180)
+</script>
+
+
+<div id="mymenu2" class="outlinemenu">
+<ul>
+<li><a href="http://www.dynamicdrive.com/">JavaScript Kit</a></li>
+<li><a href="http://www.dynamicdrive.com/">Dynamic Drive</a></li>
+<li><a href="http://www.dynamicdrive.com/style/" >CSS Library</a></li>
+<li><a href="http://www.dynamicdrive.com/style/csslibrary/category/C1/">Horizontal CSS Menus</a></li>
+<li><a href="http://www.dynamicdrive.com/style/csslibrary/category/C2/">Vertical CSS Menus</a></li>
+<li><a href="http://www.dynamicdrive.com/style/csslibrary/category/C4/">Image CSS</a></li>
+<li><a href="http://www.dynamicdrive.com/style/csslibrary/category/C6/">Form CSS</a></li>
+<li><a href="http://www.dynamicdrive.com/style/csslibrary/category/C5/">DIVs and containers</a></li>
+<li><a href="http://www.dynamicdrive.com/style/csslibrary/category/C7/">Links and Buttons</a></li>
+<li><a href="http://www.javascriptkit.com/jsref/">JavaScript Reference</a></li>
+<li><a href="http://www.javascriptkit.com/domref/">DOM Reference</a></li>
+<li><a href="http://www.cssdrive.com">CSS Drive</a></li>
+<li><a href="http://www.codingforums.com/" style="border-bottom-width: 0">Coding Forums</a></li>        
+</ul>
+</div>
+
+<script type="text/javascript">
+//jkoutlinemenu.definemenu("anchorid", "menuid", "mouseover|click", optional_width, optional_height)
+jkoutlinemenu.definemenu("designanchor2", "mymenu2", "mouseover", 170, 150)
+</script>
+</apex:form>
+</apex:page>

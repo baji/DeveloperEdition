@@ -1,0 +1,10 @@
+<apex:page controller="vfcontroller">
+ <apex:form >
+    
+    <apex:pageBlock title="Fetched Data">
+   <apex:outputPanel id="resultPanel" layout="block"> 
+    Result: {!fetchedData}
+   </apex:outputPanel>
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

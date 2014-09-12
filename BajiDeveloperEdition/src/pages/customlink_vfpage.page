@@ -1,0 +1,9 @@
+<apex:page standardController="Account" showHeader="false">
+  
+  <h1>TestPage</h1>
+  This is your Custom Link visual force page.
+  <apex:outputText >Description</apex:outputText>
+  <apex:outputField id="desc" value="{!Account.Description}"/>
+  
+ 
+</apex:page>

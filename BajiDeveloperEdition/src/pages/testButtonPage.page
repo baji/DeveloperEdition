@@ -1,0 +1,52 @@
+<apex:page standardController="Account" showHeader="false" extensions="buttonController">
+ 
+ 
+<!-- <script language="JavaScript1.2" src="/js/functions.js"></script>  -->
+<script src="/soap/ajax/9.0/connection.js" type="text/javascript"></script>
+  <script id="clientEventHandlersJS" language="javascript"> 
+function CallSOQL()
+{
+    sforce.connection.sessionId = '{!$Api.Session_ID}';
+    try
+    {
+        alert('Select Name, Id From Account ORDER BY Name');
+        var AccountName="testingRuby";
+        var qr = sforce.connection.query("SELECT id,name FROM Account where Name='"+ AccountName +"'");
+        var records = qr.getArray("records");
+        alert('qr '+qr);
+    }
+    catch (error)
+    {
+        alert(error.faultstring);
+    }
+    
+    if (qr.size == 0)
+    {
+        alert("No Record found.");
+    }
+    else
+    {
+        for (var i=0;i<qr.records.length;i++)
+        {
+            alert(qr.records[i].Name);
+        }
+    
+    }
+
+}
+</script>
+ 
+ <apex:form >
+ <table>
+ <tr><td>&nbsp;</td></tr>
+ <tr>
+ <td>&nbsp;</td>
+ <td><apex:commandButton value="Email" action="{!sendEmail}"/></td>
+ </tr>
+ <tr><td><input type="button" onclick="CallSOQL();" value="Call SOQL Query"/></td></tr>
+ 
+ 
+ </table>
+ </apex:form>
+ 
+</apex:page>

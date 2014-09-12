@@ -1,0 +1,17 @@
+<apex:page controller="soslTest" showHeader="false">
+<apex:form > 
+
+<apex:pageBlock id="Results" > 
+
+<apex:pageblocktable value="{!accounts}" var="a">
+
+<apex:column headerValue="Account Name" value="{!a.Name}"/>
+<apex:column headerValue="contact Name"><apex:dataTable value="{!contacts}" var="c">
+    <apex:column value="{!c.Name}"/>
+</apex:dataTable>    
+</apex:column>
+
+</apex:pageblocktable>
+</apex:pageBlock>    
+</apex:form>  
+</apex:page>

@@ -1,0 +1,4 @@
+<apex:page standardController="skuid__Page__c" extensions="skuid.PageListControllerExtension" recordsetvar="a" title="Skuid Pages" 
+		readonly="true" sidebar="false" showHeader="true" docType="html-5.0">  
+    <c:page page="PageList"/>
+</apex:page>

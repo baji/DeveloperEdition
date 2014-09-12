@@ -1,0 +1,24 @@
+<apex:page controller="ajaxclass" showHeader="false"><p/>
+    <apex:pageBlock title="AjaxExample">
+        <b>Hello {!$User.FirstName}</b>
+            <apex:form >
+                <apex:commandButton action="{!setCurrentTime}" reRender="pbc" value="Display Current Time"/>
+            </apex:form>
+    </apex:pageBlock>
+    
+    <apex:pageblock title="AjaxData">
+    
+    <!--
+        <apex:outputPanel id="AjaxCode" layout="block"><br/>
+        Result:  {!currentTime}        
+        </apex:outputPanel>
+    -->
+    
+        <apex:pageBlockSection id="pbc">
+            <apex:pageBlockTable value="{!currentTime}" var="a">
+                <apex:column value="{!currentTime}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+    </apex:pageblock>
+    
+</apex:page>

@@ -1,0 +1,6 @@
+<apex:page >
+<!--  <apex:iframe src="/00O900000025Khs" scrolling="true"/>  -->
+  
+ <!-- The below line is written to test the visual force page in another visual force page    --> 
+  <apex:iframe src="apex/DepentlistManually" scrolling="true"/> 
+</apex:page>

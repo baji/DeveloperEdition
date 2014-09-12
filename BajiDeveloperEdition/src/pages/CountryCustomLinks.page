@@ -1,0 +1,13 @@
+<apex:page sidebar="false" controller="customlink_contry">
+<apex:form >
+<apex:pageBlock >
+    <div ><h2>Contry Links</h2></div>
+    <apex:pageblockSection >
+        <apex:repeat value="{!Countries}" var="con">
+             <apex:outputLink value="{!$Page.clubsByCountry}?Country={!con.Id}">{!con.Name}</apex:outputLink>
+        </apex:repeat>
+    </apex:pageblockSection>   
+    
+</apex:pageBlock>
+</apex:form>
+</apex:page>

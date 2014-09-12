@@ -1,0 +1,15 @@
+Hi {!Employee__c.Company_CEO__c},
+
+A new Employee joined in your company.
+
+Below are the details of the new Emlpoyee
+
+Employee ID - {!Employee__c.ID__c}
+Employee Name -{!Employee__c.Name}
+Mobile            - {!Employee__c.Mobile__c}
+
+
+
+
+Thanks and Regards,
+{!Employee__c.CreatedBy}

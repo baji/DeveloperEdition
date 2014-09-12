@@ -1,0 +1,908 @@
+<apex:page showHeader="false">
+<html><head>
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+<meta content="62342221439" property="fb:page_id"/>
+
+<title>Start Awana</title>
+
+
+    <meta content="Start Awana at your church." name="description"/>
+
+
+    <meta content="inquiry, church, God, ministry, missionary, registration, start awana, how to start awana, fax, mail, email, register, intro to awana, video, know, love, serve, children, youth, integrated, ages 2 to 18, spanish, canada" name="keywords"/>
+
+
+<link rel="stylesheet" type="text/css" href="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/-/default/v1352318328167/css/default_org.css"/>
+<link rel="stylesheet" type="text/css" href="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/-/default/v1352318328167/lib/jquery/js/jcarousel/jquery.jcarousel.css"/>
+
+<link rel="stylesheet" type="text/css" href="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/-/default/v1352318328167/lib/jquery/css/themes/base/ui.all.css"/>
+
+<!--[if lte IE 7]>
+    <link rel="stylesheet" type="text/css" href="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/-/default/v1352318328167/css/ie_org.css" media="screen" />
+<![endif]-->   
+
+<script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/-/default/v1352318328167/lib/jquery/js/jquery/jquery-1.3.2.min.js" type="text/javascript"></script>
+<script src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/-/default/v1352318328167/lib/jquery/js/jcarousel/jquery.jcarousel.pack.fixed.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/-/default/v1352318328167/lib/jquery/js/jquery/ui.core.js"></script>
+<script type="text/javascript" src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/-/default/v1352318328167/lib/jquery/js/jquery/ui.dialog.js"></script>
+<script type="text/javascript" src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/-/default/v1352318328167/lib/jquery/js/jquery/ui.resizable.js"></script>
+<script type="text/javascript" src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/-/default/v1352318328167/lib/jquery/js/jquery/ui.draggable.js"></script>
+
+<meta content="tKhDJsstGYlLqeKKnU3kcsVst5qU4SU0FfV_RSslMV8" name="google-site-verification"/>
+    </head>
+    <body><div id="cboxOverlay" style="display: none;"></div><div id="colorbox" style="padding-bottom: 42px; padding-right: 42px; display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxLoadedContent" style="width: 0px; height: 0px;" class=""></div><div id="cboxLoadingOverlay" class=""></div><div id="cboxLoadingGraphic" class=""></div><div id="cboxTitle" class=""></div><div id="cboxCurrent" class=""></div><div id="cboxSlideshow" class=""></div><div id="cboxNext" class=""></div><div id="cboxPrevious" class=""></div><div id="cboxClose" class=""></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position:absolute; top:0; left:0; width:9999px; height:0;"></div></div>
+        <div id="wrapper">
+        
+            <div id="header">
+
+    
+
+
+
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/Sites-Awana-Library/default/v1352318328167/awanaorg/css/header.css"/>
+    
+    
+        
+        <div class="contentasset"><!-- dwMarker="content" dwContentID="cdFb2iaag2AIaaaacNdbwE4ebB" -->
+            <div id="headerLogo"><a href="http://awana.org">&nbsp;</a></div>
+<div id="headerNavigation">
+<ul>
+    <li><a class="liFirst" href="http://awana.org/about/about-awana,default,pg.html">About Us</a></li>
+    <li><a href="http://awana.org/donate/donate,default,pg.html">Donate</a></li>
+    <li><a href="http://awana.org/locations/awana-locator,default,pg.html">Awana Locator</a></li>
+    <li><a href="http://awana.org/startawana/start-awana,default,pg.html">Inquire About Awana</a></li>
+    <li><a href="http://awana.org/pressroom/press_room_home,default,pg.html">Press Room</a></li>
+    <li><a href="http://awana.org/contactus/contact-us,default,pg.html">Contact Us</a></li>
+    <li><a href="http://awana.org/espanol/Awana-en-Espanol,default,pg.html">Español</a></li>
+</ul>
+</div>
+        </div> <!-- End contentasset -->
+    
+
+
+
+    <div id="headerSearch">
+        <form class="simplesearch" id="SimpleSearchForm" method="get" action="http://awana.org/on/demandware.store/Sites-Awana-Site/default/Search-Show">
+            <p>Search <input type="text" id="searchinput" class="simplesearchinput" name="q" maxlength="50"/><button name="simplesearch" value="Go" type="submit"><span>Search</span></button></p>
+        </form>
+    </div>
+</div>
+
+
+
+<div id="mainNavigation">
+    <ul id="dropdown">
+        
+            
+            <li>
+                
+                
+                    
+                
+                
+                <a class="top-level" href="http://www.awana.org">Home</a>
+            
+                
+                
+                
+            
+            </li>
+            
+        
+            
+            <li>
+                
+                
+                    
+                
+                
+                <a class="top-level" href="http://awana.org/welcometoawana/welcome-to-awana,default,pg.html">Parents</a>
+            
+                
+                
+                <ul style="display: none;"><li><a href="http://awana.org/welcometoawana/welcome-to-awana,default,pg.html">Parents - Home</a></li><li><a href="/locations/awana-locator,default,pg.html">New To Awana? » » » </a><ul style="display: none;"><li><a href="http://awana.org/welcometoawana/welcome-to-awana,default,pg.html">What Is Awana?</a></li><li><a href="http://awana.org/locations/awana-locator,default,pg.html">Find Awana in Your Area</a></li><li><a href="http://awana.org/welcometoawana/welcome-to-awana,default,pg.html">What Kids Learn</a></li><li><a href="http://awana.org/alumni-study/alumni-study,default,pg.html">How We Impact Kids</a></li><li><a href="/tommeyer/tom-meyer,default,pg.html">What is an MDJ?</a></li><li><a href="/youcanhaveeternallife/you-can-have-eternal-life,default,pg.html">You Can Have Eternal Life</a></li></ul></li><li><a href="#">My Kids Are in Awana » » » </a><ul style="display: none;"><li><a href="#">Award Placement » » » </a><ul style="display: none;"><li><a href="http://awana.org/awana-clubs/cubbies-awards,default,pg.html">Cubbies</a></li><li><a href="/awana-clubs/sparks-awards,default,pg.html">Sparks</a></li><li><a href="/ttawards/tt-awards,default,pg.html">T&amp;T</a></li></ul></li><li><a href="#">Club Helps » » » </a><ul style="display: none;"><li><a href="/extra-credit/extra-credit,default,pg.html">Extra Credit Materials</a></li><li><a href="/memorization-tips/memorization-tips,default,pg.html">Awana - Memorization Tips</a></li><li><a href="/learning-styles/learning-styles,default,pg.html">Learning Styles</a></li><li><a href="/club-verse-count/club-verse-count,default,pg.html">Club Verse Count</a></li><li><a href="http://awana.org/homestretch-handbook-helps/homestretch-handbook-helps,default,pg.html">Handbook Helps</a></li></ul></li><li><a href="http://awana.org/powerup-sparks-bookwalks/powerup-sparks-bookwalks,default,pg.html">PowerUP Sparks Bookwalks</a></li><li><a href="http://awana.org/powerup-tt-bookwalks/powerup-tt-bookwalks,default,pg.html">PowerUP T&amp;T Bookwalks</a></li><li><a href="store/Awana at Home/family-at-home,default,sc.html">Parent Resources</a></li><li><a href="http://awana.org/social-media/social-media,default,pg.html">Parent Blogs » » » </a><ul style="display: none;"><li><a href="http://mdj.awana.org">Parenting Articles</a></li><li><a href="http://parenthelps.awana.org/">Parent Helps</a></li><li><a href="http://apparentlyblogging.awana.org/">apParently Blogging</a></li></ul></li><li><a href="http://www2.awana.org/cs/forums/56/ShowForum.aspx">Forums</a></li></ul></li><li><a href="http://awana.org/You%20Belong%20-%20Home/you-belong,default,pg.html">Volunteer in Awana</a></li><li><a href="http://awana.org/espanol/Awana-en-Espanol,default,pg.html">Español</a></li><li><a href="http://awana.org/athome/awana-at-home,default,pg.html">Awana at Home » » » </a><ul style="display: none;"><li><a href="http://awana.org/truthscripts/truthscript-home,default,pg.html">TruthScripts</a></li></ul></li><li><a href="http://awana.org/social-media/social-media,default,pg.html">Articles &amp; Blogs » » » </a><ul style="display: none;"><li><a href="http://mdj.awana.org">Parenting Articles</a></li><li><a href="http://parenthelps.awana.org/">Parent Helps</a></li><li><a href="http://apparentlyblogging.awana.org/">apParently Blogging</a></li></ul></li></ul>
+            
+            </li>
+            
+        
+            
+            <li>
+                
+                
+                    
+                
+                
+                <a class="top-level" href="http://awana.org/welcometoawana/welcome-to-awana,default,pg.html">Children Age 2 to Grade 6</a>
+            
+                
+                
+                <ul style="display: none;"><li><a href="http://awana.org/awana-clubs/puggles-home,default,pg.html">Puggles - Age 2 and 3</a></li><li><a href="http://awana.org/awana-clubs/cubbies-home,default,pg.html">Cubbies - Preschool</a></li><li><a href="http://awana.org/awana-clubs/sparks-home,default,pg.html">Sparks - Grade K - 2</a></li><li><a href="http://awana.org/awana-clubs/tt-home,default,pg.html">T&amp;T - Grade 3 - 6</a></li></ul>
+            
+            </li>
+            
+        
+            
+            <li>
+                
+                
+                    
+                
+                
+                <a class="top-level" href="http://awana.org/youthministries/aym-home,default,pg.html">Youth Middle / High School</a>
+            
+                
+                
+                <ul style="display: none;"><li><a href="http://awana.org/youthministries/aym-home,default,pg.html">Awana Youth Ministries</a></li><li><a href="http://awana.org/youthministries/aym-trek-overview,default,pg.html">Trek - Middle School</a></li><li><a href="http://awana.org/youthministries/aym-journey-overview,default,pg.html">Journey - High School</a></li><li><a href="http://awana.org/whatisctrack/what-is-ctrack,default,pg.html">C-Track</a></li><li><a href="http://awana.org/summit/Summit-Home,default,pg.html">Summit</a></li><li><a href="http://awana.org/youthministries/aym-colleges,default,pg.html">College Scholarships</a></li></ul>
+            
+            </li>
+            
+        
+            
+            <li>
+                
+                
+                    
+                
+                
+                <a class="top-level" href="http://awana.org/about/about-awana,default,pg.html">Info for Churches</a>
+            
+                
+                
+                <ul style="display: none;"><li><a href="/about/about-awana,default,pg.html">Welcome</a></li><li><a href="/startawana/start-awana,default,pg.html">Tell me about Awana</a></li><li><a href="http://awana.org/welcometoawana/welcome-to-awana,default,pg.html">What is Awana » » » </a><ul style="display: none;"><li><a href="http://awana.org/alumni-study/alumni-study,default,pg.html">Alumni Study</a></li><li><a href="http://awana.org/endorsements/endorsements,default,pg.html">Endorsements</a></li><li><a href="http://awana.org/Awana%20-%20F.A.Q.s/awana-faqs,default,pg.html">F.A.Q's</a></li></ul></li><li><a href="http://http://awana.org/Awana%20-%20What%20We%20Believe%20-%20expanded%20version/what-we-believe-expanded,default,pg.html">What We Believe</a></li><li><a href="http://awana.org/missionary-home/missionary-home,default,pg.html">Awana Missionaries » » » </a><ul style="display: none;"><li><a href="http://awana.org/missionary-serve/missionary-serve,default,pg.html">Learn What They Do</a></li><li><a href="http://awana.org/missionary-history/missionary-history,default,pg.html">History</a></li><li><a href="http://awana.org/missionary-support/missionary-support,default,pg.html">Support Them</a></li><li><a href="http://awana.org/missionaries/missionary-map,default,pg.html">Find Your Missionary</a></li><li><a href="/becomeamissionary/become-a-missionary,default,pg.html">Become an Awana Missionary</a></li><li><a href="http://awana.org/employment/employment,default,pg.html">Employment</a></li></ul></li><li><a href="http://awana.org/You%20Belong%20-%20Home/you-belong,default,pg.html">Volunteer Campaign - You Belong</a></li><li><a href="http://awana.org/training/training,default,pg.html">Leader Training</a></li><li><a href="http://awana.org/pastors/pastors,default,pg.html">Pastor Resources</a></li><li><a href="http://awana.org/espanol/Awana-en-Espanol,default,pg.html">Awana en Español</a></li></ul>
+            
+            </li>
+            
+        
+            
+            <li>
+                
+                
+                    
+                
+                
+                <a class="top-level" href="http://awanalifeline.org/">Fathering Ministries</a>
+            
+                
+                
+                <ul style="display: none;"><li><a href="http://awanalifeline.org/">Lifeline</a></li><li><a href="http://awanalifeline.org/#/programs">Malachi Dads</a></li><li><a href="http://awanalifeline.org/#/programs/returning-hearts">Returning Hearts Celebration</a></li><li><a href="http://www.turnassembly.org/">Turn - Men's Conference</a></li></ul>
+            
+            </li>
+            
+        
+            
+            <li>
+                
+                
+                    
+                
+                
+                <a class="top-level" href="http://www.awanainternational.org/">Awana International</a>
+            
+                
+                
+                <ul style="visibility: hidden; display: block;"><li><a href="http://www.awanachildrenatrisk.org">Children at Risk</a></li><li><a href="http://missions.awana.org/site/PageServer?pagename=aac_landing_page">Adopt-a-Club</a></li></ul>
+            
+            </li>
+            
+        
+            
+            <li class="primaryNavLastChild">
+                
+                
+                    
+                
+                
+                <a class="top-level" href="/store">Shop</a>
+            
+                
+                
+                
+            
+            </li>
+            
+        
+    </ul>
+
+</div>
+<script type="text/javascript">
+&lt;!--
+$(function(){
+    $("ul#dropdown li ul li:has(ul)").find("a:first").append(" &amp;raquo; &amp;raquo; &amp;raquo; ");
+});
+
+function mainmenu(){
+$(" #dropdown ul ").css({display: "none"}); // Opera Fix
+$(" #dropdown li").hover(function(){
+        $(this).find('ul:first').css({visibility: "visible",display: "none"}).show(400);
+        },function(){
+        $(this).find('ul:first').css({visibility: "hidden"});
+        });
+}
+
+ $(document).ready(function(){
+    mainmenu();
+});
+//--&gt;
+</script>
+
+            
+
+    
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/Sites-Awana-Library/default/v1352318328167/awanaorg/css/inquiry-beta.css"/>
+    
+    
+        
+        <div class="contentasset"><!-- dwMarker="content" dwContentID="bcjisiaagTqwaaaacUhVtNeE6g" -->
+            <style type="text/css">
+label {
+    text-align:left !important;
+}
+</style>
+<script>
+     var addressCheck = "http://awana.org/on/demandware.store/Sites-Awana-Site/default/VerifyAddress-VerifyAJAXAddress";
+</script>
+<div class="wrapper" id="contentBox">
+    <div id="inquiryHeader">
+        <div id="headerCopy">
+            <p><strong>We appreciate your interest in our ministry to churches. After filling out this form:</strong></p>
+            <p class="steps"><strong>1) You will be redirected</strong> to a page featuring a video and more information on Awana.</p>
+            <p class="steps"><strong>2) A local Awana missionary will contact you.</strong> The missionary will explain how Awana can benefit your church, help you assess your needs and support you every step of the way.</p>
+            <p><strong>Thanks for your commitment to reaching and discipling children and youth!</strong></p>
+        </div>
+    </div>
+    <div id="mainDiv">
+        <form onsubmit="return validateWrapper();$('#frmInquiry').submit();" method="POST" action="https://na3.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" name="frmInquiry" id="frmInquiry">
+            <input type="hidden" value="00D500000006dw0" id="oid" name="oid"/>
+            <input type="hidden" value="http://awana.org/startawana/thankyou,default,pg.html" name="retURL"/>
+            <input type="hidden" value="01250000000DUQn" name="recordType" id="recordType"/>
+                    <table cellspacing="0" cellpadding="0" border="0" id="main">
+                <tbody><tr>
+                    <td class="row-spacer" colspan="4"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="row-label">
+                        <label style="font-weight:bold;font-size:16px;font-style:italic" for="Name">Tell Us About Yourself:</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="200">&nbsp;</td>
+                    <td>
+                        <label class="cell-label" style="font-size:11px" for="first_name"><span style="color:#b22222;">* </span>First Name</label>
+                    </td>
+                    <td colspan="2">
+                        <label class="cell-label" style="font-size:11px" for="last_name"><span style="color:#b22222;">* </span>Last Name</label>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="row-label"><span style="color:#b22222;">*</span>Name:</td>
+                    <td>
+                        <input type="text" class="required" size="30" name="first_name" maxlength="40" id="first_name"/>
+                    </td>
+                    <td colspan="2">
+                        <input type="text" class="required" size="30" name="last_name" maxlength="40" id="last_name"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="row-spacer" colspan="4"></td>
+                </tr>
+                <tr valign="top">
+                    <td class="row-label"><span style="color:#b22222;">*</span>Phone:</td>
+                    <td colspan="3">
+                        <input type="text" class="required phone" size="30" name="phone" maxlength="40" id="phone"/>
+                    </td>
+                </tr>   
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td colspan="2">
+                        <label class="cell-label" style="font-size:11px" for="email2"><span class="emailReqSpan" style="color:#b22222;"></span>Confirm Email:</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="changeableEmailTD" style="font-size:12px" class="row-label"><span class="emailReqSpan" style="color:#b22222;"></span>Email:</td>
+                    <td valign="top">
+                        <input type="text" class="required email" size="30" name="email" maxlength="40" id="email"/>
+                    </td>
+                    <td valign="top" colspan="2">
+                        <input type="text" class="required" size="30" name="email2" maxlength="40" id="email2"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="row-spacer" colspan="4"></td>
+                </tr>
+                <tr>
+                    <td class="row-spacer" colspan="4"></td>
+                </tr>
+                <tr>
+                    <td align="left" class="row-label"><span style="color:#ffffff;font-size:12px"></span>What's your role at the church?</td>
+                     <td colspan="3">
+                        <select title="Position/Role Status" name="00N50000001d6VB" id="00N50000001d6VB">
+                            <option value="">-Choose a Role-</option>
+                            <option value="Pastor/Associate Pastor">Pastor/Associate Pastor</option>
+                            <option value="Children''s Pastor">Children's Pastor</option>
+                            <option value="Youth Pastor">Youth Pastor</option>
+                            <option value="Christian Education Director">Christian Education Director</option>
+                            <option value="Church Secretary">Church Secretary</option>
+                            <option value="Church Member">Church Member</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="row-spacer" colspan="4"></td>
+                </tr>
+                <tr>
+                    <td class="row-label">
+            <label for="lead_source"><span style="color:#b22222;">* </span>How would you like to receive your information packet?</label>
+                    </td>
+                    <td class="radioBTN"><input type="radio" value="email" onclick="wantsWhich(this)" id="chkEmail" name="browser" style="font-size:11px;" class="cell-label"/> Email</td>
+                    <td class="radioBTN"><input type="radio" value="mail" onclick="wantsWhich(this)" id="chkMail" name="browser" style="font-size:11px;" class="cell-label"/> Mail</td>
+                    <td class="radioBTN"><input type="radio" value="both" onclick="wantsWhich(this)" id="chkBoth" name="browser" style="font-size:11px;" class="cell-label"/> Both</td>
+                </tr>
+                <tr>
+                    <td class="row-spacer" colspan="3"></td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                </tr>
+                <tr>
+                    <td class="row-spacer" colspan="4"></td>
+                </tr>
+                <tr class="hiddenAddress">
+                    <td></td>
+                    <td colspan="3">
+                        <label class="cell-label" style="font-size:11px" for="street" id="lbl-street"><span style="color:#b22222;">* </span>Street</label>
+                    </td>
+                </tr>
+                <tr class="hiddenAddress">
+                    <td></td>
+                    <td colspan="3">
+                        <textarea cols="66" rows="2" name="street" id="street"></textarea>
+                    </td>
+                </tr>
+                <tr class="hiddenAddress">
+                    <td></td>
+                    <td>
+                        <label class="cell-label" style="font-size:11px" for="city" id="lbl-city"><span style="color:#b22222;">* </span>City</label>
+                    </td>
+                    <td>
+                        <label class="cell-label" style="font-size:11px" for="state" id="lbl-state"><span style="color:#b22222;">* </span>State</label>
+                    </td>
+                    <td>
+                        <label class="cell-label" style="font-size:11px" for="zip" id="lbl-zip"><span style="color:#b22222;">* </span>ZIP</label>
+                    </td>
+                </tr>
+                <tr valign="top" class="hiddenAddress">
+                    <td></td>
+                    <td>
+                        <input type="text" name="city" size="30" maxlength="40" id="city"/>
+                    </td>
+                    <td valign="top">
+                        <select onfocus="this.value=document.getElementById('state').value;" onblur="this.enabled='false';" name="state" id="state">
+                            <option value="">- Choose a State -</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DC">District of Columbia</option>
+                            <option value="DE">Delaware</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" size="30" name="zip" maxlength="10" class="zip" id="zip"/>
+                    </td>
+                </tr>
+                    
+                <tr>
+                    <td class="row-spacer" colspan="4"></td>
+                </tr>
+                <tr valign="top">
+                    <td class="row-label">
+                        <label for="lead_source"><span style="color:#b22222;font-size:12px">* </span>How did you hear about us?</label>
+                    </td>
+                    <td colspan="3">
+                        <select style="text-align:left" class="singleSelects required" name="lead_source" id="lead_source">
+                            <option value="">- Choose From List -</option>
+                            <option value="Conference">Conference</option>
+                            <option value="Email Offer">Email offer</option>
+                            <option value="Internet Advertisement">Internet ad</option>
+                            <option value="Missionary">Missionary</option>
+                            <option value="Other">Other</option>
+                            <option value="Personal Referral">Personal referral</option>
+                            <option value="Print Advertisement"> Print advertisement</option>
+                            <option value="Used Awana Previously">Used Awana previously</option>
+                        </select>
+    
+                    </td>
+                </tr>
+                <tr>
+                    <td class="row-spacer" colspan="4"></td>
+                </tr>
+                <tr>
+                    <td class="row-label">
+                        <label style="font-weight:bold;font-size:16px;font-style:italic" for="Name">Tell Us About Your Church:</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="row-spacer" colspan="4"></td>
+                    
+                </tr>
+                <tr>
+                    <td class="row-spacer" colspan="4"></td>
+                    
+                </tr>
+                <tr>
+                    <td class="row-label">
+                        <label for="company"><span style="color:#b22222;font-size:12px">* </span>Church Name:</label>
+                    </td>
+                    <td colspan="3">
+                        <input type="text" class="required" name="company" size="30" maxlength="40" id="company"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="row-spacer" colspan="4"></td>
+                </tr>
+                <tr>
+                    <td class="row-spacer" colspan="4"></td>
+                </tr>
+                <tr colspan="4">
+                    <td></td>
+                    <td>
+                        <label class="cell-label" size="20" style="font-size:11px;" for="00N50000001dJVX" id="lbl-street1"><span style="color:#b22222;">* </span>Street</label>
+                    </td>
+                    <td>
+                        <label class="cell-label" size="20" style="font-size:11px;" for="00N50000001dJVI" id="lbl-city1"><span style="color:#b22222;">* </span>City</label>
+                    </td>
+                    <td>
+                        <label class="cell-label" size="20" style="font-size:11px;" for="00N50000001dJW6" id="lbl-zip1"><span style="color:#b22222;">* </span>ZIP</label>
+                    </td>
+                </tr>
+                <tr valign="top" colspan="4">
+                    <td class="row-label">
+                        <span class="cell-label" style="color:#b22222;font-size:12px;">*</span><strong>Church Address</strong>
+                    </td>
+                      <td>
+                        <input type="text" size="30" class="required" name="00N50000001dJVX" maxlength="40" id="00N50000001dJVX"/>
+                    </td>
+                    <td>
+                        <input type="text" size="30" class="required" name="00N50000001dJVI" maxlength="40" id="00N50000001dJVI"/>
+    
+                    </td>
+                    <td>
+                        <input type="text" size="30" class="zip required" name="00N50000001dJW6" maxlength="40" id="00N50000001dJW6"/>
+    
+                    </td>
+                </tr>
+                <tr>
+                    <td class="row-spacer" colspan="4"></td>
+                </tr>
+                <tr colspan="3">
+                    <td></td>
+                    <td>
+                        <label class="cell-label" style="font-size:11px;" size="20" for="00N50000001dJVS" id="lbl-state1"><span style="color:#b22222;">* </span>State</label>
+                    </td>
+                </tr>
+                <tr colspan="3">
+                    <td></td>
+                    <td>
+                        <select onchange="return findCounties(this.value);document.getElementById('00N50000001dJVN').value=this.value;" class="required" name="00N50000001dJVS" style="font-size:12px;" id="00N50000001dJVS">
+                            <option value="">- Choose a State -</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DC">District of Columbia</option>
+                            <option value="DE">Delaware</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="hidden" name="00N50000001dJVN" id="00N50000001dJVN"/>
+                    </td>
+                </tr><tr>
+                    <td class="row-spacer" colspan="4"></td>
+                </tr>
+                <tr valign="top">
+                    <td class="row-label">
+                        <label><span style="color:#ffffff;font-size:12px;"></span>Comments or questions?</label>
+                    </td>
+                    <td colspan="3"><input type="text" size="30" class="wide-input" name="00N50000001KEwh" id="00N50000001KEwh"/></td>
+                </tr>
+                <tr>
+                    <td class="row-spacer" colspan="4">
+                        <select title="Mail Status" name="00N50000001dANP" class="displayNone" id="00N50000001dANP">
+                            <option value="">--None--</option>
+                            <option value="Mail">Mail</option>
+                            <option value="E-mail">E-mail</option>
+                            <option value="Both">Both</option>
+                        </select>
+                        
+                        <!--<input type="hidden" name="debug" value=1>-->
+                        <!--<input type="hidden" name="debugEmail" value="jenniferl@awana.org">-->
+                    </td>
+                </tr>
+                <!--
+                <tr>
+                    <td colspan="4" align="center">
+                        <script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6LfUF9USAAAAAJap2u3jry_awJ1VGmx46GxeyAe1"></script>
+                        <noscript>
+                            <iframe src="http://www.google.com/recaptcha/api/noscript?k=6LfUF9USAAAAAJap2u3jry_awJ1VGmx46GxeyAe1" height="300" width="500" frameborder="0"></iframe><br />
+                            <textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+                            <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+                        </noscript>
+                    </td>
+                </tr>
+                -->
+                <tr>
+                    <td align="center" colspan="4"><input type="submit" value="Submit Inquiry" name="submitform" id="btnSubmit"/></td>
+                </tr>
+                <tr>
+                    <td class="row-label">
+                        <label><span style="color:#b22222;font-size:12px;">* </span>Required Fields</label>
+                    </td>
+                    <td colspan="4">
+                        <span id="finalCheck"><img width="16" height="16" alt="Cancel" id="fcIMG" src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/Sites-Awana-Library/default/v1352318328167/awanaorg/images/cancel.gif"/> Please complete and correct all required fields.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="errorsTXT" colspan="4"></td>
+                </tr>
+            </tbody></table>
+    </form>
+    </div>
+</div>
+<div id="qaDialog"></div><div id="loadDialog"></div>
+<script src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/Sites-Awana-Library/default/v1352318328167/awanaorg/scripts/inquiry-beta.js" type="text/javascript"></script>
+<script src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/Sites-Awana-Library/default/v1352318328167/awanaorg/scripts/validation-beta.js" type="text/javascript"></script>
+<script src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/Sites-Awana-Library/default/v1352318328167/awanaorg/scripts/encrypt.js" type="text/javascript"></script>
+        </div> <!-- End contentasset -->
+    
+
+
+
+
+
+            <div id="footer">
+    
+    
+
+
+
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/Sites-Awana-Library/default/v1352318328167/awanaorg/css/footer.css"/>
+    
+    
+        
+        <div class="contentasset"><!-- dwMarker="content" dwContentID="cdTygiaag2rvwaaacNnasE4ebC" -->
+            <div id="footerNav">
+    <div id="fCol1" class="footCol">
+        <a href="http://awana.org/about/about-awana,default,pg.html"><strong>About Us</strong></a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/welcometoawana/welcome-to-awana,default,pg.html">What is Awana?</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/whatwebelieve/what-we-believe,default,pg.html">What We Believe</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/about/about-history,default,pg.html">History</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/about/about-endorsements,default,pg.html">Endorsements</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://www.awana60years.org/">Celebration of 60 Years</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/pressroom/bios/bios_photos,default,pg.html,">Leadership Bios</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/pressroom/annual-report,default,pg.html">Annual Report</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/youcanhaveeternallife/you-can-have-eternal-life,default,pg.html">You Can Have Eternal Life</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/employment/employment,default,pg.html">Employment</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/isgodcallingyou/is-god-calling-you,default,pg.html">Becoming an Awana Missionary</a><br/>
+        <br/>
+        <a href="http://awana.org/contactus/contact-us,default,pg.html"><strong>Contact Us</strong></a><br/>
+        <br/>
+        <strong>Resources</strong><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/youbelong/you-belong,default,pg.html">You Belong</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/versecount/verse-count,default,pg.html">Club Verse Count</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/digitallibrary/digital-library,default,pg.html">Digital Library</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/extra-credit/extra-credit,default,pg.html">Extra-Credit Materials</a> <br/>
+        &nbsp;-&nbsp;<a target="_blank" onclick="javascript: _gaq.push(['_trackPageview', 'gospel-wheel.pdf']);" href="http://awana.org/gospelwheel">Gospel Wheel</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/awanagrandprix/awana-grand-prix,default,pg.html">Grand Prix</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/highpowerhome/highpower-home,default,pg.html">High Power Soccer</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/shakeup/shakeup,default,pg.html">Great ShakeUP</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/memorization-tips/memorization-tips,default,pg.html">Memorization Tips</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/mychurchandawana/my-church-and-awana,default,pg.html">My Church and Awana</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/powerup/powerup,default,pg.html">PowerUP<br/></a>
+    </div>
+    <div id="fCol2" class="footCol">
+        <a href="http://awana.org/welcometoawana/welcome-to-awana,default,pg.html"><strong>Parents</strong></a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/welcometoawana/welcome-to-awana,default,pg.html">New to Awana?</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/locations/awana-locator,default,pg.html">Find Awana in Your Area</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/youbelong/you-belong,default,pg.html">Volunteer in Awana - You Belong</a><br/>
+        <br/>
+        <a href="http://awana.org/athome/awana-at-home,default,pg.html"><strong>Awana at Home</strong></a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/truthscripts/truthscript-home,default,pg.html">TruthScripts</a><br/>
+        <br/>
+        <strong>Children Age 2 to Grade 6</strong><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/awana-clubs/puggles-home,default,pg.html">Puggles - Ages 2 and 3</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/awana-clubs/cubbies-home,default,pg.html">Cubbies - Preschool</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/awana-sparks/sparks-home,default,pg.html">Sparks - Grades K - 2</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/awana-clubs/tt-home,default,pg.html">T&amp;T - Grades 3 - 6</a><br/>
+        <br/>
+        <strong>Youth Ministries</strong><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/youthministries/aym-home,default,pg.html">Awana Youth Ministries - About Us</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/youthministries/aym-trek-overview,default,pg.html">Trek - Middle School</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/youthministries/aym-journey-overview,default,pg.html">Journey - High School</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/youthministries/aym-events,default,pg.html">Youth Events</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/youthministries/aym-colleges,default,pg.html">Scholarships</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/youthministries/aym-clipart-agreement,default,pg.html">Clip Art</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://awana.org/store/Youth/youth,default,sc.html">Shop Youth Resources</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/whatisctrack/what-is-ctrack,default,pg.html">C-track</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://www.awanaconnections.org/">Internships</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/youthministries/aym-students,default,pg.html">Awana Youth Ministries Network</a>
+    </div>
+    <div id="fCol3" class="footCol">
+        <a href="http://awana.org/about/about-awana,default,pg.html"><strong>Inquiring Churches</strong></a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/welcometoawana/welcome-to-awana,default,pg.html">What is Awana?</a><br/>
+        &nbsp;-&nbsp;<a onclick="javascript: _gaq.push(['_trackPageview', 'http://www.awana60years.org/resources/60th%20Awana%20Fact%20Sheet.pdf']);" target="_self" href="http://www.awana60years.org/resources/60th%20Awana%20Fact%20Sheet.pdf" class="pdfBox cboxElement">What is the Spiritual Impact of Awana?</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/whatwebelieve/what-we-believe,default,pg.html">What We Believe</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/training/training,default,pg.html">Leader Training</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/youbelong/you-belong,default,pg.html">Volunteer Campaign - You Belong</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/alumni-study/alumni-study,default,pg.html">Results - Alumni Study</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/about/about-endorsements,default,pg.html">Recommendations and Advocates</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/awanafaqs/awana-faqs,default,pg.html">FAQs</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/startawana/start-awana,default,pg.html">Tell me about Awana</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/espanol/Awana-en-Espanol,default,pg.html">Awana en Español</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/missionaryhome/missionary-home,default,pg.html">About Awana Missionaries</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/missionaries/missionary-map,default,pg.html">Find Your Missionary</a><br/>
+        <br/>
+        <a href="http://awana.org/donate/donate,default,pg.html"><strong>Donations</strong></a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://missions.awana.org/adoptaclub">Adopt-a-Club</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://missions.awana.org/">Awana International</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="https://secure2.convio.net/awana/site/Donation2?idb=105474458&amp;df_id=2380&amp;2380.donation=form1">Commander College</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://www.idonate.com/nonprofit/awana-international">Financial and Estate Planning</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://missions.awana.org/missionaries-international">International Missionaries</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="https://secure2.convio.net/awana/site/Donation2?idb=394393220&amp;df_id=2661&amp;2661.donation=form1">Leader-Based Strategy</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://missions.awana.org/lifeline">Lifeline - Fathering Ministry</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://missions.awana.org/site/TR/Events/USMissionaries?fr_id=1130&amp;pg=tgreeting">U.S. Missionaries</a>
+    </div>
+    <div id="fCol4" class="footCol">
+        <a href="http://awana.org/pressroom/press_room_home,default,pg.html"><strong>Media</strong></a><br/>
+        &nbsp;-&nbsp;<a href="http://news.awana.org/">Awana in the News</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/pressroom/presskits/press_kits,default,pg.html">Press Kits</a><br/>
+        &nbsp;-&nbsp;<a href="http://pressreleases.awana.org/">Press Releases</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/pressroom/media_contact,default,pg.html">Press Contact</a><br/>
+        &nbsp;-&nbsp;<a href="http://awana.org/pressroom/annual-report,default,pg.html">Annual Report</a><br/>
+        <br/>
+        <a target="_blank" href="http://awanalifeline.org/"><strong>Fathering Ministries</strong></a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://awanalifeline.org/">Lifeline</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://awanalifeline.org/#/programs">Malachi Dads</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://awanalifeline.org/#/programs/returning-hearts">Returning Hearts Celebration</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://www.turnassembly.org/">Turn - Mens Conference</a><br/>
+        <br/>
+        <a target="_blank" href="http://awanainternational.org/site/PageServer?pagename=AI_Homepage"><strong>Awana International</strong></a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://awanainternational.org/site/PageServer?pagename=About_AI">About Us</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://awanainternational.org/site/PageServer?pagename=prayer">Pray</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://awana.convio.net/site/PageServer?pagename=aac_landing_page">Sponsor</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://www.awanachildrenatrisk.org/">Children at Risk</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://awanainternational.org/site/PageServer?pagename=aac_landing_page">Adopt-a-Club</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://awana.convio.net/site/PageServer?pagename=donations_main">Giving Opportunities</a><br/>
+        <br/>
+        <a target="_blank" href="http://store.awana.org"><strong>Shop the Awana Catalog</strong></a><br/>
+        <br/>
+        <a target="_blank" href="https://www.companypromostore.com/stores/awana/"><strong>Shop Awana Premium Apparel</strong></a><br/>
+        <br/>
+        <a href="http://awana.org/awanaapps/awana-apps,default,pg.html"><strong>Awana Apps</strong></a>
+    </div>
+    <div id="fCol5" class="footCol">
+        <a href="http://awana.org/socialmedia/social-media,default,pg.html"><strong>Stay Connected</strong></a><br/>
+        <br/>
+        <strong>Tips and Ideas</strong><br/>
+        &nbsp;-&nbsp;<a href="http://apparentlyblogging.awana.org/">apPARENTly Blogging</a><br/>
+        &nbsp;-&nbsp;<a href="http://parenthelps.awana.org/">Parent Helps</a><br/>
+        <br/>
+        <strong>Facebook</strong><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://www.facebook.com/AwanaHQ">Awana</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://www.facebook.com/AwanaInternational">Awana International</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="https://www.facebook.com/awanalifeline">Awana Lifeline</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="https://www.facebook.com/AwanaYM">Awana Youth Ministries</a><br/>
+        <br/>
+        <strong>Twitter</strong><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://www.twitter.com/awana">Awana</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://www.twitter.com/awanaparents">Awana Parents</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://www.twitter.com/awanaleadertips">Awana Leader Tips</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://twitter.com/awanaathome">Awana at Home</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://twitter.com/AwanaPuggles">Puggles</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://twitter.com/awanacubbies">Cubbies</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://twitter.com/AwanaSparks">Sparks</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://twitter.com/AwanaTT">T&amp;T</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://twitter.com/AwanaYM">Awana Youth Ministries</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://twitter.com/awanalifeline">Fathering Ministry</a><br/>
+        &nbsp;-&nbsp;<a target="_blank" href="http://twitter.com/awanaintl">Awana International</a><br/>
+        <br/>
+        <br/>
+    </div>
+    <p>&nbsp;</p>
+    <div id="legalIcons">
+        <span id="legalInfo">&copy; 1997-2012 Awana<sup>&reg;</sup> Clubs International. All rights reserved. <a target="_self" onclick="javascript: _gaq.push(['_trackPageview', 'awanaorg/resources/fundraising-disclosure-statement.pdf']);" href="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/Sites-Awana-Library/default/v1352318328167/awanaorg/resources/fundraising-disclosure-statement.pdf" class="pdfBox cboxElement">Fundraising Disclosure | </a><a href="http://awana.org/privacy/awanaorg-privacy,default,pg.html">Privacy and Policies</a> | <a href="http://awana.org/legal/awanaorg-legal,default,pg.html">Legal notices for copyright and trademarks</a></span>
+        <div id="socIcons">
+            <a href="http://awana.org/socialmedia/social-media,default,pg.html"><img width="15" height="19" alt="Twitter" src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/Sites-Awana-Library/default/v1352318328167/awanaorg/images/home/twitter-icon.gif"/></a>
+            <a target="_blank" href="http://www.facebook.com/home.php#/pages/Streamwood-IL/AWANA/62342221439?ref=nf"><img width="18" height="18" alt="Facebook" src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/Sites-Awana-Library/default/v1352318328167/awanaorg/images/home/facebook-icon.gif"/></a>
+            <a target="_blank" href="http://www.youtube.com/user/awana1950"><img width="15" height="19" alt="YouTube" src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/Sites-Awana-Library/default/v1352318328167/awanaorg/images/home/youtube-icon.gif"/></a>
+            <a href="http://awana.force.com/info_edit_newsletters"><img width="27" height="18" alt="Newsletters" src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/Sites-Awana-Library/default/v1352318328167/awanaorg/images/home/newsletter-icon.gif"/></a>
+        </div>
+    </div>
+    <br class="last"/>
+</div>
+
+<div style="display:none">
+    <div id="showForm">
+        <form action="http://www.tfaforms.com/responses/processor" method="post">
+            <p>
+                PDF Request Form<br/>
+                <br/>
+                <label for="tfa_1"><strong>Email</strong></label><br/>
+                <input type="text" id="tfa_1" name="tfa_1"/>
+                <input type="hidden" value="" id="pdfLink" name="tfa_2"/>
+                <input type="submit" value="Submit"/>
+            </p>
+            <div>
+                <input type="hidden" name="tfa_dbFormId" value="251559"/>
+                <input type="hidden" name="tfa_dbResponseId" value=""/>
+                <input type="hidden" name="tfa_dbControl" value="d5be7b59f25167ce441df4a568221cec"/>
+                <input type="hidden" name="tfa_dbVersionId" value="1"/>
+            </div>
+        </form>
+    </div>
+</div>
+<link media="screen" rel="stylesheet" type="text/css" href="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/-/default/v1300112606594/css/colorbox.css"/>
+<script type="text/javascript" src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/-/default/v1300112606594/js/jquery.colorbox-min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $("a").each(function(e) {
+        if($(this).attr("href").indexOf(".pdf") &gt; 0) {
+            $(this).addClass("pdfBox");
+            $(this).attr("target","_self");
+        }
+    })
+    $(".pdfBox")
+        .colorbox({inline:true, href:function(e) {
+            $("#pdfLink").val($(this).attr("href"));
+            return "#showForm";
+        }})
+});
+</script>
+
+<script type="text/javascript">
+$("#dropdown &gt; li:last-child").addClass("primaryNavLastChild");
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1265584-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+        </div> <!-- End contentasset -->
+    
+
+
+
+    
+</div>
+            
+        </div>
+    <!-- Demandware Analytics code 1.0 --><script src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/-/default/v1352318328167/internal/jscript/dwanalytics.js" type="text/javascript"></script><script type="text/javascript">//&lt;!--
+/* &lt;![CDATA[ */
+try{
+  var trackingUrl = "http://awana.org/on/demandware.store/Sites-Awana-Site/default/__Analytics-Tracking";
+  var dwAnalytics = dw.__dwAnalytics.getTracker(trackingUrl);
+  if (typeof dw.ac == "undefined") { 
+     dwAnalytics.trackPageView();
+  } else {        
+     dw.ac.setDWAnalytics(dwAnalytics);
+  } 
+}catch(err) {};
+/* ]]&gt; */
+// --&gt;
+</script>
+</body></html>
+</apex:page>

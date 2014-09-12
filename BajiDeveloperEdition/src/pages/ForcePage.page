@@ -1,0 +1,15 @@
+<apex:page controller="ForceIDEClass" tabStyle="Account">
+
+<h1>Congratulations you have create page using Force.IDE</h1>
+
+<apex:pageBlock >
+    <apex:pageBlockSection title="Accounts" >    
+        <apex:pageBlockTable value="{!accounts}" var="a">
+            <apex:column value="{!a.Name}"/>
+            <apex:column value="{!a.Phone}" />
+        </apex:pageBlockTable>
+    </apex:pageBlockSection>
+</apex:pageBlock>
+
+
+</apex:page>

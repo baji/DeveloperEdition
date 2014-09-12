@@ -1,0 +1,42 @@
+<apex:page controller="dependent_picklist_controller" showHeader="false" >
+<apex:form >
+    <apex:pageBlock >
+        
+        
+        <apex:outputLabel value="Select country" />
+        <apex:pageblockSection id="sec1" >
+        
+            <apex:selectList id="chooseCountry"  value="{!Country}" size="1" multiselect="false" >
+            <apex:actionSupport event="onchange"  rerender="Sec2" /> 
+            
+                <apex:selectOptions value="{!Countries}" /> 
+            
+            <!--    <apex:selectOption itemValue="None" itemLabel="None"/>     
+                <apex:selectOption itemValue="India" itemLabel="India"/>
+                <apex:selectOption itemValue="USA" itemLabel="USA"/>
+                <apex:selectOption itemValue="SouthAfrica" itemLabel="RSA"/>
+                <apex:selectOption itemValue="Australia" itemLabel="AUS"/>
+                <apex:selectOption itemValue="Arab" itemLabel="UAE"/>
+                <apex:selectOption itemValue="England" itemLabel="UK"/>   -->
+            </apex:selectList>
+         </apex:pageblockSection>
+         
+          <apex:outputLabel value="States"/>
+          <apex:pageBlockSection id="Sec2">
+            <apex:selectList id="chooseState" value="{!State}" size="1" multiselect="false" >
+            <apex:actionSupport event="onchange" reRender="Sec3"/>                       
+               <apex:selectOptions value="{!States}"/>
+            </apex:selectList>
+          </apex:pageBlockSection>
+          
+          <apex:outputLabel value="Districts"/>
+          <apex:pageBlockSection id="Sec3">
+            <apex:selectList id="chooseDistrict" value="{!district}" size="1" multiselect="false" >                       
+               <apex:selectOptions value="{!districts}"/>
+            </apex:selectList>
+          </apex:pageBlockSection>
+    </apex:pageBlock>
+
+    
+</apex:form>
+</apex:page>

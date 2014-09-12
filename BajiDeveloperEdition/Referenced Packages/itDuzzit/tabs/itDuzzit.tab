@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>itDuzzit</description>
+    <frameHeight>600</frameHeight>
+    <hasSidebar>false</hasSidebar>
+    <label>itDuzzit</label>
+    <mobileReady>false</mobileReady>
+    <motif>Custom57: Building Block</motif>
+    <url>http://www.itduzzit.com</url>
+    <urlEncodingKey>UTF-8</urlEncodingKey>
+</CustomTab>

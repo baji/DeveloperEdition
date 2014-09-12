@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Contactdetails</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Contactdetailss</value>
+    </caseValues>
+    <fields>
+        <help><!-- Enter Contact Address --></help>
+        <label><!-- ContactAddress --></label>
+        <name>ContactAddress__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter contact name --></help>
+        <label><!-- ContactName --></label>
+        <name>ContactName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter Contact Phone --></help>
+        <label><!-- ContactPhone --></label>
+        <name>ContactPhone__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

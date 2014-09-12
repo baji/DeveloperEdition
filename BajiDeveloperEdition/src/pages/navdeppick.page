@@ -1,0 +1,34 @@
+<apex:page controller="dependenpick"  showHeader="false">
+  
+<apex:form >
+    <apex:pageBlock >
+        <apex:outputLabel value="Select country" ></apex:outputLabel>
+        <apex:pageblockSection id="sec1" >
+        
+            <apex:selectList id="chooseCountry"  value="{!Country}" size="1" multiselect="false" >
+            <apex:actionSupport event="onchange"  rerender="Sec2" /> 
+            
+            <!--    <apex:selectOptions value="{!Countries}" /> -->
+            
+                <apex:selectOption itemValue="None" itemLabel="None"/>     
+                <apex:selectOption itemValue="India" itemLabel="India"/>
+                <apex:selectOption itemValue="USA" itemLabel="USA"/>
+                <apex:selectOption itemValue="SouthAfrica" itemLabel="RSA"/>
+                <apex:selectOption itemValue="Australia" itemLabel="AUS"/>
+                <apex:selectOption itemValue="Arab" itemLabel="UAE"/>
+                <apex:selectOption itemValue="England" itemLabel="UK"/>   
+            
+            </apex:selectList>
+         </apex:pageblockSection>
+         
+         <apex:pageBlockSection id="Sec2">
+            <apex:pageBlockTable value="{!States}" var="a">           
+                <apex:column value="{!a.id}" />
+                <apex:column value="{!a.name}" />
+                <apex:column value="{!a.State_Code__c}" />                 
+            </apex:pageBlockTable>
+          </apex:pageBlockSection>
+    </apex:pageBlock>
+
+</apex:form>
+</apex:page>

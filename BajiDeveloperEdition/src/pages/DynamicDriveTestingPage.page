@@ -1,0 +1,9 @@
+<apex:page >
+<style type="text/css">
+.matrix { font-family:Lucida Console, Courier, Monotype; font-size:20pt; text-align:center; width:15px; padding:0px; margin:0px;}
+</style>
+
+<script type="text/javascript" src="{!$Resource.test}" />
+
+<div id="matrix">Awana International Location Finder</div>
+</apex:page>

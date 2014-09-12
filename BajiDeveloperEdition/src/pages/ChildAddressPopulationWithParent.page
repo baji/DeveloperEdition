@@ -1,0 +1,16 @@
+<apex:page controller="Parent_Child">
+<apex:form id="form">
+ <apex:pageBlock >
+  <apex:pageBlockSection columns="1" id="section">
+    <apex:inputField value="{!con.Accountid}">
+     <apex:actionSupport action="{!loading_values}" event="onchange" reRender="section"/>
+    </apex:inputfield>
+    <apex:inputField value="{!con.mailingcity}"/>
+    <apex:inputField value="{!con.mailingstreet}"/>        
+  </apex:pageBlockSection>
+  <apex:pageBlockSection >
+      <apex:inputField value="{!CountryCode.Country_Code__c}"/>
+  </apex:pageBlockSection>
+ </apex:pageBlock>
+ </apex:form>
+</apex:page>

@@ -1,0 +1,44 @@
+<apex:page controller="FileUploadController">
+
+  <apex:includeScript value="{!$Resource.JQuery_1_9_1}"/>
+  <script>
+    var j$ = jQuery.noConflict();
+  </script>    
+  <apex:sectionHeader title="Visualforce Example" subtitle="File Upload Example"/>
+ 
+  <apex:form enctype="multipart/form-data">
+    <apex:pageMessages />
+    <apex:pageBlock title="Upload a File">
+ 
+      <apex:pageBlockButtons >
+        <apex:commandButton action="{!upload}" value="Save"/>
+      </apex:pageBlockButtons>
+ 
+      <apex:pageBlockSection showHeader="false" columns="2" id="block1">
+ 
+        <apex:pageBlockSectionItem >
+          <apex:outputLabel value="File Name" for="fileName"/>
+          <apex:inputText value="{!document.name}" id="fileName"/>
+        </apex:pageBlockSectionItem>
+ 
+        <apex:pageBlockSectionItem >
+          <apex:outputLabel value="File" for="file"/>
+          <apex:inputFile value="{!document.body}" filename="{!document.name}" id="file"/>
+        </apex:pageBlockSectionItem>
+        
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel value=""/>
+        </apex:pageBlockSectionItem>
+        <apex:pageBlockSectionItem >
+              <apex:outputLabel value=""/>  
+              <apex:commandButton value="Add File" action="{!addRows}" rerender="wtable">
+                 <apex:param name="addCount" value="1" assignTo="{!addCount}"/>
+              </apex:commandButton>
+        </apex:pageBlockSectionItem>
+        
+        
+      </apex:pageBlockSection>
+ 
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

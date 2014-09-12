@@ -1,0 +1,26 @@
+<apex:page controller="ContentVersionAlt" showHeader="false">
+         <h1>Current User's Latest Version of All Accessible
+         Files</h1>
+         <table border="1">
+         <thead>
+              
+                 <th>Title</th>
+                 <th>Description</th>
+                 <th>FileType</th>
+                 <th>Author</th>
+                 <th>Revision</th>
+              
+         </thead>
+         <tbody>
+             <apex:repeat var="cv" value="{!contentVersions}">
+              
+                 <a href="/{!cv.id}">{!cv.title}</a>
+                 {!cv.description}
+                 {!cv.FileType}
+                 {!cv.Owner.Name}
+                 {!cv.VersionNumber}
+              
+         </apex:repeat>
+         </tbody>
+         </table> 
+  </apex:page>

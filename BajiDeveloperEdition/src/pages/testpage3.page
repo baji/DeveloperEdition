@@ -1,0 +1,44 @@
+<apex:page controller="class3">
+    <apex:pageBlock >
+        <apex:pageblockSection >
+        <!--
+              <apex:pageBlockTable value="{!Accounts}" var="a">    
+                  <apex:column value="{!a.name}"/>
+                  <apex:column value="{!a.id}"/>
+                  <apex:column value="{!a.phone}"/>   
+               </apex:pageBlockTable> 
+               <apex:dataTable var="ac" value="{!Accounts}">
+                   <apex:column headerValue="Account Name" value="{!ac.Name}"/>
+                   <apex:column headerValue="Account Id" value="{!ac.Id}"/>                  
+               </apex:dataTable> 
+               
+                <apex:repeat var="ac" value="{!Accounts}">
+                 <table width="100%" cellpadding="0" cellspacing="0" border="1">
+                        <tr>
+                            <td width ="30">
+                                {!ac.Name}
+                            </td>
+                            <td width ="30">
+                              {!ac.ID}
+                            </td>
+                        </tr>                       
+                    </table>
+                </apex:repeat>
+                -->
+               
+               <!-- 
+                <apex:flash src="http://www.adobe.com/devnet/flash/samples/drawing_1/1_coordinates.swf"
+                                        height="300" width="100%" />
+                <apex:flash src="{!$Resource.Name}"
+                                        height="300" width="100%" />
+               --> 
+               <apex:outputText value="(template) This is before the header"/><br/>
+<apex:insert name="header"/><br/>
+<apex:outputText value="(template) This is between the header and body"/><br/>
+<apex:insert name="body"/>
+
+        </apex:pageblockSection>
+    </apex:pageBlock>
+
+ 
+</apex:page>

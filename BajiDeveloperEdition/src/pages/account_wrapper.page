@@ -1,0 +1,16 @@
+<apex:page standardController="Account" extensions="accountTeamWrapperController">
+  <apex:form >
+    <apex:pageBlock >
+      <apex:pageBlockSection title="List of accountTeams">
+       </apex:pageBlockSection>
+       
+         <apex:pageblockTable value="{!accountWrapperList}" var="acc">
+         <apex:column value="{!acc.AccRec.name}"/>
+                  
+         <apex:column headerValue="TeamMemberRole" value="{!acc.accStr}"/>
+         
+     </apex:pageblockTable>
+     
+   </apex:pageBlock>
+  </apex:form>
+</apex:page>

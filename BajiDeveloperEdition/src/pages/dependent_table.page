@@ -1,0 +1,46 @@
+<apex:page controller="DependentObjects"  showHeader="false">
+<html>
+    <head>
+        <script type="text/javascript" src="{!$Resource.jquery_js}"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+          $(".btn1").click(function(){
+          $("p").hide();
+          });
+          $(".btn2").click(function(){
+          $("p").show();
+          });
+        });
+        </script>
+    </head>
+    <body>
+        <p>This is a paragraph.</p>
+        <button class="btn1">Hide</button>
+        <button class="btn2">Show</button>
+    </body>
+</html>
+<p>
+<apex:form >
+    <apex:pageBlock >
+        <apex:outputLabel value="Select country" ></apex:outputLabel>
+        <apex:pageblockSection id="sec1" >
+        
+            <apex:selectList id="chooseCountry"  value="{!Country}" size="1" multiselect="false" >
+                <apex:actionSupport event="onchange"  rerender="Sec2" /> 
+                <apex:selectOption itemValue="None" itemLabel="None"/>
+                <apex:selectOptions value="{!Countries}" />
+            </apex:selectList>
+         </apex:pageblockSection>
+         
+         <apex:pageBlockSection id="Sec2">
+            <apex:pageBlockTable value="{!States}" var="a">           
+                <apex:column value="{!a.id}" />
+                <apex:column value="{!a.name}" />
+                <apex:column value="{!a.State_Code__c}" />           
+            </apex:pageBlockTable>
+          </apex:pageBlockSection>
+    </apex:pageBlock>
+
+</apex:form>
+</p>
+</apex:page>

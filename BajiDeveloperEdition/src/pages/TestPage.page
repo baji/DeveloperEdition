@@ -1,0 +1,15 @@
+<apex:page standardController="User">
+<apex:includeScript value="{!$Resource.JQuery_1_9_1}"/>
+<apex:includeScript value="{!$Resource.jquery_confirm_JS}"/>
+<script>
+    var j$ = jQuery.noConflict();
+    j$(document).ready(function(){    
+          alert("1");    
+          j$(".confirm").confirm();
+    });
+    
+</script>
+<body>
+  <a href="#" class="confirm">click</a>
+</body>  
+</apex:page>

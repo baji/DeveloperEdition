@@ -1,0 +1,26 @@
+<apex:page controller="chooseColor" showHeader="false"><br/><br/>
+<apex:form >
+
+<apex:pageBlock >
+<apex:outputLabel value="Select city" ></apex:outputLabel>
+    <apex:pageblockSection id="sec1" >
+
+        <apex:selectList id="chooseColor1" value="{!Country}"  size="1" multiselect="false" >   
+        <!-- On click/Change of Pick list sec2 is refreshed using ajax concept -->
+            <apex:actionSupport event="onchange"  rerender="Sec2" /> 
+            
+            <apex:selectOption itemValue="None" itemLabel="None"/>     
+            <apex:selectOption itemValue="India" itemLabel="India"/>
+            <apex:selectOption itemValue="america" itemLabel="USA"/>
+            <apex:selectOption itemValue="SouthAfrica" itemLabel="RSA"/>
+                <!--    <apex:selectOptions ></apex:selectOptions> -->
+        </apex:selectList>
+    </apex:pageblockSection>
+    <apex:pageblockSection id="Sec2" >
+        <apex:selectList id="chooseColor2" value="{!State}" size="1" multiselect="false" >        
+            <apex:selectOptions value="{!States}"/>
+        </apex:selectList>
+    </apex:pageblockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

@@ -1,0 +1,701 @@
+<apex:component controller="PocketCRMAccountController" >
+<script type="text/javascript">
+ 
+//================================================================================================================
+//APPLICATION
+//The Application class is the entry point into your Sencha Touch application.
+//================================================================================================================
+Ext.application({
+name: "PocketCRM",
+ 
+//Load the various MVC components into memory.
+models: ["Account"],
+stores: ["Accounts"],
+controllers: ["Accounts"],
+views: ["AccountsList","AccountEditor"],
+//The application's startup routine once all components are loaded.
+launch: function () {
+ 
+//Instantiate your main list view for Accounts.
+var accountsListView = {
+xtype: "accountslistview"
+};
+ 
+var accountEditorView = {
+xtype: "accounteditorview"
+};
+ 
+//Launch the primary fullscreen view and pass in the list view.
+Ext.Viewport.add([accountsListView, accountEditorView]);
+ 
+}
+ 
+});
+ 
+ 
+//================================================================================================================
+//VIEWS
+//Views display data to your users and gather input from them; they also emit events about your user interaction.
+//================================================================================================================
+ 
+//The Account list view.
+Ext.define("PocketCRM.view.AccountsList", {
+extend: "Ext.Container",
+ 
+//It uses the base list class.
+requires: "Ext.dataview.List",
+alias: "widget.accountslistview",
+ 
+config: 
+    {
+     
+            //Take up the full space available in the parent container.
+            layout: {
+                type: 'fit'
+            },
+     
+        //Add the components to include within the list view.
+        items: 
+        [
+           {
+                //Add the components to include within the list view.
+                xtype: "toolbar",
+                title: "PocketCRM",
+                docked: "top",
+                items: 
+                [
+                    {
+                        xtype: 'spacer'
+                    },  
+                    {
+                        xtype: "button",
+                        text: 'New',
+                        ui: 'action',
+                        itemId: "newButton"
+                    }
+                ]
+            },           
+                   {
+                        xtype:"toolbar",
+                        docked: "bottom",
+                        itemId: "bottomToolBar",
+                 items: [
+                  {
+                        xtype: 'spacer'
+                  },      
+                  {
+                      xtype: 'searchfield',
+                      itemId: 'accountSearchField',
+                      PlaceHolder: 'Enter Name.......'
+                  },    
+                  {
+                      xtype: "button",
+                      iconCls: "search",
+                      iconMask: true,
+                      itemId: "syncButton"
+                  },  
+                  {
+                      xtype: 'spacer'
+                  }
+               ]   
+            },
+            {
+                //The main list and its properties.
+                xtype: "list",
+                store: "Accounts",
+                itemId: "accountsList",
+                
+                onItemDisclosure: true,
+                indexBar: true,
+                grouped: true,
+                disableSelection: false,
+     
+                 plugins: 
+             [
+                  {
+                      xclass: 'Ext.plugin.ListPaging',
+                      autoPaging: false  //set true for automatic fetching when user reaches bottom of the list
+                  }
+              ],
+     
+                //The template for display if the Store is empty of records.
+                //Note the style to control visual presentation.
+                loadingText: "Loading Accounts...",
+                emptyText: '<div class="accounts-list-empty-text">No accounts found.</div>',
+     
+                //The template for the display of each list item representing one record.
+                //One row will display for each record in the data Store.
+                //The fields referenced are from the entity's Model.
+                itemTpl: '<div class="list-item-line-main">{Name}</div>' + '<div class="list-item-line-detail">Mobile: {Phone}</div>' + '<div class="list-item-line-detail">Type: {Type}</div>' + '<div class="list-item-line-detail">City: {BillingCity} </div>'+'<div class="list-item-line-detail">{SLA__c} </div>',
+            }
+        ],
+listeners: [{
+delegate: "#newButton",
+event: "tap",
+fn: "onNewButtonTap"
+}, {
+delegate: "#syncButton",
+event: "tap",
+fn: "onSyncButtonTap"
+}, {
+delegate: "#accountsList",
+event: "disclose",
+fn: "onAccountsListDisclose"
+}, {
+delegate: "#accountSearchField",
+event: "clearicontap",
+fn: "onAccountSearchFieldClearIconTap"
+},
+{
+delegate: "#accountsList",
+event: "refresh",
+fn: "onAccountsListRefresh",
+},
+{
+//Listener on the view's Activate event fires when redisplayed by transition.
+event: "activate",
+fn: "onAccountsListViewActivate",
+}]
+},
+ 
+onSyncButtonTap: function () {
+console.log("syncAccountCommand");
+this.fireEvent("syncAccountCommand", this);
+},
+ 
+onNewButtonTap: function () {
+console.log("newAccountCommand");
+this.fireEvent("newAccountCommand", this);
+},
+ 
+onAccountsListDisclose: function (list, record, target, index, evt, options) {
+console.log("editAccountCommand");
+this.fireEvent('editAccountCommand', this, record);
+},
+ 
+onAccountSearchFieldClearIconTap: function () {
+console.log("clearSearchAccountCommand");
+this.fireEvent('clearSearchAccountCommand', this);
+},
+onAccountsListRefresh: function () {
+console.log("onAccountsListRefresh");
+this.updateListCounter();
+},
+ 
+onAccountsListViewActivate: function () {
+console.log("onAccountsListViewActivate");
+this.updateListCounter();
+},
+ 
+//Function to get count of records in the list and show on the search button's badge.
+updateListCounter: function () {
+var listCount = Ext.getStore("Accounts").getCount();
+this.getComponent("bottomToolBar").getComponent("syncButton").setBadgeText(listCount);
+}
+ 
+});
+ 
+//The Account form view.
+Ext.define("PocketCRM.view.AccountEditor", {
+extend: "Ext.form.Panel",
+requires: "Ext.form.FieldSet",
+alias: "widget.accounteditorview",
+ 
+config: {
+ 
+scrollable: 'vertical',
+ 
+items: [
+{
+xtype: "toolbar",
+docked: "top",
+title: "Edit Account",
+items: [
+{
+xtype: "button",
+ui: "back",
+text: "Home",
+itemId: "backButton"
+},
+{ xtype: "spacer" },
+{
+xtype: "button",
+ui: "action",
+text: "Save",
+itemId: "saveButton"
+}
+]
+},
+{
+xtype: "toolbar",
+docked: "bottom",
+items: [
+{
+xtype: "button",
+iconCls: "trash",
+iconMask: true,
+itemId: "deleteButton"
+}
+]
+},
+{
+                xtype: "fieldset",
+                title: 'Account Info',
+                items: [
+                    {
+                    xtype: 'textfield',
+                    name: 'Name',
+                    label: 'Account Name',
+                    required: true
+                },  
+                    {
+                    xtype: 'textfield',
+                    name: 'Phone',
+                    label: 'Mobile'    
+                },  
+                    {
+                    xtype: 'textfield',
+                    name: 'BillingCity',
+                    label: 'City'    
+                },  
+                    {              
+                    xtype: 'selectfield',
+                    name: 'Type',
+                    label: 'Type',
+                    value: 'Prospect',
+                    options: [
+                        {
+                        text: 'Prospect',
+                        value: 'Prospect'
+                    },
+                        {
+                        text: 'Customer - Direct',
+                        value: 'Customer - Direct'
+                    },
+                        {
+                        text: 'Customer - Channel',
+                        value: 'Customer - Channel'
+                    },
+                        {
+                        text: 'Channel Partner / Reseller',
+                        value: 'Channel Partner / Reseller'
+                    },
+                        {
+                        text: 'Installation Partner',
+                        value: 'Installation Partner'
+                    },
+                        {
+                        text: 'Technology Partner',
+                        value: 'Technology Partner'
+                    },
+                        {
+                        text: 'Other',
+                        value: 'Other'
+                    }
+                    ],
+                },
+                    ]
+            },      
+                             
+      ],
+listeners: [
+{
+delegate: "#backButton",
+event: "tap",
+fn: "onBackButtonTap"
+},
+{
+delegate: "#saveButton",
+event: "tap",
+fn: "onSaveButtonTap"
+},
+{
+delegate: "#deleteButton",
+event: "tap",
+fn: "onDeleteButtonTap"
+}
+]
+},
+ 
+onSaveButtonTap: function () {
+console.log("saveAccountCommand");
+this.fireEvent("saveAccountCommand", this);
+},
+ 
+onDeleteButtonTap: function () {
+console.log("deleteAccountCommand");
+Ext.Msg.confirm("Delete Account", "Are you sure?", function(button){
+if (button == 'yes') {
+this.fireEvent("deleteAccountCommand", this);
+} else {
+return false;
+}
+}, this);
+},
+ 
+onBackButtonTap: function () {
+console.log("backToHomeCommand");
+this.fireEvent("backToHomeCommand", this);
+}
+ 
+});
+ 
+//================================================================================================================
+//CONTROLLERS
+//Controllers manage the communication of your application and the coordination between the views and the model;
+//they listen for the events emitted by the views and react accordingly.
+//================================================================================================================
+ 
+//The controller for the Accounts list view
+Ext.define("PocketCRM.controller.Accounts", {
+extend: "Ext.app.Controller",
+ 
+config: {
+ 
+refs: {
+// We're going to lookup our views by alias.
+accountsListView: "accountslistview",
+accountEditorView: "accounteditorview",
+accountsList: "#accountsList",
+ 
+//Add a new search field.
+accountsListSearchField: "#accountSearchField"
+},
+ 
+control: {
+accountsListView: {
+// The commands fired by the list container.
+syncAccountCommand: "onSyncAccountCommand",
+newAccountCommand: "onNewAccountCommand",
+editAccountCommand: "onEditAccountCommand",
+//Add an event when clearing the search text.
+clearSearchAccountCommand: "onClearSearchAccountCommand"
+},
+ 
+accountEditorView: {
+// The commands fired by the note editor.
+saveAccountCommand: "onSaveAccountCommand",
+deleteAccountCommand: "onDeleteAccountCommand",
+backToHomeCommand: "onBackToHomeCommand"
+}
+ 
+}
+},
+ 
+//View Transitions
+slideLeftTransition: { type: 'slide', direction: 'left' },
+slideRightTransition: { type: 'slide', direction: 'right' },
+ 
+//View Transition Helper functions
+activateAccountEditor: function (record) {
+var accountEditorView = this.getAccountEditorView();
+accountEditorView.setRecord(record);
+Ext.Viewport.animateActiveItem(accountEditorView, this.slideLeftTransition);
+},
+ 
+activateAccountsList: function () {
+Ext.Viewport.animateActiveItem(this.getAccountsListView(), this.slideRightTransition);
+},
+ 
+onSyncAccountCommand: function () {
+console.log("onSyncAccountCommand");
+ 
+this.loadList();
+ 
+},
+ 
+onNewAccountCommand: function () {
+console.log("onNewAccountCommand");
+ 
+//Set a default value for the Status selectfield.
+var newAccount = Ext.create("PocketCRM.model.Account", {
+Status: "Open - Not Contacted"
+});
+ 
+this.activateAccountEditor(newAccount);
+},
+ 
+onEditAccountCommand: function (list, record) {
+console.log("onEditAccountCommand");
+this.activateAccountEditor(record);
+},
+ 
+onSaveAccountCommand: function () {
+console.log("onSaveAccountCommand");
+//Update the field values in the record.
+var accountEditorView = this.getAccountEditorView();
+var currentAccount = accountEditorView.getRecord();
+var newValues = accountEditorView.getValues();
+this.getAccountEditorView().updateRecord(currentAccount);
+ 
+//Check for validation errors.
+var errors = currentAccount.validate();
+if (!errors.isValid()) {
+var msg = '';
+errors.each(function(error) {
+msg += error.getMessage() + '<br/>';
+});
+console.log('Errors: ' + msg);
+Ext.Msg.alert('Please correct errors!', msg, Ext.emptyFn);
+currentAccount.reject();
+return;
+}
+ 
+//Get a ref to the store.
+var accountsStore = Ext.getStore("Accounts");
+ 
+//Add new record to the store.
+if (null == accountsStore.findRecord('id', currentAccount.data.id)) {
+accountsStore.add(currentAccount);
+}
+ 
+//Resync the proxy and activate the list.
+accountsStore.sync();
+this.activateAccountsList();
+},
+ 
+onDeleteAccountCommand: function () {
+console.log("onDeleteAccountCommand");
+//Get a ref to the form and its record.
+var accountEditorView = this.getAccountEditorView();
+var currentAccount = accountEditorView.getRecord();
+ 
+//Get a ref to the store and remove it.
+var accountsStore = Ext.getStore("Accounts");
+accountsStore.remove(currentAccount);
+//Resync the proxy and activate the list.
+accountsStore.sync();
+this.activateAccountsList();
+},
+ 
+onBackToHomeCommand: function () {
+console.log("onBackToHomeCommand");
+this.activateAccountsList();
+},
+ 
+//Reload the list when clearing the search value.
+onClearSearchAccountCommand: function () {
+console.log("onClearSearchAccountCommand");
+//Get a ref to the search field.
+var accountSearchField = this.getAccountsListSearchField();
+accountSearchField.setValue('');
+console.log("Cleared Field Value: " + accountSearchField.getValue());
+ 
+this.loadList();
+},
+ 
+//Add separate load function to be called by multiple event handlers.
+loadList: function () {
+ 
+//Get a ref to the store and remove it.
+var accountsStore = Ext.getStore("Accounts");
+ 
+//Get any search text.
+var accountSearchField = this.getAccountsListSearchField();
+var searchText = accountSearchField.getValue();
+console.log("Search Field Value in reSync: " + searchText);
+ 
+if (searchText.length > 0 && searchText.length < 2) {
+var msg = 'Search requires more text.';
+Ext.Msg.alert('Please correct errors!', msg, Ext.emptyFn);
+return;
+}
+ 
+//Add wild cards.
+if (searchText != '') {
+//Surround the search value with a wildcard for SOQL search.
+searchText = '%' + searchText + '%';
+} else {
+//Set wildcard for wide open filter.
+searchText = '%';
+}
+console.log("Search Field Value: " + searchText);
+ 
+//Set the value of the searchFilter param to pass with the query.
+var model = Ext.ModelMgr.getModel('PocketCRM.model.Account');
+model.getProxy().setExtraParam('searchFilter', searchText);
+ 
+//Clear all data in the store before loading it.
+//This is necessary to make sure that the proxy doesn't get confused by
+//the loss of records not reloaded with a new filter.
+//Without the clear(), the proxy assumes a deletion was processed and
+//calls a destroy to be executed on missing records with the next sync() operation.
+accountsStore.getData().clear();
+accountsStore.loadPage(1);
+//Reshow the list.
+this.activateAccountsList();
+},
+// Base Class functions.
+launch: function () {
+console.log("launch");
+this.callParent(arguments);
+//Load up the Store associated with the controller and its views.
+console.log("load Accounts");
+this.loadList();
+},
+ 
+init: function() {
+ 
+this.callParent(arguments);
+console.log("init");
+ 
+//Listen for exceptions observed by the proxy so we can report them and clean up.
+Ext.getStore('Accounts').getProxy().addListener('exception', function (proxy, response, operation, options) {
+// only certain kinds of errors seem to have useful information returned from the server
+if (response) {
+if (response.errorMessage) {
+Ext.Msg.alert('Error', response.errorMessage);
+} else {
+Ext.Msg.alert('Error', operation.config.action + ' failed: ' + response.errorMessage);
+}
+} else {
+Ext.Msg.alert('Error', operation.config.action + ' failed for an unknown reason: proxy = ' + proxy);
+}
+});
+ 
+},
+ 
+});
+ 
+ 
+//================================================================================================================
+//MODELS
+//Models are the objects on your application.
+//================================================================================================================
+//AN IMPORTANT NOTE: if your org has a registered namespace, you MUST reference the Apex controller name in the
+//proxy your JavaScript with your org's namespace. If you fail to do this, you will get a a JavaScript error that
+//the Apex controller can NOT be found!
+//================================================================================================================
+//The Account model will include whatever fields are necssary to manage.
+Ext.define("PocketCRM.model.Account", {
+extend: "Ext.data.Model",
+ 
+config: {
+            idProperty: 'Id',
+     
+            fields: [
+                {
+                name: 'Id',
+                type: 'string',
+                persist: false
+            },
+                {
+                name: 'Name',
+                type: 'string'
+                
+            }, 
+                {
+                name: 'Phone',
+                type: 'string'
+            },    
+                {
+                name: 'BillingCity',
+                type: 'string'
+            },                                     
+                {
+                name: 'Type',
+                type: 'string'
+            }
+            ],
+     
+            validations: [
+                {
+                type: 'presence',
+                field: 'Name',
+                message: 'Enter a Account name.'
+            }              
+            ],
+//Bind each CRUD functions to a @RemoteAction method in the Apex controller
+proxy: {
+type: 'direct',
+api: {
+read: PocketCRMAccountController.Query,
+create: PocketCRMAccountController.Add,
+update: PocketCRMAccountController.Edit,
+destroy: PocketCRMAccountController.Destroy
+},
+limitParam: 'recordCount', // because "limit" is an Apex keyword
+sortParam: 'sortParams', // because "sort" is a keyword too
+pageParam: false, // we don't use this in the controller, so don't send it
+extraParams: ( { 'searchFilter':'%' } ),
+reader: {
+type: 'json',
+rootProperty: 'records',
+messageProperty: 'errorMessage'
+},
+writer: {
+type: 'json',
+root: 'records',
+writeAllFields: false, // otherwise empty fields will transmit as empty strings, instead of "null"/not present
+allowSingle: false, // need to always be an array for code simplification
+encode: false // docs say "set this to false when using DirectProxy"
+}
+ 
+}
+},
+ 
+});
+ 
+ 
+//================================================================================================================
+//PROXY RELATED EXTENSIONS
+//================================================================================================================
+//AN IMPORTANT NOTE: if your org has ANY installed packages, you MUST reference the Apex controller name in your
+//JavaScript with your org's namespace. If you fail to do this, you will get a a JavaScript error that the Apex
+//controller can NOT be found!
+//================================================================================================================
+//Adjust our read method to add a function that Touch expects to see to get Arguments.
+PocketCRMAccountController.Query.directCfg.method.getArgs =
+function (params, paramOrder, paramsAsHash) {
+console.log('getArgs: ' + params.data);
+return [params];
+}
+ 
+Ext.data.proxy.Direct.prototype.createRequestCallback =
+function(request, operation, callback, scope){
+var me = this;
+return function(data, event){
+console.log('createRequestCallback: ' + operation);
+me.processResponse(event.status, operation, request, data, callback, scope);
+};
+};
+ 
+ 
+//================================================================================================================
+//STORES
+//Stored serve as the client-side cache of your data; they loading data into your app's views.
+//================================================================================================================
+ 
+Ext.define("PocketCRM.store.Accounts", {
+extend: "Ext.data.Store",
+requires: "Ext.data.proxy.LocalStorage",
+ 
+config: {
+     
+            model: "PocketCRM.model.Account",
+            autoLoad: true,
+            //Fetch the data from the custom Apex controller method
+            //which will return a simple list of Accounts as JSON on load. 
+            
+         <!--   data: {!accounts}, -->
+            pageSize: 5,
+            groupField: 'Type',
+            groupDir: 'ASC',
+             
+            //Create additional sorts for within the Group.
+            sorters: [{
+                property: 'Name',
+                direction: 'ASC'
+            }]
+        },
+ 
+listeners: {
+load: function(){
+console.log('store.load(): loaded!');
+},
+}
+ 
+});
+ 
+</script>
+</apex:component>

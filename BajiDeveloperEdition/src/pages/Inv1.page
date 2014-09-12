@@ -1,0 +1,12 @@
+<apex:page title="Interview1" standardController="Account" recordSetVar="act" sidebar="true" showHeader="true" wizard="false" tabStyle="Inv1__tab">
+
+    <apex:pageBlock title="All Acounts" dir="LTR" >   
+            <apex:pageBlockTable value="{!act}" var="a">
+                <apex:column headerValue="Account Name" >{!a.Name}</apex:column>
+                <apex:column headerValue="Phone" >{!a.phone}</apex:column>
+                <apex:column headerValue="Billing State/Province" >{!a.BillingState}</apex:column>
+                <apex:column headerValue="Website" >{!a.Website}</apex:column>
+            </apex:pageBlockTable>      
+    </apex:pageBlock>
+ 
+</apex:page>

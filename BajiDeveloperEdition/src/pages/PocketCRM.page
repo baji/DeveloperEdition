@@ -1,0 +1,24 @@
+<apex:page docType="html-5.0" showHeader="false" standardStylesheets="false" cache="false">
+         
+        <head>
+            <meta charset="UTF-8" />
+            <title>Pocket CRM</title>
+     
+            <!-- Use the Visualforce tags for scripts and stylesheets rather than their HTML counterparts -->
+            <apex:includeScript value="http://cdn.sencha.io/try/touch/2.0.1/sencha-touch-all.js"  />
+            <apex:stylesheet value="http://cdn.sencha.io/try/touch/2.0.1/resources/css/sencha-touch.css"  />
+     
+            <!-- Our custom Visualforce component containing our Sencha Touch application -->
+            <c:PocketCRM_App />
+            <c:pocketCRM_css />
+        </head>
+         
+        <body>
+            <!-- An animated image that displays while loading -->
+            <div id="appLoadingIndicator">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </body>
+    </apex:page>

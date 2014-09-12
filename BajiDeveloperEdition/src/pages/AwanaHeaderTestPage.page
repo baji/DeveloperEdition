@@ -1,0 +1,380 @@
+<apex:page showHeader="false">
+  
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta property="fb:page_id" content="62342221439" />
+
+<title>Start Awana</title>
+
+
+    <meta name="description" content="Start Awana at your church." />
+
+
+    <meta name="keywords" content="inquiry, church, God, ministry, missionary, registration, start awana, how to start awana, fax, mail, email, register, intro to awana, video, know, love, serve, children, youth, integrated, ages 2 to 18, spanish, canada" />
+
+
+
+<apex:stylesheet value="{!$Resource.default_org}"/>
+
+<apex:stylesheet value="{!$Resource.jquery_jcarousel}"/>
+
+<apex:stylesheet value="{!$Resource.ui_all}"/>
+<!--[if lte IE 7]>
+    <link rel="stylesheet" type="text/css" href="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/-/default/v1361404501210/css/ie_org.css" media="screen" />
+    
+<![endif]-->   
+
+<script type="text/javascript" src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/-/default/v1361404501210/lib/jquery/js/jquery/jquery-1.3.2.min.js"></script>
+<script  type="text/javascript" src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/-/default/v1361404501210/lib/jquery/js/jcarousel/jquery.jcarousel.pack.fixed.js"></script>
+
+<script src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/-/default/v1361404501210/lib/jquery/js/jquery/ui.core.js" type="text/javascript"></script>
+<script src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/-/default/v1361404501210/lib/jquery/js/jquery/ui.dialog.js" type="text/javascript"></script>
+<script src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/-/default/v1361404501210/lib/jquery/js/jquery/ui.resizable.js" type="text/javascript"></script>
+<script src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/-/default/v1361404501210/lib/jquery/js/jquery/ui.draggable.js" type="text/javascript"></script>
+
+<meta name="google-site-verification" content="tKhDJsstGYlLqeKKnU3kcsVst5qU4SU0FfV_RSslMV8" />
+    </head>
+    <body>
+        <div id="wrapper">       
+            <div id="header">
+
+    <apex:stylesheet value="{!$Resource.header}"/>
+            
+        <div class="contentasset">
+        <apex:stylesheet value="{!$Resource.colorbox}"/>
+<script src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/-/default/v1300112606594/js/jquery.colorbox-min.js" type="text/javascript"></script>
+<!--[if IE]>
+<style type="text/css">
+.primaryNavLastChild a {
+    line-height:23px !important;
+}
+</style>
+<![endif]-->
+<style type="text/css">
+.barLI {
+    color:#fff;
+    line-height:28px;
+}
+</style>
+<div id="headerLogo"><a href="http://awana.org"> &nbsp;</a></div>
+<div id="headerNavigation">
+<ul>
+    <li><a href="http://awana.org/about/about-awana,default,pg.html" class="liFirst">About Us</a></li>
+    <li><a href="http://awana.org/donate/donate,default,pg.html">Donate</a></li>
+    <li><a href="http://awana.org/locations/awana-locator,default,pg.html">Awana Locator</a></li>
+    <li><a href="http://awana.org/startawana/start-awana,default,pg.html">Inquire About Awana</a></li>
+    <li><a href="http://awana.org/pressroom/press_room_home,default,pg.html">Press Room</a></li>
+    <li><a href="http://awana.org/contactus/contact-us,default,pg.html">Contact Us</a></li>
+    <li><a href="http://awana.org/espanol/Awana-en-Espanol,default,pg.html">Espa&#241;ol</a></li>
+</ul>
+</div>
+<div id="headerLogin">
+    <form id="headerLoginForm" method="post" action="https://na3.salesforce.com/secur/login_portal.jsp" target="_blank" name="login">
+        <div>
+            <input type="hidden" name="startURL" />
+            <input type="hidden" name="loginURL" />
+            <input type="hidden" name="useSecure" value="true" />
+            <input type="hidden" id="jse" name="jse" value="0" />
+            <input type="hidden" name="orgId" value="00D500000006dw0" />
+            <input type="hidden" name="portalId" value="060500000004ddU" />
+            <input type="hidden" name="loginType" value="2" />
+            <input type="hidden" name="action" value="loginAction" />
+        </div>
+        <input type="text" id="headerun" class="username" maxlength="80" name="un" title="ART User Name" />
+        <input type="password" id="headerpassword" class="pw" maxlength="80" name="pw" title="Password" />
+    </form>
+    <p id="formLinks"><a href="https://na3.salesforce.com/secur/forgotpasswordp.jsp?orgId=00D500000006dw0 portalId=060500000004ddU pLu=%2Fsecur%2Flogin_portal.jsp">Forgot your password?</a> nbsp; nbsp;<a href="http://www5.awana.org/register/">Create Account</a></p>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+    if($("#headerun").val() != "" && $("#headerun").val() != "undefined") {
+        $("#headerun").css("background-image","none")
+    }
+    if($("#headerpassword").val() != "" && $("#headerpassword").val() != "undefined") {
+        $("#headerpassword").css("background-image","none")
+    }
+})
+$("#headerun").focus(function() {
+    $("#headerun").css("background-image","none")
+});
+$("#headerun").blur(function() {
+    if($("#headerun").val() == "" || $("#headerun").val() == "undefined") {
+        $("#headerun").css("background-image","url(http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/Sites-Awana-Library/default/v1361404501210/awanaorg/images/home/user-name-txt.gif)")
+    }
+})
+$("#headerpassword").focus(function() {
+    $("#headerpassword").css("background-image","none")
+})
+$("#headerpassword").blur(function() {
+    if($("#headerpassword").val() == "" || $("#headerpassword").val() == "undefined") {
+        $("#headerpassword").css("background-image","url(http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/Sites-Awana-Library/default/v1361404501210/awanaorg/images/home/art-login-txt.gif)")
+    }
+})
+$("#headerpassword").keypress(function(e, terms) {
+    var charCode = (e.which) ? e.which : e.keyCode;
+    if(charCode==13) {
+        $("#headerLoginForm").submit();
+    }
+})
+</script>
+        </div> <!-- End contentasset -->
+    
+
+
+
+    <div id="headerSearch">
+        <form action="http://awana.org/on/demandware.store/Sites-Awana-Site/default/Search-Show" method="get" id="SimpleSearchForm" class="simplesearch">
+            <p><label for="searchinput">Search</label> <input type="text" maxlength="50" name="q" class="simplesearchinput" id="searchinput" /><button type="submit" value="Go" name="simplesearch"><span>Search</span></button></p>
+        </form>
+    </div>
+</div>
+
+
+
+<div id="mainNavigation">
+    <ul id="dropdown">
+        
+            
+            <li>
+                
+                
+                    
+                
+                
+                <a href="http://www.awana.org" class="top-level">Home</a>
+            
+                
+                
+                
+            
+            </li>
+            
+        
+            
+            <li>
+                
+                
+                    
+                
+                
+                <a href="http://awana.org/welcometoawana/welcome-to-awana,default,pg.html" class="top-level">Parents</a>
+            
+                
+                
+                <ul><li><a href='http://awana.org/welcometoawana/welcome-to-awana,default,pg.html'>Parents - Home</a></li><li><a href='/locations/awana-locator,default,pg.html'>New To Awana?</a><ul><li><a href='http://awana.org/welcometoawana/welcome-to-awana,default,pg.html'>What Is Awana?</a></li><li><a href='http://awana.org/locations/awana-locator,default,pg.html'>Find Awana in Your Area</a></li><li><a href='http://awana.org/welcometoawana/welcome-to-awana,default,pg.html'>What Kids Learn</a></li><li><a href='http://awana.org/alumni-study/alumni-study,default,pg.html'>How We Impact Kids</a></li><li><a href='/tommeyer/tom-meyer,default,pg.html'>What is an MDJ?</a></li><li><a href='/youcanhaveeternallife/you-can-have-eternal-life,default,pg.html'>You Can Have Eternal Life</a></li></ul></li><li><a href='#'>My Kids Are in Awana</a><ul><li><a href='#'>Award Placement</a><ul><li><a href='http://awana.org/awana-clubs/cubbies-awards,default,pg.html'>Cubbies</a></li><li><a href='/awana-clubs/sparks-awards,default,pg.html'>Sparks</a></li><li><a href='/ttawards/tt-awards,default,pg.html'>T amp;T</a></li></ul></li><li><a href='#'>Club Helps</a><ul><li><a href='/extra-credit/extra-credit,default,pg.html'>Extra Credit Materials</a></li><li><a href='/memorization-tips/memorization-tips,default,pg.html'>Awana - Memorization Tips</a></li><li><a href='/learning-styles/learning-styles,default,pg.html'>Learning Styles</a></li><li><a href='/club-verse-count/club-verse-count,default,pg.html'>Club Verse Count</a></li><li><a href='http://awana.org/homestretch-handbook-helps/homestretch-handbook-helps,default,pg.html'>Handbook Helps</a></li></ul></li><li><a href='http://awana.org/powerup-sparks-bookwalks/powerup-sparks-bookwalks,default,pg.html'>PowerUP Sparks Bookwalks</a></li><li><a href='http://awana.org/powerup-tt-bookwalks/powerup-tt-bookwalks,default,pg.html'>PowerUP T amp;T Bookwalks</a></li><li><a href='store/Awana at Home/family-at-home,default,sc.html'>Parent Resources</a></li><li><a href='http://awana.org/social-media/social-media,default,pg.html'>Parent Blogs</a><ul><li><a href='http://mdj.awana.org'>Parenting Articles</a></li><li><a href='http://parenthelps.awana.org/'>Parent Helps</a></li><li><a href='http://apparentlyblogging.awana.org/'>apPARENTly Blogging</a></li></ul></li></ul></li><li><a href='http://awana.org/You%20Belong%20-%20Home/you-belong,default,pg.html'>Volunteer in Awana</a></li><li><a href='http://awana.org/espanol/Awana-en-Espanol,default,pg.html'>Espa&ntilde;ol</a></li><li><a href='http://awana.org/athome/awana-at-home,default,pg.html'>Awana at Home</a><ul><li><a href='http://awana.org/truthscripts/truthscript-home,default,pg.html'>TruthScripts</a></li></ul></li><li><a href='http://awana.org/social-media/social-media,default,pg.html'>Articles   Blogs</a><ul><li><a href='http://mdj.awana.org'>Parenting Articles</a></li><li><a href='http://parenthelps.awana.org/'>Parent Helps</a></li><li><a href='http://apparentlyblogging.awana.org/'>apPARENTly Blogging</a></li></ul></li></ul>
+            
+            </li>
+            
+        
+            
+            <li>
+                
+                
+                    
+                
+                
+                <a href="http://awana.org/welcometoawana/welcome-to-awana,default,pg.html" class="top-level">Children Age 2 to Grade 6</a>
+            
+                
+                
+                <ul><li><a href='http://awana.org/awana-clubs/puggles-home,default,pg.html'>Puggles - Age 2 and 3</a></li><li><a href='http://awana.org/awana-clubs/cubbies-home,default,pg.html'>Cubbies - Preschool</a></li><li><a href='http://awana.org/awana-clubs/sparks-home,default,pg.html'>Sparks - Grade K - 2</a></li><li><a href='http://awana.org/awana-clubs/tt-home,default,pg.html'>T amp;T - Grade 3 - 6</a></li></ul>
+            
+            </li>
+            
+        
+            
+            <li>
+                
+                
+                    
+                
+                
+                <a href="http://awana.org/youthministries/aym-home,default,pg.html" class="top-level">Youth Middle / High School</a>
+            
+                
+                
+                <ul><li><a href='http://awana.org/youthministries/aym-home,default,pg.html'>Awana Youth Ministries</a></li><li><a href='http://awana.org/youthministries/aym-trek-overview,default,pg.html'>Trek - Middle School</a></li><li><a href='http://awana.org/youthministries/aym-journey-overview,default,pg.html'>Journey - High School</a></li><li><a href='http://awana.org/whatisctrack/what-is-ctrack,default,pg.html'>C-track</a></li><li><a href='http://awana.org/summit/Summit-Home,default,pg.html'>Summit</a></li><li><a href='http://awana.org/youthministries/aym-colleges,default,pg.html'>College Scholarships</a></li></ul>
+            
+            </li>
+            
+        
+            
+            <li>
+                
+                
+                    
+                
+                
+                <a href="http://awana.org/about/about-awana,default,pg.html" class="top-level">Info for Churches</a>
+            
+                
+                
+                <ul><li><a href='/about/about-awana,default,pg.html'>Welcome</a></li><li><a href='/startawana/start-awana,default,pg.html'>Tell me about Awana</a></li><li><a href='http://awana.org/welcometoawana/welcome-to-awana,default,pg.html'>What is Awana</a><ul><li><a href='http://awana.org/alumni-study/alumni-study,default,pg.html'>Alumni Study</a></li><li><a href='http://awana.org/endorsements/endorsements,default,pg.html'>Endorsements</a></li><li><a href='http://awana.org/Awana%20-%20F.A.Q.s/awana-faqs,default,pg.html'>F.A.Q's</a></li></ul></li><li><a href='http://awana.org/Awana%20-%20What%20We%20Believe%20-%20expanded%20version/what-we-believe-expanded,default,pg.html'>What We Believe</a></li><li><a href='http://awana.org/missionary-home/missionary-home,default,pg.html'>Awana Missionaries</a><ul><li><a href='http://awana.org/missionary-serve/missionary-serve,default,pg.html'>Learn What They Do</a></li><li><a href='http://awana.org/missionary-history/missionary-history,default,pg.html'>History</a></li><li><a href='http://awana.org/missionary-support/missionary-support,default,pg.html'>Support Them</a></li><li><a href='http://awana.org/missionaries/missionary-map,default,pg.html'>Find Your Missionary</a></li><li><a href='/becomeamissionary/become-a-missionary,default,pg.html'>Become an Awana Missionary</a></li><li><a href='http://awana.org/employment/employment,default,pg.html'>Employment</a></li></ul></li><li><a href='http://awana.org/You%20Belong%20-%20Home/you-belong,default,pg.html'>Volunteer Campaign - You Belong</a></li><li><a href='http://awana.org/training/training,default,pg.html'>Leader Training</a></li><li><a href='http://awana.org/pastors/pastors,default,pg.html'>Pastor Resources</a></li><li><a href='http://awana.org/espanol/Awana-en-Espanol,default,pg.html'>Awana en Espa&ntilde;ol</a></li></ul>
+            
+            </li>
+            
+        
+            
+            <li>
+                
+                
+                    
+                
+                
+                <a href="http://awanalifeline.org/" class="top-level">Fathering Ministries</a>
+            
+                
+                
+                <ul><li><a href='http://awanalifeline.org/'>Lifeline</a></li><li><a href='http://awanalifeline.org/#/programs'>Malachi Dads</a></li><li><a href='http://awanalifeline.org/#/programs/returning-hearts'>Returning Hearts Celebration</a></li><li><a href='http://www.turnassembly.org/'>Turn - Men's Conference</a></li></ul>
+            
+            </li>
+            
+        
+            
+            <li>
+                
+                
+                    
+                
+                
+                <a href="http://www.awanainternational.org/" class="top-level">Awana International</a>
+            
+                
+                
+                <ul><li><a href='http://www.awanainternational.org/'>Awana International Home</a></li><li><a href='http://missions.awana.org/site/PageServer?pagename=aac_landing_page'>Adopt-a-Club</a></li><li><a href='http://www.awanachildrenatrisk.org'>Children at Risk</a></li></ul>
+            
+            </li>
+            
+        
+            
+            <li>
+                
+                
+                    
+                
+                
+                <a href="/store" class="top-level">Shop</a>
+            
+                
+                
+                
+            
+            </li>
+            
+        
+    </ul>
+
+</div>
+<script type="text/javascript">
+<!--
+$(function(){
+    $("ul#dropdown li ul li:has(ul)").find("a:first").append(" &raquo; &raquo; &raquo; ");
+});
+
+function mainmenu(){
+$(" #dropdown ul ").css({display: "none"}); // Opera Fix
+$(" #dropdown li").hover(function(){
+        $(this).find('ul:first').css({visibility: "visible",display: "none"}).show(400);
+        },function(){
+        $(this).find('ul:first').css({visibility: "hidden"});
+        });
+}
+
+ $(document).ready(function(){
+    mainmenu();
+});
+//-->
+</script>
+
+    <apex:stylesheet value="{!$Resource.inquiry_beta}"/>
+    
+        
+        <div class="contentasset"><!-- dwMarker="content" dwContentID="bcjisiaagTqwaaaacUhVtNeE6g" -->
+            <style type="text/css">
+label {
+    text-align:left !important;
+}
+#mainDiv {
+    margin:15px 0 15px 15px;
+}
+#spanishForm {
+    text-align:right;
+    vertical-align:top;
+}
+</style>
+<script>
+     var addressCheck = "http://awana.org/on/demandware.store/Sites-Awana-Site/default/VerifyAddress-VerifyAJAXAddress";
+</script>
+<div id="contentBox" class="wrapper">
+    <div id="inquiryHeader">
+        <div id="headerCopy">
+            <p><strong>We appreciate your interest in our ministry to churches. After filling out this form:</strong></p>
+            <p class="steps"><strong>1) You will be redirected</strong> to a page featuring a video and more information on Awana.</p>
+            <p class="steps"><strong>2) A local Awana missionary will contact you.</strong> The missionary will explain how Awana can benefit your church, help you assess your needs and support you every step of the way.</p>
+            <p><strong>Thanks for your commitment to reaching and discipling children and youth!</strong></p>
+        </div>
+    </div>
+
+<div id="qaDialog"></div><div id="loadDialog"></div>
+<script type="text/javascript" src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/Sites-Awana-Library/default/v1361404501210/awanaorg/scripts/inquiry-beta.js"></script>
+<script type="text/javascript" src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/Sites-Awana-Library/default/v1361404501210/awanaorg/scripts/validation-beta.js"></script>
+<script type="text/javascript" src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/Sites-Awana-Library/default/v1361404501210/awanaorg/scripts/encrypt.js"></script>
+        </div> <!-- End contentasset -->
+    
+
+<script type="text/javascript">
+(function($) {
+$(document).ready(function() {
+    $("a").each(function(e) {
+        if($(this).attr("href").indexOf(".pdf") > 0) {
+            $(this).addClass("pdfBox");
+            $(this).attr("target","_self");
+        }
+    })
+    $(".pdfBox")
+        .colorbox({inline:true, href:function(e) {
+            $("#pdfLink").val($(this).attr("href"));
+            return "#showForm";
+        }})
+});
+$("#dropdown > li").each(function(index) {
+    if(index < 6) {
+        $(this).after("<li id='barLI"+index+"' class='barLI'>|</li>");
+    }
+})
+})(jQuery);
+</script>
+
+<script type="text/javascript">
+$("#dropdown > li:last-child").addClass("primaryNavLastChild");
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-1265584-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+        </div> <!-- End contentasset -->
+   
+</div>
+     
+    <!-- Demandware Analytics code 1.0 --><script type="text/javascript" src="http://demandware.edgesuite.net/aaeq_prd/on/demandware.static/Sites-Awana-Site/-/default/v1361404501210/internal/jscript/dwanalytics.js"></script><script type="text/javascript">//<!--
+/* <![CDATA[ */
+
+/* ]]> */
+// -->
+</script></body>
+</html>
+</apex:page>

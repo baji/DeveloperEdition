@@ -1,0 +1,83 @@
+<apex:page showHeader="false" standardStylesheets="false">
+  <apex:form >
+  <apex:stylesheet value="{!$Resource.style}"/>
+  <apex:pageBlock >
+      
+                <ul class="ui-blocks">
+                
+                <li><img src="{!$Resource.cognos}"/>
+                <div class="ui-right-col">
+                <p><b>COGNOS</b></p>
+                <p>Some dummy text here, Some dummy text here, Some dummy text here....</p>
+                <input type="button" value="More"  />
+                </div>
+                </li>
+                
+                
+                <li><img src="{!$Resource.crs_lms}" alt="Cognos" />
+                <div class="ui-right-col">
+                    <a href="http://www.google.com/">
+                <p><b>CRS/LMS</b></p>
+                    </a>
+                <p>Some dummy text here, Some dummy text here, Some dummy text here....</p>
+                <input type="button" value="More"  />
+                </div>
+                </li>
+                <li><img src="{!$Resource.IGT}" alt="Cognos" />
+                <div class="ui-right-col">
+                <p><b>IGT Patron Mgmt.</b></p>
+                <p>Some dummy text here, Some dummy text here, Some dummy text here....</p>
+                
+                <input type="button" value="More"  />
+                </div>
+                </li>
+                <li><img src="{!$Resource.lyt_mgmt}" alt="Cognos" />
+                <div class="ui-right-col">
+                <p><b>Loyalty Management</b></p>
+                <p>Some dummy text here, Some dummy text here, Some dummy text here....</p>
+                <input type="button" value="More"  />
+                </div>
+                </li>
+                <li><img src="{!$Resource.partners}" alt="Cognos" />
+                <div class="ui-right-col">
+                <p><b>Partners</b></p>
+                <p>Some dummy text here, Some dummy text here, Some dummy text here....</p>
+                
+                <input type="button" value="More"  />
+                </div>
+                </li>
+                <li><img src="{!$Resource.single_view}" alt="Cognos" />
+                <div class="ui-right-col">
+                <p><b>Single View of Guest</b></p>
+                <p>Some dummy text here, Some dummy text here, Some dummy text here....</p>
+                <input type="button" value="More"  />
+                </div>
+                </li>
+                <li><img src="{!$Resource.spa}" alt="Cognos" />
+                <div class="ui-right-col">
+                <p><b>SPA</b></p>
+                <p>Some dummy text here, Some dummy text here, Some dummy text here....</p>
+                
+                <input type="button" value="More"  />
+                </div>
+                </li>
+                <li><img src="{!$Resource.tkt_mstr}" alt="Cognos" />
+                <div class="ui-right-col">
+                <p><b>TicketMaster</b></p>
+                <p>Some dummy text here, Some dummy text here, Some dummy text here....</p>
+                <input type="button" value="More"  />
+                </div>
+                </li>
+                <li><img src="{!$Resource.unica}" alt="Cognos" />
+                <div class="ui-right-col">
+                <p><b>Unica</b></p>
+                <p>Some dummy text here, Some dummy text here, Some dummy text here....</p>
+                
+                <input type="button" value="More"  />
+                </div>
+                </li>
+                </ul>
+        
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

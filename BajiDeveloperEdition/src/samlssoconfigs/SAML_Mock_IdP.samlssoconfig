@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SamlSsoConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <identityLocation>SubjectNameId</identityLocation>
+    <identityMapping>Username</identityMapping>
+    <issuer>mockidp</issuer>
+    <name>SAML Mock IdP</name>
+    <oauthTokenEndpoint>https://bajidssk-dev-ed.my.salesforce.com/services/oauth2/token?so=00D90000000bGtX</oauthTokenEndpoint>
+    <redirectBinding>false</redirectBinding>
+    <salesforceLoginUrl>https://bajidssk-dev-ed.my.salesforce.com?so=00D90000000bGtX</salesforceLoginUrl>
+    <samlEntityId>https://saml.salesforce.com</samlEntityId>
+    <samlVersion>SAML2_0</samlVersion>
+    <userProvisioning>false</userProvisioning>
+    <validationCert>MIIDuzCCA3igAwIBAgIESdu3wzALBgcqhkjOOAQDBQAwgb8xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEOMAwGA1UEChMFQXhpb20xUTBPBgNVBAsTSEZPUiBERU1PTlNUUkFUSU9OIFBVUlBPU0VTIE9OTFkuIERPIE5PVCBVU0UgRk9SIFBST0RVQ1RJT04gRU5WSVJPTk1FTlRTLjEoMCYGA1UEAxMfQXhpb20gSWRlbnRpdHkgUHJvdmlkZXIgRXhhbXBsZTAeFw0wOTA0MDcyMDI5NTVaFw0wOTA3MDYyMDI5NTVaMIG/MQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xDjAMBgNVBAoTBUF4aW9tMVEwTwYDVQQLE0hGT1IgREVNT05TVFJBVElPTiBQVVJQT1NFUyBPTkxZLiBETyBOT1QgVVNFIEZPUiBQUk9EVUNUSU9OIEVOVklST05NRU5UUy4xKDAmBgNVBAMTH0F4aW9tIElkZW50aXR5IFByb3ZpZGVyIEV4YW1wbGUwggG4MIIBLAYHKoZIzjgEATCCAR8CgYEA/X9TgR11EilS30qcLuzk5/YRt1I870QAwx4/gLZRJmlFXUAiUftZPY1Y+r/F9bow9subVWzXgTuAHTRv8mZgt2uZUKWkn5/oBHsQIsJPu6nX/rfGG/g7V+fGqKYVDwT7g/bTxR7DAjVUE1oWkTL2dfOuK2HXKu/yIgMZndFIAccCFQCXYFCPFSMLzLKSuYKi64QL8Fgc9QKBgQD34aCF1ps93su8q1w2uFe5eZSvu/o66oL5V0wLPQeCZ1FZV4661FlP5nEHEIGAtEkWcSPoTCgWE7fPCTKMyKbhPBZ6i1R8jSjgo64eK7OmdZFuo38L+iE1YvH7YnoBJDvMpPG+qFGQiaiD3+Fa5Z8GkotmXoB7VSVkAUw7/s9JKgOBhQACgYEA2dJ2EJgFnIXnRTnXgxf9I8sbPGCjP9/OyuJHx9pAi7hPC7i3q2j60VdQ4bM9Nook08xTVckB0sheSeYaseHS1v2EojoPfuusjoRAjgdx/32XkKnU7XX9tL5zCJoq43BIxFcWyW6NdnBixekoEIASImqOVcZIhnZXGV5sCyz2sD4wCwYHKoZIzjgEAwUAAzAAMC0CFQCMnmwoBf8eXy3Sex90mL32DcDImAIUbmpCjdjy8d+uTlKazT+rLryTeuU=</validationCert>
+</SamlSsoConfig>

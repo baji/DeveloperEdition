@@ -1,0 +1,7 @@
+<apex:page >
+    <apex:image value="{!$Resource.unica}"/>
+  <flow:interview name="Mortgage_Calculator" finishLocation="NewAccountPage">
+      
+  </flow:interview>
+  
+</apex:page>

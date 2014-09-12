@@ -1,0 +1,30 @@
+<apex:page controller="accountdisplylink" showHeader="false" sidebar="false">
+            <apex:form > 
+            <apex:pageBlock Title="Countries">
+                <apex:pageblockSection >    
+                        <apex:commandLink value="D Contacts" action="{!search}" rerender="resultsblock">
+                           <!--<apex:param value="{!Searchtext}"></apex:param>-->
+                           <apex:param name="name" value="d"/>
+                          </apex:commandLink>
+                        <apex:commandLink value="E Contacts" action="{!search}" rerender="resultsblock">
+                           <!--<apex:param value="{!Searchtext}"></apex:param>-->
+                           <apex:param name="name" value="e"/>
+                          </apex:commandLink>                         
+                        <apex:commandLink value="F Contacts" action="{!search}" rerender="resultsblock">
+                           <!--<apex:param value="{!Searchtext}"></apex:param>-->
+                           <apex:param name="name" value="f"/>
+                          </apex:commandLink>
+                </apex:pageblockSection>  
+           </apex:pageBlock>
+           <apex:pageblock title="Contacts Info" id="resultsblock">
+                <apex:outputPanel >
+                           <apex:commandButton value="PREVIOUS" action="{!PREVIOUS}" styleClass="btnImportant" rendered="{!Con.HasPrevious}" />
+                           <apex:commandButton value="NEXT" action="{!NEXT}" styleClass="btnImportant" rendered="{!Con.HasNext}" />
+                </apex:outputPanel>
+                <apex:pageBlockTable value="{!searchResults}" var="o" >                                    
+                       <apex:column value="{!o.Name}"/>
+                       <apex:column value="{!o.phone}"/>           
+                </apex:pageBlocktable>
+           </apex:pageBlock>
+             </apex:form>
+    </apex:page>

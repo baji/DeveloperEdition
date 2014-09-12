@@ -1,0 +1,3 @@
+<apex:page sidebar="false" readOnly="true" docType="html-5.0" title="Skuid Settings">
+    <c:page page="SkuidSettings"/>
+</apex:page>

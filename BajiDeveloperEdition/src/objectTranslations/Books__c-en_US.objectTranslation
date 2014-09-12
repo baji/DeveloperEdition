@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Books</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Books</value>
+    </caseValues>
+    <fields>
+        <label><!-- Book Price --></label>
+        <name>Book_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Book_Received_Date --></label>
+        <name>Book_Received_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dispatched_to_Library --></label>
+        <name>Dispatched_to_Library__c</name>
+        <picklistValues>
+            <masterLabel>Benguluru</masterLabel>
+            <translation><!-- Benguluru --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hyderabad</masterLabel>
+            <translation><!-- Hyderabad --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- asdfa --></label>
+        <name>asdfa__c</name>
+        <picklistValues>
+            <masterLabel>a</masterLabel>
+            <translation><!-- a --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>b</masterLabel>
+            <translation><!-- b --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>c</masterLabel>
+            <translation><!-- c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>d</masterLabel>
+            <translation><!-- d --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>e</masterLabel>
+            <translation><!-- e --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

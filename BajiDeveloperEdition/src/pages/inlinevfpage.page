@@ -1,0 +1,15 @@
+<apex:page showHeader="false" standardController="Contact">
+ <apex:includeScript value="{!URLFOR($Resource.JQuery_1_9_1)}"/>
+ <script>
+    function test()
+    {
+  alert(1);
+     
+     $('#00N90000009r4ax_ileinner').load(function(){                                         
+                alert($("#00N90000009r4ax_ileinner").val());
+
+    }); 
+    }  
+ </script>
+ <body onload="test()" />
+</apex:page>

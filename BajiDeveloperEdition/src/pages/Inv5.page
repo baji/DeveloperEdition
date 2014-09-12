@@ -1,0 +1,52 @@
+<apex:page standardController="Account" recordSetVar="act" showHeader="false" extensions="AccountInv5">
+
+<apex:form id="accForm">
+
+    <apex:pageBlock title="All Acounts" >
+
+        <apex:pageMessage summary="Click on the account name" severity="info" strength="2" />  
+
+            <apex:pageBlockTable id="accTable" value="{!act}" var="a" onrowClick="show(this);" >
+
+                <apex:column headerValue="Account Name"><a href="#"> {!a.Name}</a></apex:column>   
+
+                <apex:column headerValue="Phone" >{!a.phone}</apex:column>
+
+                <apex:column headerValue="Billing State/Province" >{!a.BillingState}</apex:column>
+
+                <apex:column headerValue="Website" >{!a.Website}</apex:column>
+
+            </apex:pageBlockTable>     
+
+    </apex:pageBlock>
+
+</apex:form>
+
+<style>
+.selectedDataRow {
+    background-color: #ccffbb;
+}
+</style>
+<script>
+    var previousrrow='';
+        function show(rowVar)
+        {              
+                var classname1=rowVar.className;
+                rowVar.className="selectedDataRow";
+               if(previousrrow =='')
+               {
+                   previousrrow=rowVar;
+               }
+               else
+               {
+                   if(previousrrow.innerHTML!=rowVar.innerHTML)
+                   {
+                       previousrrow.className=classname1;
+                       previousrrow=rowVar;
+                   }
+               }            
+        }
+
+</script>
+
+</apex:page>

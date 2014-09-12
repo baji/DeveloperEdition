@@ -1,0 +1,44 @@
+<apex:page controller="Checkbox_Class" Tabstyle="INV3__tab" showHeader="true">
+
+<apex:form >
+<apex:pageBlock >
+&nbsp;&nbsp;&nbsp;<h1 align ="left"> All Accounts</h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <h1 align ="center">Selected Accounts</h1> 
+<apex:pageBlockSection >
+
+<apex:pageBlockSectionItem >
+<apex:pageBlockTable value="{!accounts}" var="a" >
+<apex:column headerValue="Select">
+<apex:inputCheckbox value="{!a.selected}" id="checkedone">
+<!--  If you remove the below comment selected accounts will be automatically populated with out clicking 'Show Selected Accounts' Button -->
+<!-- <apex:actionSupport event="onclick" action="{!GetSelected}" rerender="Selected_PBS"/>  -->
+</apex:inputCheckbox></apex:column>
+<apex:column headervalue="Account Name" value="{!a.acc.Name}" />
+<apex:column headervalue="Phone" value="{!a.acc.Phone}" />
+</apex:pageBlockTable>
+</apex:pageBlockSectionItem>
+
+<apex:pageBlockSectionItem >
+<apex:pageBlockTable value="{!SelectedAccounts}" var="s" id="Selected_PBS" >
+<apex:column headervalue="Account Name" value="{!s.Name}" />
+<apex:column headervalue="Phone" value="{!s.Phone}" />
+</apex:pageBlockTable>
+</apex:pageBlockSectionItem>
+
+</apex:pageBlockSection>
+<apex:pageBlockSection id="PBMSG">
+<apex:pageMessage summary="WARNING:No Accounts Selected" severity="warning" id="errID"  strength="2" rendered="{!Err != ''}"/>
+</apex:pageBlockSection>
+<apex:pageBlockButtons >
+     <apex:commandButton id="SSA" value="Show Selected Accounts"  action="{!GetSelected}" rerender="Selected_PBS,PBMSG" status="status"/>
+     
+     <apex:actionStatus id="status" startText="Please wait......" />
+</apex:pageBlockButtons>
+</apex:pageBlock>
+</apex:form>
+
+</apex:page>

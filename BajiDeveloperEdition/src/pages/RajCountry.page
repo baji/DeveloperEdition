@@ -1,0 +1,15 @@
+<apex:page standardController="Foundation_Countries__c" extensions="CountryStates">
+
+    
+<apex:form >
+<apex:pageBlock >
+    <div ><h2>Contry Links</h2></div>
+    <apex:pageblockSection >
+       <apex:outputLink value="{!$Page.newstates}">India</apex:outputLink>
+       <apex:outputLink value="{!$Page.newstates}">America</apex:outputLink>
+       <apex:outputLink value="{!$Page.newstates}">Australia</apex:outputLink>
+    </apex:pageblockSection>
+    
+</apex:pageBlock>
+</apex:form>
+</apex:page>
